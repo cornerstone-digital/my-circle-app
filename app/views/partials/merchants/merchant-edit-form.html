@@ -1,0 +1,156 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                {{title}}
+            </h1>
+            <span class="delete-alert triangle-border right">
+              <span class="bubble-title">Alert</span>
+              You need to select at least one checkbox from the list in order to delete any items.
+            </span>
+
+            <span class="save-alert triangle-border right">
+              <span class="bubble-title">Alert</span>
+              You have not saved your changes yet.
+              <div class="button-row" style="padding-top: 10px">
+                <button class="cancel-save-btn btn" data-ng-click="cancelSaveBtnClick()">Don't save</button>
+                <button class="cancel-btn btn" data-ng-click="cancelBtnClick()">Cancel</button>
+              </div>
+            </span>
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg tick-icon save-btn" data-ng-click="save(true)" value="Save" />
+                <input type="button" class="icon icon-lg bin-icon delete-staff-btn" data-ng-click="deleteEmployees()" value="Delete Staff" />
+                <input type="button" class="icon icon-lg plus-icon add-staff-btn" data-ng-click="addEmployee()" value="Add Staff" />
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="merchant" class="container">
+    <alert-box data-group="Merchant"></alert-box>
+    <div id="merchant-tabs" kendo-tab-strip="merchantTabs" k-select="onSelect">
+        <ul>
+            <li class="k-state-active merchant-tab">Merchant</li>
+            <li data-ng-if="employees.length" class="staff-tab">Staff</li>
+        </ul>
+        <div class="merchant-info">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <fieldset class="row">
+                        <legend>Merchant info</legend>
+                        <div class="col-md-12 editable-item" validate-data="merchant.name" rules="['required']"
+                             displayName="Merchant name" groupName="Merchant">
+                            <div class="row">
+                                <label class="col-md-4">Merchant name:</label>
+
+                                <div class="col-md-8">
+                                    <a editable-text="merchant.name" e-class="k-textbox" blur="submit" buttons="no"
+                                       e-data-ng-change="showDataChangedMessage()" tabindex="1" nexttabindex="2"
+                                       e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ merchant.name ||
+                                        'required' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                  <fieldset class="row">
+                    <legend>Contact info</legend>
+                    <div class="col-md-12">
+                      <div class="row editable-item" validate-data="venues[0].contacts[0].value" rules="['required']" displayName="Contact Name" groupName="Merchant">
+                        <label class="col-md-4">Name:</label>
+
+                        <div class="col-md-8">
+                          <a editable-text="venues[0].contacts[0].value" e-class="k-textbox" blur="submit" buttons="no"
+                             e-data-ng-change="showDataChangedMessage()" tabindex="10" nexttabindex="11"
+                             e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venues[0].contacts[0].value ||
+                            'required' }}</a>
+                        </div>
+                      </div>
+                      <div class="row editable-item" validate-data="venues[0].contacts[1].value" rules="['required']" displayName="Contact Phone" groupName="Merchant">
+                        <label class="col-md-4">Phone:</label>
+
+                        <div class="col-md-8">
+                          <a editable-text="venues[0].contacts[1].value" e-class="k-textbox" blur="submit" buttons="no"
+                             e-data-ng-change="showDataChangedMessage()" tabindex="11" nexttabindex="12"
+                             e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venues[0].contacts[1].value ||
+                            'required' }}</a>
+                        </div>
+                      </div>
+                      <div class="row editable-item" validate-data="venues[0].contacts[2].value" rules="['required']" displayName="Contact Email" groupName="Merchant">
+                        <label class="col-md-4">Email:</label>
+
+                        <div class="col-md-8">
+                          <a editable-text="venues[0].contacts[2].value" e-class="k-textbox" blur="submit" buttons="no"
+                             e-data-ng-change="showDataChangedMessage()" tabindex="12" nexttabindex="13"
+                             e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venues[0].contacts[2].value ||
+                            'required' }}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <fieldset class="row" data-ng-if="venues[0]">
+                    <legend>Address</legend>
+                    <div class="col-md-12">
+                      <div class="row editable-item" validate-data="venues[0].address.line1" rules="['required']" displayName="Address Line 1" groupName="Merchant">
+                        <label class="col-md-4">Line 1:</label>
+                        <div class="col-md-8">
+                          <a editable-text="venues[0].address.line1" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="13" nexttabindex="14" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venues[0].address.line1 || 'required' }}</a>
+                        </div>
+                      </div>
+
+                      <div class="row editable-item">
+                        <label class="col-md-4">Line 2:</label>
+                        <div class="col-md-8">
+                          <a editable-text="venues[0].address.line2" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="14" nexttabindex="15" e-data-ng-tab="moveToNextTabIndex($event, $editable)">{{ venues[0].address.line2 || 'optional' }}</a>
+                        </div>
+                      </div>
+
+                      <div class="row editable-item" validate-data="venues[0].address.city" rules="['required']" displayName="City" groupName="Merchant">
+                        <label class="col-md-4">City:</label>
+                        <div class="col-md-8">
+                          <a editable-text="venues[0].address.city" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="15" nexttabindex="16" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venues[0].address.city || 'required' }}</a>
+                        </div>
+                      </div>
+
+                      <div class="row editable-item">
+                        <label class="col-md-4">County:</label>
+                        <div class="col-md-8">
+                          <a editable-text="venues[0].address.county" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="16" nexttabindex="17" e-data-ng-tab="moveToNextTabIndex($event, $editable)">{{ venues[0].address.county || 'optional' }}</a>
+                        </div>
+                      </div>
+
+                      <div class="row editable-item" validate-data="venues[0].address.postCode" rules="['required']" displayName="Postcode" groupName="Merchant">
+                        <label class="col-md-4">Postcode:</label>
+                        <div class="col-md-8">
+                          <a editable-text="venues[0].address.postCode" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="17" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venues[0].address.postCode || 'required' }}</a>
+                        </div>
+                      </div>
+
+                      <div class="row editable-item">
+                        <label class="col-md-4">Country:</label>
+                        <div class="col-md-8">
+                          <select id="country" name="country"
+                                  kendo-drop-down-list="countrySelect"
+                                  k-data-text-field="'name'"
+                                  k-data-value-field="'numericCode'"
+                                  data-ng-model="venues[0].address.country.numericCode"
+                                  k-data-source="countries"
+                                  k-class="form-control"
+                                  data-ng-change="updateVenueCountry()"
+                                  k-enabled="false">
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="merchant-employees" data-ng-if="employees.length">
+            <div id="merchantEmployeesGrid" data-kendo-grid="merchantEmployeesGrid" data-k-options="employeeGridOptions" data-ng-if="employees"></div>
+            <div data-ng-if="!employees.length">No items to display</div>
+        </div>
+    </div>
+</section>

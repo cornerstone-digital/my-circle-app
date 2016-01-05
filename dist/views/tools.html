@@ -1,0 +1,50 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header" data-ng-if="hasModuleEnabled('multivenue')">
+                smartTools: <span class="subHeader">{{ venue.name }}</span>
+            </h1>
+            <h1 class="pull-left main-header" data-ng-hide="hasModuleEnabled('multivenue')">
+                smartTools
+            </h1>
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg back-icon" data-ng-click="back()" data-ng-if="backUrl" value="Back">
+            </div>
+            <!-- Venue Chooser -->
+            <div class="btn-group pull-right" dropdown="" is-open="status.isopen" data-ng-hide="!hasMultipleVenues()" data-ng-if="hasModuleEnabled('multivenue')">
+                <button type="button" class="btn-lg dropdown-toggle" ng-disabled="disabled">
+                    Switch Venue <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-repeat="venue in venues">
+                        <a data-ng-click="switchVenue(venue)">{{venue.name}} ({{venue.id}})</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="tools" class="container">
+  <div class="row" data-ng-repeat="tool in tools" style="float: left; width: 100%; margin-top: 50px; margin-bottom: 100px">
+    <div class="col-md-12 {{tool.appId | afterLast:'.'}}">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>
+                    <div class="tool-img"></div>
+                    {{tool.name}}
+                </h2>
+            </div>
+            <div class="col-md-8">
+                <fieldset>
+                    <legend>Available to:</legend>
+                    <div data-role-selector="tool.groups"></div>
+                </fieldset>
+                <!--<input type="button" class="icon icon-lg tick-icon pull-right" data-ng-click="save(tool)" value="Save" />-->
+                <button class="btn btn-success btn-lg pull-right" type="submit" data-ng-click="save(tool)">Save</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,62 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header" data-ng-if="hasModuleEnabled('multivenue')">
+                Products: <span class="subHeader">{{credentials.venue.name}}</span>
+            </h1>
+            <h1 class="pull-left main-header" data-ng-if="!hasModuleEnabled('multivenue')">Products: <span>{{credentials.venue.name}}</span></h1>
+
+            <!-- Venue Chooser -->
+            <div class="btn-group pull-right" dropdown is-open="status.isopen" data-ng-hide="!hasMultipleVenues()" data-ng-if="hasModuleEnabled('multivenue')">
+                <button type="button" class="btn-lg dropdown-toggle" ng-disabled="disabled">
+                    Switch Venue <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-repeat="venue in venues">
+                        <a data-ng-click="switchVenue(venue)">{{venue.name}} ({{venue.id}})</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg tick-icon product-save-btn" disabled="disabled" data-ng-click="save()" value="{{ 'common.save' | i18n }}" />
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="products" class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="category-filter">
+                <category-filter data-categories="categories" data-selected="selectedCategory" data-sections="sections"></category-filter>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="toolbar controls" data-ng-if="hasModuleEnabled('multivenue')">
+              <button type="button" data-ng-click="create()" data-ng-show="hasCategories()" class="icon icon-lg plus-icon pull-left add-btn">Add Product</button>
+
+              <button type="button" data-ng-click="toggleLockMode()" data-ng-show="hasCategories()" class="icon icon-lg pull-left toggle-active-icon lockToggle">{{lockedModeText}}</button>
+              <button type="button" class="icon icon-lg plus-icon" data-ng-if="!hasCategories()" data-ng-click="populateCatalog()" data-requires-permission="PERM_PLATFORM_ADMINISTRATOR">Populate catalog</button>
+            </div>
+            <div class="product-grid">
+                <ul id="productList" ng-model="productsForCategory">
+                    <li data-ng-repeat="product in productsForCategory" class="product-tile {{lockedClass}}" data-product="{{product}}"></li>
+                </ul>
+                <div class="modal bs-modal-lg fade delete-confirm" data-trigger="productToDelete" data-on-cancel="closeConfirm">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete {{productToDelete.title}}?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default btn-lg" data-ng-click="closeConfirm()">No</button>
+                                <button type="button" class="btn btn-danger btn-lg" data-ng-click="confirmYes()">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

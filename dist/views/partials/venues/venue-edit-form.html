@@ -1,0 +1,76 @@
+<section class="modal bs-modal-lg fade" tabindex="-1" role="dialog" data-trigger="venue">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form name="venueForm" data-ng-submit="save()" novalidate="">
+
+        <header class="modal-header">
+          <h2>Edit venue</h2>
+        </header>
+
+        <div class="modal-body">
+
+          <div data-label="Name" class="form-group">
+            <input type="text" name="name" class="form-control input-lg" data-ng-model="venue.name" required="">
+            <div class="help-block error">Please enter a name</div>
+          </div>
+
+          <div class="row">
+            <fieldset class="col-sm-6">
+              <legend>Address</legend>
+
+              <div data-label="Address" class="form-group">
+                <input type="text" name="streetAddress" class="form-control input-lg" data-ng-model="venue.address.line1">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="locality" class="form-control input-lg" data-ng-model="venue.address.line2">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="region" class="form-control input-lg" data-ng-model="venue.address.city">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="region" class="form-control input-lg" data-ng-model="venue.address.county">
+              </div>
+
+              <div data-label="Post code" class="form-group">
+                <input type="text" name="postalCode" class="form-control input-lg" data-ng-model="venue.address.postCode">
+              </div>
+
+            </fieldset>
+
+            <fieldset class="col-sm-6">
+              <legend>Contact</legend>
+
+              <div data-label="Telephone" class="form-group">
+                <input type="tel" name="tel" class="form-control input-lg" data-ng-model="contact.value" required="">
+                <div class="help-block error">Please enter a telephone number</div>
+              </div>
+            </fieldset>
+
+            <fieldset class="col-sm-6">
+              <legend>Venue info</legend>
+
+              <div data-label="Legal name" class="form-group">
+                <input type="text" name="legalName" class="form-control input-lg" data-ng-model="venue.legalName" required="">
+                <div class="help-block error">Please enter a Legal name</div>
+              </div>
+
+              <div data-label="VAT registration no." class="form-group">
+                <input type="text" name="vatID" class="form-control input-lg" data-ng-model="venue.vatNumber">
+                <div class="help-block error">Please enter a VAT registration no.</div>
+              </div>
+            </fieldset>
+          </div>
+
+        </div>
+
+        <footer class="modal-footer">
+          <button id="venue-edit-cancel" type="button" class="btn btn-default btn-lg" style="margin-left: 20px" data-ng-click="cancel()" data-ng-disabled="locked">Cancel</button>
+          <button id="venue-edit-save" type="submit" class="btn btn-success btn-lg" data-loading-button="Saving&hellip;">Save</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,190 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                {{title}}
+            </h1>
+            <span class="delete-alert triangle-border right">
+              <span class="bubble-title">Alert</span>
+              You need to select at least one checkbox from the list in order to delete any items.
+            </span>
+
+            <span class="save-alert triangle-border right">
+              <span class="bubble-title">Alert</span>
+              You have not saved your changes yet.
+              <div class="button-row" style="padding-top: 10px">
+                <button class="cancel-save-btn btn" data-ng-click="cancelSaveBtnClick()">Don't save</button>
+                <button class="cancel-btn btn" data-ng-click="cancelBtnClick()">Cancel</button>
+              </div>
+            </span>
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg tick-icon save-btn" data-ng-click="save(true)" value="Save" />
+
+              <input type="button" class="icon icon-lg bin-icon delete-staff-btn" data-ng-click="deleteEmployees()" value="Delete Staff" />
+              <input type="button" class="icon icon-lg plus-icon add-staff-btn" data-ng-click="addEmployee()" value="Add Staff" />
+
+              <input type="button" class="icon icon-lg bin-icon delete-discount-btn" data-ng-click="deleteDiscounts()" value="Delete Discounts" />
+              <input type="button" class="icon icon-lg plus-icon add-discount-btn" data-ng-click="addDiscount()" value="Add Discount" />
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="venues" class="container">
+  <alert-box data-group="Venue"></alert-box>
+
+    <div id="venue-tabs" kendo-tab-strip="venueTabs" k-select="onSelect">
+        <ul>
+            <li class="k-state-active">Venue</li>
+            <li>Staff</li>
+            <li>Discounts</li>
+        </ul>
+        <div class="venue-info">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                <fieldset>
+                <legend>Venue info</legend>
+                <div class="row editable-item" validate-data="venue.name" rules="['required']" displayName="Venue name" groupName="Venue">
+                <label class="col-md-4">Venue name:</label>
+                <div class="col-md-8">
+                <a editable-text="venue.name" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="1" nexttabindex="2" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venue.name || 'required' }}</a>
+                </div>
+                </div>
+                <div class="row editable-item" validate-data="venue.legalName" buttons="no" rules="['required']" displayName="Legal name" groupName="Venue">
+                <label class="col-md-4">Legal name:</label>
+                <div class="col-md-8">
+                <a editable-text="venue.legalName" e-class="k-textbox" buttons="no" blur="submit" e-data-ng-change="showDataChangedMessage()" tabindex="2" nexttabindex="3" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venue.legalName || 'required' }}</a>
+                </div>
+                </div>
+                <div class="row editable-item">
+                <label class="col-md-4">VAT Number:</label>
+                <div class="col-md-8">
+                <a editable-text="venue.vatNumber" e-class="k-textbox" buttons="no"  blur="submit" e-data-ng-change="showDataChangedMessage()" tabindex="3" nexttabindex="4" e-data-ng-tab="moveToNextTabIndex($event, $editable)">{{ venue.vatNumber || 'optional' }}</a>
+                </div>
+                </div>
+                </fieldset>
+
+                <fieldset>
+                <legend>Venue Sections</legend>
+                <p>Add and setup the various sections contained within this venue i.e Bar, Kitchen etc.</p>
+                <alert-box data-group="Sections"></alert-box>
+
+                <span data-ng-pluralize count="venue.sections.length"
+                when="{'0': 'You currently have 0 sections setup for this venue.',
+                '1': 'You currently have 1 section setup for this venue.',
+                'other': 'You currently have {{venue.sections.length}} sections setup for this venue.'}"
+                class="row">
+                </span>
+
+                <div data-ng-repeat="section in venue.sections">
+                <div class="row editable-item">
+                <div class="col-md-12 editable-list-item" validate-data="section.name" rules="['required']" displayName="Section Name" groupName="Sections">
+                <a editable-text="section.name" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" e-required>{{ section.name || 'required' }}</a>
+                <div class="actions pull-right">
+                <input type="button" class="icon icon-lg bin-icon" data-ng-click="deleteSection(section)" value="Remove" />
+                </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="add-list-item row">
+                <div class="col-md-4" validate-data="newSection" rules="['required']" displayName="Section Name" groupName="Sections">
+                <input ng-model="newSection" type="text" class="k-textbox" data-ng-enter="addSection(newSection)" required />
+                </div>
+                <div class="col-md-8">
+                <input type="button" value="Add Section" class="icon icon-lg plus-icon" data-ng-click="addSection(newSection)" />
+                </div>
+                </div>
+
+                </fieldset>
+                </div>
+                <div class="col-lg-6 col-md-6 ">
+                <fieldset>
+                <legend>Contact info</legend>
+                <div class="row editable-item" validate-data="name.value" rules="['required']" displayName="Name" groupName="Venue">
+                <label class="col-md-4">Name:</label>
+                <div class="col-md-8">
+                <a editable-text="name.value" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="4" nexttabindex="5" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ name.value || 'required' }}</a>
+                </div>
+                </div>
+                <div class="row editable-item" validate-data="phone.value" rules="['required']" displayName="Telephone" groupName="Venue">
+                <label class="col-md-4">Telephone:</label>
+                <div class="col-md-8">
+                <a editable-text="phone.value" e-class="k-textbox" buttons="no" blur="submit" e-data-ng-change="showDataChangedMessage()" tabindex="5" nexttabindex="6" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ phone.value || 'required' }}</a>
+                </div>
+                </div>
+                <div class="row editable-item" validate-data="email.value" rules="['required','email']" displayName="Email" groupName="Venue">
+                <label class="col-md-4">Email:</label>
+                <div class="col-md-8">
+                <a editable-text="email.value" e-class="k-textbox" buttons="no" blur="submit" e-data-ng-change="showDataChangedMessage()" onbeforesave="validateEmail($data)" tabindex="6" nexttabindex="7" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ email.value || 'required' }}</a>
+                </div>
+                </div>
+                </fieldset>
+
+                <fieldset>
+                <legend>Address</legend>
+
+                <div class="row editable-item" validate-data="venue.address.line1" rules="['required']" displayName="Address Line 1" groupName="Venue">
+                <label class="col-md-4">Line 1:</label>
+                <div class="col-md-8">
+                <a editable-text="venue.address.line1" e-class="k-textbox" buttons="no" blur="submit" e-data-ng-change="showDataChangedMessage()" tabindex="7" nexttabindex="8" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venue.address.line1 || 'required' }}</a>
+                </div>
+                </div>
+
+                <div class="row editable-item">
+                <label class="col-md-4">Line 2:</label>
+                <div class="col-md-8">
+                <a editable-text="venue.address.line2" e-class="k-textbox" buttons="no" blur="submit" e-data-ng-change="showDataChangedMessage()" tabindex="8" nexttabindex="9" e-data-ng-tab="moveToNextTabIndex($event, $editable)">{{ venue.address.line2 || 'optional' }}</a>
+                </div>
+                </div>
+
+                <div class="row editable-item" validate-data="venue.address.city" rules="['required']" displayName="City" groupName="Venue">
+                <label class="col-md-4">City:</label>
+                <div class="col-md-8">
+                <a editable-text="venue.address.city" e-class="k-textbox" buttons="no" blur="submit" e-data-ng-change="showDataChangedMessage()" tabindex="9" nexttabindex="10" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venue.address.city || 'required' }}</a>
+                </div>
+                </div>
+
+                <div class="row editable-item">
+                <label class="col-md-4">County:</label>
+                <div class="col-md-8">
+                <a editable-text="venue.address.county" e-class="k-textbox" buttons="no" blur="submit" e-data-ng-change="showDataChangedMessage()" tabindex="10" nexttabindex="11" e-data-ng-tab="moveToNextTabIndex($event, $editable)">{{ venue.address.county || 'optional' }}</a>
+                </div>
+                </div>
+
+                <div class="row editable-item" validate-data="venue.address.postCode" rules="['required']" displayName="Postcode" groupName="Venue">
+                <label class="col-md-4">Postcode:</label>
+                <div class="col-md-8">
+                <a editable-text="venue.address.postCode" e-class="k-textbox" buttons="no" blur="submit" e-data-ng-change="showDataChangedMessage()" onbeforesave="validatePostcode($data)" tabindex="11" nexttabindex="12" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ venue.address.postCode || 'required' }}</a>
+                </div>
+                </div>
+
+                <div class="row editable-item">
+                <label class="col-md-4">Country:</label>
+                <div class="col-md-8">
+                <select id="country" name="country"
+                kendo-drop-down-list="countrySelect"
+                k-data-text-field="'name'"
+                k-data-value-field="'numericCode'"
+                data-ng-model="venue.address.country.numericCode"
+                k-data-source="countries"
+                k-class="form-control"
+                data-ng-change="updateVenueCountry()"
+                k-enabled="false">
+                </select>
+                </div>
+                </div>
+                </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="venue-employees">
+            <div id="venueEmployeesGrid" data-kendo-grid="venueEmployeesGrid" data-k-options="employeeGridOptions" data-ng-if="employees"></div>
+            <div id="noEmployeesMessage" data-ng-if="!employees.length">No items to display</div>
+        </div>
+        <div class="venue-discounts">
+            <div id="venueDiscountsGrid" data-kendo-grid="venueDiscountsGrid" data-k-options="discountGridOptions" data-ng-if="discounts"></div>
+            <div data-ng-if="!discounts.length">No items to display</div>
+        </div>
+    </div>
+</section>

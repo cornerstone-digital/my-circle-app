@@ -1,0 +1,51 @@
+.modifiers-tab
+  .navbar
+    margin-bottom: -1px
+  .navbar-right .add-button
+    margin-right: 15px
+  .nav-pills
+    li > a
+      text-align: center
+      padding: 6px 12px
+      border: 1px solid
+    button
+      width: 100% !important
+
+.variants
+  margin-bottom: 15px
+
+  .input-currency
+    width: 100%
+    text-align: left
+
+%repeatable-form-row
+  $button-size: 45px
+  margin-bottom: 14px
+  position: relative
+  padding-right: $button-size + 8px
+  .delete-button
+    min-width: $button-size
+
+.modifier
+  @extend %repeatable-form-row
+  .delete-button
+    right: 6px
+
+.variant
+  @extend %repeatable-form-row
+  .delete-button
+    right: 0
+
+.variant-title
+  width: 14em
+
+.variant-price
+  width: 9em
+
+.images-tab
+  img.img-thumbnail
+    width: 230px
+    height: 130px
+
+    button
+      margin: 10px

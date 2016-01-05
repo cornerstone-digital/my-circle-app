@@ -1,0 +1,20 @@
+<table class="table table-condensed table-striped report-table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Sales Total</th>
+      <th class="currency">Refunds Total</th>
+      <th class="number">Payments</th>
+      <th class="number">Refunds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="category in report.byCategory() | orderBy:'total':true">
+      <td>{{category.category}}</td>
+      <td class="currency">{{category.payment.total | currency:"£"}}</td>
+      <td class="currency">{{category.refund.total * -1 | currency:"£"}}</td>
+      <td class="number">{{category.payment.count | number}}</td>
+      <td class="number">({{category.refund.count | number}})</td>
+    </tr>
+  </tbody>
+</table>

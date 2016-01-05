@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "pos.js",
+  "sourceRoot": "",
+  "sources": [
+    "pos.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,YAAA,CAAA;AAAA,EAEA,OAAO,CAAC,MAAR,CAAe,aAAf,CACE,CAAC,QADH,CACY,aADZ,EAEI;IACE;AAAA,MAAA,IAAA,EAAM,MAAN;AAAA,MACA,IAAA,EAAM,KADN;KADF,EAIE;AAAA,MAAA,IAAA,EAAM,MAAN;AAAA,MACA,IAAA,EAAM,UADN;KAJF;GAFJ,CAFA,CAAA;AAAA"
+}

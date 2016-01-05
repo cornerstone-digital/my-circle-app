@@ -1,0 +1,20 @@
+{
+    "smartSetup": "smartSet-up",
+    "smartSetup-merchants": "comerciantes",
+    "smartSetup-venues": "Lugares",
+    "smartSetup-staff": "empleados",
+    "smartSetup-products": "Productos",
+    "smartSetup-discounts": "Descuentos",
+
+    "smartReports": "smartReports",
+    "smartReports-reports": "smartReport",
+    "smartReports-products": "informe del producto",
+    "smartReports-soldStock": "Vendido informe En balance",
+    "smartReports-compare": "informe de comparación",
+    "smartReports-timesheets": "hojas de tiempo Personal",
+
+    "smartSocial": "smartSocial",
+    "smartTools": "smartTools",
+    "userGuide": "Guía del usuario",
+    "logout": "Cerrar sesión"
+}

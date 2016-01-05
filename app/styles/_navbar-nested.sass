@@ -1,0 +1,198 @@
+$navbar-height: 55px
+$navbar-margin: 20px
+
+body.has-navbar
+  padding:
+    top: $navbar-height
+    bottom: $navbar-height
+
+#mainnav
+  background: #ffffff
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 10000
+  border-bottom: 1px solid #ddd
+
+  #drawer-trigger
+    position: absolute
+    top: 10px
+    left: 10px
+    z-index: 1500
+
+  .navbar-brand
+    background: transparent url('/images/logo.png') left center no-repeat
+    text-indent: -9999px
+    display: inline-block
+    width: 120px
+
+  #menu
+    border: none
+    background: none
+
+    .k-item
+      border-right: none
+      border-left: none
+      border-bottom: none
+      border-top: 5px solid #DDD
+
+    .k-item.k-state-hover, .k-item.k-state-active
+      background: none
+
+    .k-link
+      line-height: 40px
+      color: #858686
+      min-width: 100px
+      text-align: center
+
+      //.k-i-arrow-s
+      //  background-position: -139px -74px
+      //  width: 14px
+      //  height: 13px
+
+    .k-state-active, .k-state-hover
+      color: #FFFFFF !important
+
+
+    ul
+      width: 250px
+      margin-top: 1px
+
+    .toplevel.k-state-hover > .k-link,
+    .toplevel.k-state-active > .k-link,
+    .toplevel li.animated-swipe-right.k-state-hover > .k-link,
+    .nested-subnav li.animated-swipe-right.k-state-hover .k-link
+      color: #FFFFFF !important
+
+    .subnav
+      margin-top: -4px
+      margin-left: 1px
+
+      .nested-subnav
+        margin-left: -6px
+
+      .k-item
+        border-right: none
+        border-left: 5px solid #DDD
+        border-bottom: none
+        border-top: none
+
+    .smart-setup
+      border-color: #7BD2F3
+      
+    .smart-setup.k-state-hover, .smart-setup.k-state-active
+      background: #7BD2F3
+
+    .smart-setup,
+    .smart-setup .subnav li
+      border-color: #7BD2F3 !important
+
+    .smart-setup.animated-swipe-down:after,
+    .smart-setup:active,
+    .smart-setup li.animated-swipe-right:after,
+    .smart-setup .k-state-active
+      background: #7BD2F3 !important
+
+    .smart-reports,
+    .smart-reports .subnav li
+      border-color: #AFC9C2 !important
+
+    .smart-reports.k-state-hover, .smart-reports.k-state-active
+      background: #AFC9C2
+
+    .smart-reports.animated-swipe-down:after,
+    .smart-reports:active,
+    .smart-reports li.animated-swipe-right:after,
+    .smart-reports .k-state-active
+      background: #AFC9C2
+
+    .smart-social,
+    .smart-social .subnav li
+      border-color: #A9ACD0
+
+    .smart-social.k-state-hover, .smart-social.k-state-active
+      background: #A9ACD0
+
+    .smart-social.animated-swipe-down:after,
+    .smart-social:active,
+    .smart-social > .animated-swipe-right:after,
+    .smart-social > .k-state-active
+      background: #A9ACD0
+
+    .smart-tools,
+    .smart-tools .subnav li
+      border-color: #F1AFC9
+
+    .smart-tools.k-state-hover, .smart-tools.k-state-active
+      background: #F1AFC9
+
+    .smart-tools.animated-swipe-down:after,
+    .smart-tools:active,
+    .smart-tools > .animated-swipe-right:after,
+    .smart-tools > .k-state-active
+      background: #F1AFC9
+
+    .user-guide,
+    .user-guide .subnav li
+      border-color: #398CB1
+
+    .user-guide.k-state-hover, .user-guide.k-state-active
+      background: #398CB1
+
+    .user-guide.animated-swipe-down:after,
+    .user-guide:active,
+    .user-guide > .animated-swipe-right:after,
+    .user-guide > .k-state-active
+      background: #398CB1
+
+
+
+/* Animated Buttons */
+
+/* General button style (reset) */
+.animated-btn
+  border: none
+  font-family: inherit
+  font-size: inherit
+  color: inherit
+  background: none
+  cursor: pointer
+  display: block
+  outline: none
+  position: relative
+  -webkit-transition: all 0.3s
+  -moz-transition: all 0.3s
+  transition: all 0.3s
+
+.animated-btn:after
+  content: ''
+  position: absolute
+  z-index: -1
+  -webkit-transition: all 0.3s
+  -moz-transition: all 0.3s
+  transition: all 0.3s
+
+/* Animated Swipe Down */
+.animated-swipe-down:after
+  width: 100%
+  height: 0%
+  top: 0
+  left: 0
+
+.animated-swipe-down.k-state-hover:after,
+.animated-swipe-down.k-state-active:after
+  height: 100%
+
+
+/* Animated Swipe Right */
+.animated-swipe-right:after
+  height: 100%
+  width: 0%
+  top: 0
+  left: 0
+
+.animated-swipe-right.k-state-hover:after,
+.animated-swipe-right.k-state-active:after
+  width: 100%
+

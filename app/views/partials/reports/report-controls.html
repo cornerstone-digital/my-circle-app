@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default report-subnav" role="navigation">
+    <form class="navbar-form" name="reportForm" data-ng-submit="update()">
+        <div class="container">
+            <!--<div data-date-range="range" data-disabled="!!event"></div>-->
+            <div class="row">
+                <div class="form-group">
+                    <select k-ng-model="range" kendo-drop-down-list="rangeList" style="width:130px">
+                        <option value="today">Today</option>
+                        <option value="yesterday">Yesterday</option>
+                        <option value="this-week">This week</option>
+                        <option value="last-week">Last week</option>
+                        <option value="last-month">This month</option>
+                        <option value="last-month">Last month</option>
+                        <option value="this-year">This year</option>
+                        <option value="custom">Custom date</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select id="venue" name="venue"
+                            kendo-drop-down-list="venueSelect"
+                            k-data-text-field="'name'"
+                            k-data-value-field="'id'"
+                            data-ng-model="selectedVenueId"
+                            k-data-source="venues"
+                            k-class="form-control">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select id="device" name="device"
+                            kendo-drop-down-list="deviceSelect"
+                            k-data-text-field="'label'"
+                            k-data-value-field="'id'"
+                            data-ng-model="selectedDeviceId"
+                            k-data-source="devices"
+                            k-class="form-control">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateRangeFrom">Start date:</label>
+                    <input id="dateRangeFrom" name="dateRangeFrom" data-ng-model="dateRange.from" k-ng-model="dateRange.from" k-interval="5" kendo-date-time-picker="dateRangeFrom" />
+                </div>
+
+                <div class="form-group">
+                    <label for="dateRangeTo">End date:</label>
+                    <input id="dateRangeTo" name="dateRangeTo" data-ng-model="dateRange.to" k-ng-model="dateRange.to" k-interval="5" kendo-date-time-picker="dateRangeTo" />
+                </div>
+
+                <div class="form-group">
+                    <button
+                            ng-click="update()"
+                            kendo-button class="k-primary"
+                            data-loading-button="Updating&hellip;"
+                            data-ng-disabled="!isValid()">Update
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</nav>

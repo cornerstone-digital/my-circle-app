@@ -1,0 +1,80 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                {{title}}
+            </h1>
+            <!--<div class="controls pull-right">-->
+                <!--<input type="button" class="icon icon-lg plus-icon" data-ng-click="create()" value="Create Closing POS Report" />-->
+            <!--</div>-->
+        </div>
+    </div>
+</header>
+
+<section class="container">
+    <div class="date-range-filter k-block k-shadow" style="margin-bottom: 20px; padding-bottom: 10px">
+        <div class="k-header k-inset">Report filter</div>
+        <div class="row">
+            <div class="col-md-2">
+                <select id="POSList" style="margin-left: 5px"></select>
+            </div>
+            <div class="col-md-10 pull-left">
+                <div class="dateFilter">
+                    <label>From Date:</label>
+                    <input id="dateRangeFrom">
+                </div>
+
+                <div class="dateFilter">
+                    <label>To Date:</label>
+                    <input id="dateRangeTo">
+                </div>
+                <button class="k-button" data-ng-click="resetDateRange()">Clear</button>
+            </div>
+            <!--<div class="col-md-4 pull left">-->
+                <!---->
+            <!--</div>-->
+            <!--<div class="col-md-2">-->
+                <!--&lt;!&ndash;<button class="k-button" data-ng-click="filterByDateRange()">Filter results</button>&ndash;&gt;-->
+
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="order-history-list"></div>
+
+    <script type="text/x-kendo-template" id="detail-template">
+        <div class="tabstrip">
+            <ul>
+                <li class="k-state-active">
+                    Items
+                </li>
+                <li>
+                    Transactions
+                </li>
+            </ul>
+            <div>
+                <div class="order-items row">
+                    <div class="col-md-9">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Title</th>
+                                    <th width="100">Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="paid-count">Total paid: <span></span></div>
+                        <div class="refunded-count">Total refunded: <span></span></div>
+                        <div class="order-total">Final total: <span></span></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class='order-transactions'></div>
+            </div>
+        </div>
+
+    </script>
+</section>

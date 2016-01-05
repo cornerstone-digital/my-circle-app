@@ -1,0 +1,43 @@
+input[type="search"]
+  -webkit-appearance: none
+
+.orders
+  > thead, > tbody, > tfoot
+    > tr
+      > th, > td
+        font-size: $font-size-large
+        line-height: $line-height-large
+        vertical-align: top
+
+  ul
+    margin-top: 10px
+    padding: 0
+    list-style: none
+
+  li
+    padding: 10px 0
+    margin-bottom: 10px
+    position: relative
+
+    &:last-child
+      margin-bottom: 0
+
+    .switchery
+      position: absolute
+      right: 0
+      top: 50%
+      margin-top: -16px
+
+  .order-id, time
+    padding-top: 10px
+    margin-top: 10px
+    display: inline-block
+
+  .refunded .title
+    text-decoration: line-through
+
+  .original-price
+    font-style: italic
+
+  .btn
+    margin-bottom: 10px

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "nework-service.js",
+  "sourceRoot": "",
+  "sources": [
+    "nework-service.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,kBAAf,CACA,CAAC,OADD,CACS,gBADT,EAC2B;IAAC,YAAD,EAAc,kBAAd,EAAkC,SAAC,UAAD,EAAa,gBAAb,GAAA;aAC3D;AAAA,QAAA,QAAA,EAAU,SAAA,GAAA;AACR,UAAA,OAAO,CAAC,GAAR,CAAY,UAAU,CAAC,MAAvB,CAAA,CAAA;iBACA,UAAU,CAAC,OAFH;QAAA,CAAV;QAD2D;IAAA,CAAlC;GAD3B,CAAA,CAAA;AAAA"
+}

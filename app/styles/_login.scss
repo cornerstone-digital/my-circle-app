@@ -1,0 +1,75 @@
+@mixin circle-background {
+  background: {
+    image: image-url('circle-background-semitransparent.png');
+    position: center;
+    repeat: no-repeat;
+    size: contain;
+  }
+}
+
+.mycircle-logo {
+  width: image-width('logo.png') + $navbar-padding-horizontal;
+  height: $navbar-height;
+  @include replace-text('logo.png');
+  background-position: $navbar-padding-horizontal 50%;
+  @media (min-width: $screen-sm-min) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  @include retina {
+    background-image: image-url('logo@2x.png');
+    background-size: image-width("logo.png") auto;
+  }
+}
+
+.login {
+
+  h1 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 24px;
+    margin: 2em 0 1em 0;
+  }
+
+  form {
+    @include circle-background;
+    @media (min-width: $screen-sm-min) {
+      position: relative;
+      padding: 192px 0;
+    }
+    @media (min-width: $screen-md-min) {
+      padding: 256px 0;
+    }
+    @media (min-width: $screen-lg-min) {
+      padding: 333px 0;
+    }
+  }
+
+  fieldset {
+    padding: 20px;
+  }
+
+  input {
+    font-size: 18px;
+  }
+
+  .alert {
+    @media (min-width: $screen-sm-min) {
+      position: absolute;
+      top: (192px / 2) - 15px;
+      left: 192px;
+      right: 192px;
+    }
+    @media (min-width: $screen-md-min) {
+      top: (256px / 2) - 15px;
+      left: 256px;
+      right: 256px;
+    }
+    @media (min-width: $screen-lg-min) {
+      top: (333px / 2) - 15px;
+      left: 333px;
+      right: 333px;
+    }
+  }
+}

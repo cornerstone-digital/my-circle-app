@@ -1,0 +1,99 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                {{title}}
+            </h1>
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg back-icon" data-ng-click="back()" data-ng-if="backUrl" value="Back">
+                <!--<input type="button" class="icon icon-lg cancel-icon" data-ng-click="reset()" value="Reset" />-->
+                <input type="button" class="icon icon-lg tick-icon" data-ng-click="save(true)" value="Save">
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="employee" class="container">
+    <alert-box data-group="Employee"></alert-box>
+    <div class="col-lg-12 col-md-12 grey-bg">
+        <div class="col-lg-6 col-md-6">
+            <fieldset>
+                <legend>Staff Member info</legend>
+                <div class="row editable-item" validate-data="employee.firstname" rules="['required']" displayname="First name" groupname="Employee">
+                    <label class="col-md-4">First name:</label>
+                    <div class="col-md-8">
+                        <a editable-text="employee.firstname" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="1" nexttabindex="2" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required="">{{ employee.firstname || 'required' }}</a>
+                    </div>
+                </div>
+                <div class="row editable-item" validate-data="employee.lastname" rules="['required']" displayname="Last name" groupname="Employee">
+                    <label class="col-md-4">Last name:</label>
+                    <div class="col-md-8">
+                        <a editable-text="employee.lastname" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="2" nexttabindex="3" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required="">{{ employee.lastname || 'required' }}</a>
+                    </div>
+                </div>
+                <div class="row editable-item">
+                    <label class="col-md-4">Display name:</label>
+                    <div class="col-md-8">
+                        <a editable-text="employee.displayName" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="3" nexttabindex="4" e-data-ng-tab="moveToNextTabIndex($event, $editable)">{{ employee.displayName || 'optional' }}</a>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Staff Member PIN:</legend>
+                <div class="row editable-item" validate-data="credential.token" rules="['numeric']" displayname="PIN" groupname="Employee">
+                    <label class="col-md-4">Pin:</label>
+                    <div class="col-md-8">
+                        <a editable-text="credential.token" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="4" nexttabindex="5" e-data-ng-tab="moveToNextTabIndex($event, $editable)">{{ credential.token || 'optional' }}</a>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <fieldset>
+                <legend>Staff Member Status:</legend>
+
+                <div class="btn-group btn-group-justified btn-group-lg">
+                    <label class="active-switch btn btn-default" data-ng-class="{active: employee.enabled}">
+                        <input type="radio" name="employee-state" data-ng-model="employee.enabled" data-ng-change="showDataChangedMessage()" data-ng-value="true">
+                        Active
+                    </label>
+
+                    <label class="inactive-switch btn btn-default" data-ng-class="{active: !employee.enabled}">
+                        <input type="radio" name="employee-state" data-ng-model="employee.enabled" data-ng-change="showDataChangedMessage()" data-ng-value="false">
+                        Inactive
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset data-ng-show="roles">
+                <legend>Staff Member Role:</legend>
+
+                <div class="btn-group btn-group-justified btn-group-lg">
+                    <label class="btn btn-default" data-ng-repeat="role in roles" data-ng-class="{active: isInGroup(employee, role.group.name)}">
+                        <input type="radio" data-ng-checked="isInGroup(employee, role.group.name)" data-ng-click="switchToGroup(role.group)"> {{role.label}}
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Staff Member Type:</legend>
+
+                <div class="btn-group btn-group-justified btn-group-lg">
+                    <label class="btn btn-default" data-ng-class="{active: employee.type == 'Merchant'}">
+                        <input type="radio" name="employee-type" data-ng-model="employee.type" data-ng-click="switchMerchantType('Merchant')" data-ng-value="Merchant">
+                        Merchant
+                    </label>
+
+                    <label class="btn btn-default" data-ng-class="{active: employee.type == 'Venue'}">
+                        <input type="radio" name="employee-type" data-ng-model="employee.type" data-ng-click="switchMerchantType('Venue')" data-ng-value="Venue">
+                        Venue
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset data-ng-if="isVenueStaffMember()">
+                <legend>Staff Member Venue:</legend>
+
+                <select id="venue" name="venue" kendo-drop-down-list="venueSelect" k-data-text-field="'name'" k-data-value-field="'id'" data-ng-model="employee.venueId" k-data-source="venues" k-class="form-control">
+                </select>
+            </fieldset>
+        </div>
+    </div>
+</section>

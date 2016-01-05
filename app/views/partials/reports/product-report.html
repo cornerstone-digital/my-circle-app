@@ -1,0 +1,24 @@
+<table class="table table-condensed table-striped report-table">
+  <thead>
+    <tr>
+      <th rowspan="2">Product</th>
+      <th colspan="2">Total</th>
+      <th colspan="2">Sales</th>
+    </tr>
+    <tr>
+      <th>Payments</th>
+      <th>Refunds</th>
+      <th>Payments</th>
+      <th>Refunds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="product in report.topByProduct()">
+      <td>{{product.title}}</td>
+      <td class="currency">{{product.payment.total | currency:"£"}}</td>
+      <td class="currency">{{product.refund.total * -1 | currency:"£"}}</td>
+      <td class="number">{{product.payment.count | number}}</td>
+      <td class="number">({{product.refund.count | number}})</td>
+    </tr>
+  </tbody>
+</table>

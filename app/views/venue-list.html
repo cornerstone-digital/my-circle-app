@@ -1,0 +1,84 @@
+<div id="venueListHeader" data-ng-show="venues">
+    <header class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <h1 class="pull-left main-header" data-ng-if="hasModuleEnabled('multivenue')">
+                    <span data-i18n="venues.headerText"></span>
+                    <span class="subHeader" data-ng-pluralize count="venues.length"
+                          when="{'0': 'You currently have no venues.',
+                                 '1': 'You currently have 1 venue.',
+                                 'other': 'You currently have {{venues.length}} venues.'}">
+
+                    </span>
+                </h1>
+                <h1 class="pull-left main-header" data-ng-if="!hasModuleEnabled('multivenue')" data-i18n="venues.headerText"></h1>
+                <span class="delete-alert triangle-border right">
+                  <span class="bubble-title">Alert</span>
+                  You need to select at least one checkbox from the list in order to delete any items.
+                </span>
+
+                <div class="controls pull-right" data-ng-if="hasModuleEnabled('multivenue')">
+                    <input type="button" class="icon icon-lg bin-icon delete-venue-btn" data-ng-click="deleteVenues()" value="Delete Venue" />
+                    <input type="button" class="icon icon-lg plus-icon" data-ng-click="create()" data-ng-show="canAddVenue()" value="{{ 'common.add' | i18n }}" />
+                    <input type="button" class="icon icon-lg duplicate-icon" data-ng-click="duplicateVenue()" data-ng-show="canAddVenue()" value="{{ 'common.duplicate' | i18n }}">
+                    <!--<input type="button" class="icon icon-lg bin-icon" data-ng-click="confirmedDelete()" data-ng-show="canDeleteVenues()" value="{{ 'common.delete' | i18n }}">-->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="venues" class="container">
+      <alert-box></alert-box>
+      <div id="venuesGrid" data-kendo-grid="venuesGrid" data-k-options="venuesGridOptions" data-ng-if="venues"></div>
+      <div id="noVenuesMessage" data-ng-if="!venues.length">No items to display</div>
+        <!--<div id="errorBox" data-ng-show="hasErrors()" class="col-md-12">-->
+          <!--<alert ng-repeat="error in errors.venue" type="danger">{{error}}</alert>-->
+        <!--</div>-->
+        <!--<table class="table">-->
+        <!--<thead>-->
+          <!--<tr>-->
+            <!--<th data-ng-if="hasModuleEnabled('multivenue')"></th>-->
+            <!--<th data-sortable="name">{{ 'venues.gridHeader-name' | i18n }}</th>-->
+            <!--<th data-sortable="address.postCode">{{ 'venues.gridHeader-postcode' | i18n }}</th>-->
+            <!--<th>{{ 'venues.gridHeader-telephone' | i18n }}</th>-->
+            <!--<th>{{ 'venues.gridHeader-email' | i18n }}</th>-->
+            <!--<th data-ng-if="hasModuleEnabled('multivenue')"></th>-->
+          <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+          <!--<tr ng-repeat="venue in venues | orderBy:sort:reverse">-->
+            <!--<td data-ng-show="hasModuleEnabled('multivenue')" class="checkbox-col">-->
+                <!--<input type="checkbox" checklist-model="checkedVenues" id="venueCheckbox{{venue.id}}" />-->
+                <!--<label data-ng-click="updateCheckboxStatus(venue)"></label>-->
+            <!--</td>-->
+            <!--<td>{{venue.name}}</td>-->
+            <!--<td>{{venue.address.postCode}}</td>-->
+            <!--<td>{{getVenueContactByType(venue, 'PHONE')}}</td>-->
+            <!--<td>{{getVenueContactByType(venue, 'EMAIL')}}</td>-->
+            <!--<td class="controls">-->
+              <!--<input type="button" class="icon icon-lg menu-icon" ng-click="editVenueProducts(venue)" data-requires-permission="PERM_MERCHANT_ADMINISTRATOR" value="{{ 'common.menu' | i18n }}" />-->
+              <!--<input type="button" class="icon icon-lg edit-icon" ng-click="edit(venue)" data-requires-permission="PERM_MERCHANT_ADMINISTRATOR" value="{{ 'common.edit' | i18n }}" />-->
+              <!--<button type="button" class="icon icon-lg bin-icon" data-ng-click="confirmedDelete(venue)">Delete</button>-->
+          <!--</tr>-->
+        <!--</tbody>-->
+        <!--</table>-->
+
+        <!--<div class="modal bs-modal-lg fade" data-trigger="venuesToDelete" data-on-cancel="closeConfirm" style="margin-top: 250px">-->
+          <!--<div class="modal-dialog modal-lg">-->
+              <!--<div class="modal-content">-->
+                  <!--<div class="modal-body">-->
+                      <!--<p>Are you sure you want to delete '{{venuesToDelete[0].name}}'?</p>-->
+                      <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<li ng-repeat="venue in venuesToDelete">{{venuesToDelete[0].name}}</li>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                  <!--</div>-->
+                  <!--<div class="modal-footer">-->
+                      <!--<button type="button" class="btn btn-default btn-lg" data-ng-click="closeConfirm()">{{ 'common.no' | i18n }}</button>-->
+                      <!--<button type="button" class="btn btn-danger btn-lg" data-ng-click="confirmYes()">{{ 'common.yes' | i18n }}</button>-->
+                  <!--</div>-->
+              <!--</div>]-->
+          <!--</div>-->
+        <!--</div>-->
+    </section>
+</div>
+<!--<venue-edit-form></venue-edit-form>-->

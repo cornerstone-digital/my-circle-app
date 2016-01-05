@@ -1,0 +1,22 @@
+<!--<div class="mycircle-logo">myCircle</div>-->
+
+<section class="login">
+    <h1>Welcome to myCircle</h1>
+
+    <form data-ng-submit="login()" name="login-form" class="row">
+        <div class="alert alert-danger" data-ng-if="error">{{error}}</div>
+        <fieldset class="col-sm-4 col-sm-offset-4">
+            <div class="form-group">
+                <label for="email" class="sr-only">Username</label>
+                <input id="email" class="form-control" type="email" placeholder="Email" data-ng-model="email" required="" autocapitalize="off" autocorrect="off">
+            </div>
+            <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+                <input id="password" class="form-control" type="password" placeholder="Password" data-ng-model="password" required="">
+            </div>
+            <button type="submit" class="btn btn-default pull-right" data-loading-button="Authenticating...">Log in
+            </button>
+            <a href="/#/forgottenPassword">Forgotten Password?</a>
+        </fieldset>
+    </form>
+</section>

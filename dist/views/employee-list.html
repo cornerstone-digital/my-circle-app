@@ -1,0 +1,58 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                Staff:
+                <span class="subHeader" data-ng-pluralize="" count="employees.length" when="{'0': 'You currently have no staff setup.',
+                             '1': 'You currently have 1 staff setup.',
+                             'other': 'You currently have {{employees.length}} staff setup.'}">
+
+                </span>
+
+            </h1>
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg plus-icon" data-ng-click="create()" value="Add New">
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="employees" class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th data-sortable="firstname">First name</th>
+        <th data-sortable="lastname">Last name</th>
+        <th data-sortable="displayName">Display Name</th>
+        <th data-sortable="status">Status</th>
+        <th data-ng-if="hasModuleEnabled('multivenue')"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in employees | orderBy:sort:reverse">
+        <td>{{employee.firstname}}</td>
+        <td>{{employee.lastname}}</td>
+        <td>{{employee.displayName}}</td>
+        <td>{{ employee.enabled ? 'Active' : 'Inactive' }}</td>
+        <td class="controls">
+          <button type="button" class="icon icon-lg edit-icon" ng-click="edit(employee)">Edit</button>
+          <button type="button" class="icon icon-lg bin-icon" ng-click="confirmedDelete(employee)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+    <div class="modal bs-modal-lg fade" data-trigger="employeeToDelete" data-on-cancel="closeConfirm">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Are you sure you want to delete '{{employeeToDelete.displayName}}'?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-lg" data-ng-click="closeConfirm()">No</button>
+                    <button type="button" class="btn btn-danger btn-lg" data-ng-click="confirmYes()">Yes</button>
+                </div>
+            </div>]
+        </div>
+    </div>
+</section>

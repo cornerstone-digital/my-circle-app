@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" data-ng-app="smartRegisterApp" data-ng-controller="RootCtrl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>myCircle smartAdmin: {{title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=576, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+
+    <link rel="stylesheet" href="styles/8e97c26d.main.css"/>
+
+    <link rel="stylesheet" href="styles/MyCircle1/d5921ff0.mycircle-kendo-web-new.css">
+
+    <script src="scripts/vendor/a52a8685.modernizr.js"></script>
+
+  </head>
+  <body class="{{mode}}">
+  <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <admin-nav></admin-nav>
+    <offline-notification></offline-notification>
+
+
+    <!-- Add your site or application content here -->
+    <div id="content-wrapper">
+        <div class="container">
+            <alert-box data-group="GlobalErrors"></alert-box>
+        </div>
+
+        <div class="main-content" data-ng-view="">
+            <!--<h1>Hello I'm loading</h1>-->
+        </div>
+    </div>
+
+    <environment-info></environment-info>
+
+    <script src="scripts/64048e66.vendor.js"></script>
+
+    <script src="external/widgets/telerik.kendoui.professional/js/kendo.all.min.js"></script>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <script src="bower_components/pdfmake/build/pdfmake.js"></script>
+    <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
+
+    <!-- Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+
+    <script>
+        try {
+            if(typeof kendo === 'undefined') {
+                location.reload()
+            }
+        }
+        catch (e) {
+            location.reload()
+        }
+    </script>
+
+    <script src="bower_components/angular-kendo/build/angular-kendo.min.js"></script>
+
+    <script src="scripts/e8f2c645.scripts.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-36462770-2', 'mycircleinc.com');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                {{title}}
+            </h1>
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg back-icon" data-ng-click="back()" data-ng-if="backUrl" value="Back" />
+                <!--<input type="button" class="icon icon-lg cancel-icon" data-ng-click="reset()" value="Reset" />-->
+                <input type="button" class="icon icon-lg tick-icon" data-ng-click="save(true)" value="Save" />
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="discount" class="container">
+    <alert-box data-group="Discount"></alert-box>
+    <div class="col-lg-12 col-md-12 grey-bg">
+        <div class="col-lg-6 col-md-6">
+            <fieldset>
+                <legend>Discount info</legend>
+                <div class="row editable-item" validate-data="discount.name" rules="['required']" displayName="Discount name" groupName="Discount">
+                    <label class="col-md-4">Discount name:</label>
+                    <div class="col-md-8">
+                        <a editable-text="discount.name" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="1" nexttabindex="2" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required>{{ discount.name || 'required' }}</a>
+                    </div>
+                </div>
+                <div class="row editable-item" validate-data="discount.value" rules="['required']" type="numeric" displayName="Discount value" groupName="Discount">
+                    <label class="col-md-4">Discount value:</label>
+                    <div class="col-md-8">
+                        <a editable-text="discount.value" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="2" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-data-percentage-input e-required>{{ (discount.value | percentage) || 'required' }}</a>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <fieldset>
+                <legend>Available:</legend>
+                <fieldset class="row">
+                    <div class="col-sm-12" data-role-selector="discount.groups"></div>
+                </fieldset>
+            </fieldset>
+        </div>
+    </div>
+</section>

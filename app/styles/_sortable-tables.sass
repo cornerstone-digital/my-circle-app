@@ -1,0 +1,25 @@
+th[sortable], th[data-sortable]
+
+  $ascending-icon: "\00a0\25b2"
+  $descending-icon: "\00a0\25bc"
+  $icon-width: 14px
+  $cell-gutter: 8px
+
+  padding-right: $icon-width + $cell-gutter !important
+  position: relative
+
+  a
+    display: inline-block
+    vertical-align: middle
+
+  &.active
+    &:after
+      content: $ascending-icon
+      display: inline-block
+      position: absolute
+      right: $cell-gutter
+      width: $icon-width
+      text-align: center
+      vertical-align: middle
+    &.desc:after
+      content: $descending-icon

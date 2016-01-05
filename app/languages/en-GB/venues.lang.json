@@ -1,0 +1,18 @@
+{
+    "headerText": "Venues:",
+    "headerSubText": "You currently have %1 %2 setup",
+
+    "gridHeader-name": "Name",
+    "gridHeader-postcode": "Post code",
+    "gridHeader-telephone": "Telephone",
+    "gridHeader-email": "Email",
+
+    "editVenue-title": "%1 Venue",
+    "editVenue-venueNameLabel": "Venue name:",
+    "editVenue-legalNameLabel": "Legal name:",
+    "editVenue-vatNumberLabel": "VAT number:",
+    "editVenue-venueInfoTitle": "Venue info",
+    "editVenue-venueSectionsTitle": "Venue sections",
+    "editVenue-venueSectionsInfoText": "Add the various sections contained within this venue i.e Bar, Kitchen etc.",
+    "editVenue-sectionsHeaderSubText": "You currently have %1 %2 setup for this venue."
+}

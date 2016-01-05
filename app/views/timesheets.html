@@ -1,0 +1,91 @@
+<section id="timesheets" class="container">
+
+  <header>
+        <div class="container">
+            <h1 class="pull-left main-header" data-ng-if="hasModuleEnabled('multivenue')">
+                Staff timesheets: <span class="subHeader">{{venue.name}}</span>
+            </h1>
+            <!-- Venue Chooser -->
+            <div class="btn-group pull-right" dropdown is-open="status.isopen" data-ng-hide="!hasMultipleVenues()" data-ng-if="hasModuleEnabled('multivenue')">
+                <button type="button" class="btn-lg dropdown-toggle" ng-disabled="disabled">
+                    Switch Venue <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-repeat="venue in venues">
+                        <a data-ng-click="switchVenue(venue)">{{venue.name}} ({{venue.id}})</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+  </header>
+
+  <form data-ng-submit="update()">
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <input type="date" class="form-control input-lg" data-ng-model="startDate" data-date>
+      </div>
+      <div class="form-group col-sm-6">
+        <input type="date" class="form-control input-lg" data-ng-model="endDate" data-date>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-lg btn-primary pull-right" data-loading-button="Updating&hellip;">Update</button>
+  </form>
+
+  <table class="table table-striped timesheets">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th class="numeric">Shifts</th>
+        <th class="numeric">Total Hours</th>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody data-ng-repeat="date in dateRange">
+      <tr class="table-section-header" data-ng-if="timesheets[date].length > 0">
+        <th colspan="4"><time datetime="{{date | moment:'YYYY-MM-DD'}}">{{date | moment:'Do MMM YYYY'}}</time></th>
+      </tr>
+      <tr data-ng-repeat="timesheet in timesheets[date] | orderBy:'employeeName'">
+        <td>{{timesheet.employeeName}}</td>
+        <td class="numeric">{{timesheet.shifts}}</td>
+        <td class="numeric">{{timesheet.totalDuration | duration:'hours'}}</td>
+        <td class="controls">
+          <button type="button" class="btn btn-default btn-lg" data-ng-click="edit(timesheet)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+    <tbody data-ng-if="!hasTimesheetData()">
+      <tr class="warning">
+        <td colspan="4">No timesheet data found for the specified date range.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="modal bs-modal-lg fade" tabindex="-1" role="dialog" data-trigger="selectedTimesheet" data-on-close="cancel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form name="timesheetForm" role="form" data-ng-submit="save()">
+        <header class="modal-header">
+          <h2>Edit timesheet</h2>
+        </header>
+
+        <div class="modal-body">
+          <div class="row" data-ng-repeat="shift in selectedShifts | orderBy:'started'" data-ng-form="shiftForm">
+            <div class="col-sm-6 form-group">
+              <input type="datetime-local" class="form-control input-lg" data-ng-model="shift.started" data-datetime-local>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input type="datetime-local" name="ended" class="form-control input-lg" data-ng-model="shift.ended" data-datetime-local data-after="shift.started">
+              <span class="help-block" data-ng-if="shiftForm.ended.$invalid">End time must be after start time</span>
+            </div>
+          </div>
+        </div>
+
+        <footer class="modal-footer">
+          <button id="timesheet-edit-cancel" type="button" class="btn btn-default btn-lg" data-ng-click="cancel()" data-ng-disabled="locked">Cancel</button>
+          <button id="timesheet-edit-save" type="submit" class="btn btn-success btn-lg" data-ng-disabled="timesheetForm.$invalid" data-loading-button="Saving&hellip;">Save</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+</section>

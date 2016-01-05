@@ -1,0 +1,15 @@
+.alert-animated
+  &.ng-enter, &.ng-leave
+    +single-transition(400ms, cubic-bezier(0.250, 0.250, 0.750, 0.750), all)
+    position: relative
+    display: block
+
+  &.ng-leave.ng-leave-active, &.ng-enter
+    +transform(scaleY(0))
+    max-height: 0
+    opacity: 0
+
+  &.ng-enter.ng-enter-active, &.ng-leave
+    +transform(scaleY(1))
+    max-height: 100%
+    opacity: 1

@@ -1,0 +1,64 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                Merchants:
+                <span class="subHeader" data-ng-pluralize count="merchantlist.length"
+                      when="{'0': 'You currently have no merchant setup.',
+                             '1': 'You currently have 1 merchants setup.',
+                             'other': 'You currently have {{merchantlist.length}} merchants setup.'}">
+
+                </span>
+            </h1>
+            <div class="controls pull-right" data-ng-if="hasModuleEnabled('multivenue')">
+                <button type="button" class="icon icon-lg plus-icon" data-ng-click="create()">Add New</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<alert-box></alert-box>
+
+<section id="merchants" class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th data-sortable="name">Name</th>
+        <th>Merchant id</th>
+        <th class="controls" data-ng-if="!hasModuleEnabled('multivenue')">
+          <button type="button" class="btn btn-primary btn-lg pull-right" data-ng-click="create()">New Merchant</button>
+        </th>
+        <th data-ng-if="hasModuleEnabled('multivenue')"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="merchant in merchants | orderBy:sort:reverse">
+        <td data-ng-class="{'inactive text-muted': !merchant.enabled}">{{merchant.name}}</td>
+        <td data-ng-class="{'inactive text-muted': !merchant.enabled}">{{merchant.id}}</td>
+        <td class="controls">
+          <button type="button" class="icon icon-lg edit-icon" data-ng-click="edit(merchant)">Edit</button>
+          <button type="button" class="icon icon-lg bin-icon" data-ng-click="confirmedDelete(merchant)">Delete</button>
+          <!--<button type="button" class="btn btn-info btn-lg" data-populate-catalog-for="merchant">Populate catalog</button>-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="pager" style="text-align: center">
+      <pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" num-pages="totalPages" class="pagination-sm" boundary-links="false" rotate="false" ng-change="pageChanged()"></pagination>
+  </div>
+
+</section>
+
+<div class="modal bs-modal-lg fade" data-trigger="merchantToDelete" role="dialog" data-on-cancel="closeConfirm">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Are you sure you want to delete '{{merchantToDelete.name}}'?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-lg" data-ng-click="closeConfirm()">No</button>
+                <button type="button" class="btn btn-danger btn-lg" data-ng-click="confirmYes()">Yes</button>
+            </div>
+        </div>]
+    </div>
+</div>

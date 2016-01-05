@@ -1,0 +1,108 @@
+<div class="container">
+<report-controls></report-controls>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Full product report</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <table class="table table-condensed table-striped">
+      <tbody>
+        <tr>
+          <th>Report date</th>
+          <td>{{report.created | date:'dd-MMM-yyyy'}}</td>
+        </tr>
+        <tr>
+          <th>Report time</th>
+          <td>{{report.created | date:'h:mm:ss a'}}</td>
+        </tr>
+        <tr>
+          <th>Start date</th>
+          <td>{{report.dateRange.from | date:'dd-MMM-yyyy'}}</td>
+        </tr>
+        <tr>
+          <th>Start time</th>
+          <td>{{report.dateRange.from | date:'h:mm:ss a'}}</td>
+        </tr>
+        <tr>
+          <th>Closing date</th>
+          <td>{{report.dateRange.to | date:'dd-MMM-yyyy'}}</td>
+        </tr>
+        <tr>
+          <th>Closing time</th>
+          <td>{{report.dateRange.to | date:'h:mm:ss a'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-6">
+    <table class="table table-condensed table-striped">
+      <tbody>
+        <tr>
+          <th>Item sales</th>
+          <td class="currency">{{report.totalSales() | currency:"£"}}</td>
+        </tr>
+        <tr>
+          <th>Item refunds</th>
+          <td class="currency">{{report.totalRefunds() * -1 | currency:"£"}}</td>
+        </tr>
+        <tr>
+          <th>Refund count</th>
+          <td class="number">({{report.refundCount() | number}})</td>
+        </tr>
+        <tr>
+          <th>VAT</th>
+          <td class="currency">{{report.totalTax() | currency:"£"}}</td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <td class="currency">{{report.totalGross() | currency:"£"}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-condensed table-vertical-striped">
+      <colgroup>
+        <col class="col-sm-2">
+        <col class="col-sm-2">
+        <col class="col-sm-2">
+        <col class="col-sm-2">
+        <col class="col-sm-2">
+        <col class="col-sm-2">
+      </colgroup>
+      <thead>
+        <tr class="csv-export" data-ng-if="!iOSDevice">
+          <td colspan="6">
+            <csv-export-button class="btn btn-primary btn-lg" data-filename="csvFilename()">Export as CSV</csv-export-button>
+          </td>
+        </tr>
+        <tr>
+          <th data-sortable="title">Product</th>
+          <th class="number" data-sortable="payment.count">Total items sold</th>
+          <th class="number" data-sortable="refund.count">Total items refunded</th>
+          <th class="currency" data-sortable="payment.total">Total sales</th>
+          <th class="currency" data-sortable="refund.total">Total refunds</th>
+          <th class="currency" data-sortable="net">Total revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="product in report.byProduct() | orderBy:sort:reverse">
+          <td>{{product.title}}</td>
+          <td class="number">{{product.payment.count | number}}</td>
+          <td class="number">({{product.refund.count | number}})</td>
+          <td class="currency">{{product.payment.total | currency:"£"}}</td>
+          <td class="currency">{{product.refund.total * -1 | currency:"£"}}</td>
+          <td class="currency">{{product.net | currency:"£"}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

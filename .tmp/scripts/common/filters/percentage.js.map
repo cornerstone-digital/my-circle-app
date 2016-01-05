@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "percentage.js",
+  "sourceRoot": "",
+  "sources": [
+    "percentage.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,YAAA,CAAA;AAAA,EAEA,OAAO,CAAC,MAAR,CAAe,kBAAf,CACA,CAAC,MADD,CACQ,YADR,EACsB;IAAC,SAAA,GAAA;aACrB,SAAC,KAAD,GAAA;eACE,EAAA,GAAE,CAAA,KAAA,GAAQ,GAAR,CAAF,GAAe,IADjB;MAAA,EADqB;IAAA,CAAD;GADtB,CAFA,CAAA;AAAA"
+}

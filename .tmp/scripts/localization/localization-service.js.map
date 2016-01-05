@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "localization-service.js",
+  "sourceRoot": "",
+  "sources": [
+    "localization-service.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,kBAAf,CACA,CAAC,OADD,CACS,qBADT,EACgC;IAAC,YAAD,EAAe,OAAf,EAAwB,oBAAxB,EAA6C,kBAA7C,EAAiE,kBAAjE,EAAqF,SAAC,UAAD,EAAa,KAAb,EAAoB,kBAApB,EAAwC,gBAAxC,EAA0D,gBAA1D,GAAA;aACnH;AAAA,QAAA,qBAAA,EAAuB,SAAA,GAAA,CAAvB;QADmH;IAAA,CAArF;GADhC,CAAA,CAAA;AAAA"
+}

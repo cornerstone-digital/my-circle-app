@@ -1,0 +1,12 @@
+<form data-ng-submit="refund()">
+  <ul>
+    <li data-ng-repeat="item in order.basket.items" data-ng-class="{'text-muted':isRefunded(item), refunded:isRefunded(item)}">
+      <span class="title">{{item.title}} <em data-ng-if="item.modifiers">({{item.modifiers | join}})</em></span>
+      <span class="price">{{item.total + item.adjustment | currency:"£"}}</span>
+      <span class="original-price" data-ng-if="item.adjustment">({{item.total | currency:"£"}})</span>
+      <input type="checkbox" data-ng-model="item.toRefund" data-ng-disabled="{{isRefunded(item) || !canRefund(item)}}" class="js-switch" data-ui-switch>
+    </li>
+  </ul>
+  <button type="button" class="btn btn-warning btn-lg pull-left" data-ng-disabled="fullyRefunded()" data-action-button data-loading-text="Refunding&hellip;" data-action="refund" data-ng-click="refundAll()">Refund all</button>
+  <button type="submit" class="btn btn-warning btn-lg pull-right" data-ng-disabled="fullyRefunded() || !anySelected()" data-action-button data-loading-text="Refunding&hellip;" data-action="refund">Refund selected</button>
+</form>

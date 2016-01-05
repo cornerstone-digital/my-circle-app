@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "after-last.js",
+  "sourceRoot": "",
+  "sources": [
+    "after-last.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,YAAA,CAAA;AAAA,EAEA,OAAO,CAAC,MAAR,CAAe,kBAAf,CAEA,CAAC,MAFD,CAEQ,WAFR,EAEqB;IAAC,SAAA,GAAA;aACpB,SAAC,EAAD,EAAK,SAAL,GAAA;eACE,EAAE,CAAC,SAAH,CAAa,EAAE,CAAC,WAAH,CAAe,SAAf,CAAA,GAA4B,CAAzC,EADF;MAAA,EADoB;IAAA,CAAD;GAFrB,CAFA,CAAA;AAAA"
+}

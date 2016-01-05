@@ -1,0 +1,34 @@
+<div class="image-uploader">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="row product-images">
+                    <div class="col-md-12">
+                        <h4>Current Image</h4>
+                        <img data-ng-model="product.images[0]" class="img-thumbnail" data-ng-src="{{ product.images[0].url || 'data:image/gif;base64,R0lGODlhAQABAIAAAP7//wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='}}">
+                        <div class="row" style="margin-top: 20px">
+                            <div class="col-md-12">
+                                <button class="delete icon icon-lg bin-icon" data-ng-if="product.images[0]" data-ng-click="deleteImage(product.images[0])">Delete Image</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Upload new image</h4>
+                        <figure class="image-preview">
+                            <canvas class="img-thumbnail"></canvas>
+                        </figure>
+                        <input class="form-control input-lg margin-bottom-20" type="file" name="image" accept="image/*">
+                        <p>We recommend using landscape images for your products.  The minimum image size is 236 pixels width x 136 pixels height (aspect ratio 16:9 ratio).</p>
+                        <p>Once you are happy with the image displayed in the tile above, please select save.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="image-cropper"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header" data-ng-if="hasModuleEnabled('multivenue')">
+                smartSocial: <span class="subHeader">{{ venue.name }}</span>
+            </h1>
+            <h1 class="pull-left main-header" data-ng-hide="hasModuleEnabled('multivenue')">
+                smartSocial
+            </h1>
+            <!-- Venue Chooser -->
+            <div class="btn-group pull-right" dropdown is-open="status.isopen" data-ng-hide="!hasMultipleVenues()" data-ng-if="hasModuleEnabled('multivenue')">
+                <button type="button" class="btn-lg dropdown-toggle" ng-disabled="disabled">
+                    Switch Venue <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-repeat="venue in venues">
+                        <a data-ng-click="switchVenue(venue)">{{venue.name}} ({{venue.id}})</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="controls pull-right">
+                <!--<input type="button" class="icon icon-lg cancel-icon" data-ng-click="reset()" value="Reset" />-->
+                <!--<input type="button" class="icon icon-lg tick-icon" data-ng-click="save()" value="Save" />-->
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="social" class="container">
+
+
+    <section id="twitter" class="twitter" style="float: left; width: 100%; margin-bottom: 150px; margin-top: 100px; border-bottom: 1px solid #DDDDDD;
+padding-bottom: 4em;">
+        <div class="col-md-12">
+            <div class="row">
+                <alert-box data-group="Twitter"></alert-box>
+
+                <div class="col-md-4">
+                    <h2>
+                        <div class="tool-img"></div>
+                        Twitter
+                    </h2>
+                </div>
+                <div class="col-md-8">
+                    <div class="alert alert-info">
+                        <p>Please use <em>System Preferences</em> to connect your iPad with your Twitter account.</p>
+                    </div>
+                    <fieldset>
+                        <legend>Available to:</legend>
+                        <div data-role-selector="toolFor('twitter').groups"></div>
+                    </fieldset>
+                    <fieldset style="margin-top: 30px">
+                        <button class="btn btn-success btn-lg pull-right" type="submit" data-ng-click="save(toolFor('twitter'))">Save</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="facebook" class="facebook" data-ng-controller="FacebookCtrl" style="float: left; width: 100%; margin-bottom: 150px; border-bottom: 1px solid #DDDDDD;
+padding-bottom: 4em;">
+        <div class="col-md-12">
+            <div class="row">
+                <alert-box data-group="Facebook"></alert-box>
+                <div class="col-md-4">
+                    <h2>
+                        <div class="tool-img"></div>
+                        Facebook
+                    </h2>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="alert alert-info" data-ng-if="!isConnected('facebook')">
+                                <p>Please click connect, to connect to your Facebook page</p>
+                            </div>
+                            <div class="alert alert-info" data-ng-if="isConnected('facebook')">
+                                <p>Please click disconnect, to disconnect your Facebook account</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-lg btn-warning pull-right" data-ng-click="connect('facebook')" data-ng-if="!isConnected('facebook')">Connect</button>
+                            <button class="btn btn-lg btn-danger pull-right" data-ng-click="disconnect('facebook')" data-ng-if="isConnected('facebook')">Disconnect</button>
+                            <facebook-user data-tool="toolFor('facebook')" class="pull-right"></facebook-user>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Facebook pages:</legend>
+                        <select class="form-control input-lg" data-ng-model="page" data-ng-options="page.name for page in pages track by page.id"></select>
+                    </fieldset>
+
+                    <fieldset class="row">
+                        <div class="col-md-12">
+                            <legend>Available to:</legend>
+                            <div data-role-selector="toolFor('facebook').groups"></div>
+                        </div>
+                    </fieldset>
+                    <fieldset style="margin-top: 30px">
+                        <button class="btn btn-success btn-lg pull-right" type="submit" data-ng-click="save(toolFor('facebook'))">Save</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="foursquare" class="foursquare" data-ng-controller="FoursquareCtrl" style="float: left; width: 100%; margin-bottom: 150px">
+        <div class="col-md-12">
+            <div class="row">
+                <alert-box data-group="Foursquare"></alert-box>
+                <div class="col-md-4">
+                    <h2>
+                        <div class="tool-img"></div>
+                        Foursquare
+                    </h2>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="alert alert-info" data-ng-if="!isConnected('foursquare')">
+                                <p>Please click connect, to connect to your Foursquare page</p>
+                            </div>
+                            <div class="alert alert-info" data-ng-if="isConnected('foursquare')">
+                                <p>Please click disconnect, to disconnect your Foursquare account</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-lg btn-warning pull-right" data-ng-click="connect('foursquare')" data-ng-if="!isConnected('foursquare')">Connect</button>
+                            <button class="btn btn-lg btn-danger pull-right" data-ng-click="disconnect('foursquare')" data-ng-if="isConnected('foursquare')">Disconnect</button>
+                            <foursquare-user data-tool="toolFor('foursquare')" class="pull-right"></foursquare-user>
+                        </div>
+                    </div>
+                    <fieldset class="row">
+                        <div class="col-md-12">
+                            <legend>Venue ID:</legend>
+
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control input-lg" data-ng-model="tool.properties.venueId" data-ng-disabled="!isConnected('foursquare')">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <button class="btn btn-danger btn-lg pull-right" type="button" data-ng-click="deleteVenue()" data-ng-disabled="!tool.properties.venueId">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Available to:</legend>
+                        <div data-role-selector="toolFor('foursquare').groups"></div>
+                    </fieldset>
+                    <fieldset style="margin-top: 30px">
+                        <button class="btn btn-success btn-lg pull-right" type="submit" data-ng-click="save(toolFor('foursquare'))">Save</button>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

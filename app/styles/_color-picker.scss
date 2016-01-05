@@ -1,0 +1,42 @@
+.color-picker {
+
+  h5 {
+    @extend %pseudo-label;
+    display: block;
+  }
+
+  .color {
+    $size: 44px;
+
+    @extend %clickable;
+
+    line-height: $size;
+    position: relative;
+    width: $size;
+    height: $size;
+    padding: 0;
+    margin: {
+      right: $padding-small-horizontal;
+      bottom: $padding-small-vertical;
+    }
+    text-align: center;
+    @include border-radius($border-radius-large);
+
+    &.active:before {
+      content: '\2715';
+      color: #fff;
+      font-size: $size;
+      line-height: $size;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+}

@@ -1,0 +1,87 @@
+<h2>Paid in / paid out</h2>
+<table class="table table-condensed table-striped report-table" data-ng-show="!report.paymentReport.payments">
+    <thead>
+    <tr>
+            <th>
+                Description
+            </th>
+            <th>
+                Sub Total
+            </th>
+            <th>
+                Tax Rate
+            </th>
+            <th>
+                Tax Total
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="5">No payments to show</td>
+        </tr>
+    </tbody>
+</table>
+
+<div data-ng-repeat="payment in report.paymentReport.payments | orderBy:adHocPaymentsComparator" data-ng-if="report.paymentReport.payments">
+<table class="table table-condensed table-striped report-table">
+    <thead>
+      <tr>
+        <th colspan="2" data-ng-if="!reportPeriods">{{payment.paymentType}} {{payment.direction}} ({{payment.type}})</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Transaction count</th>
+        <td class="number">{{payment.count | number}}</td>
+      </tr>
+      <tr>
+        <th>Total value</th>
+        <td class="currency">{{payment.total | currency:"£"}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-condensed table-striped">
+    <thead>
+      <tr>
+        <th>
+          Description
+        </th>
+        <th>
+          Sub Total
+        </th>
+        <th>
+          Tax Rate
+        </th>
+        <th>
+          Tax Total
+        </th>
+        <th>
+          Total
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="lineItem in paymentsFor(payment.paymentType, payment.direction, payment.type)">
+        <td>
+          {{lineItem.description}}
+        </td>
+        <td>
+          {{lineItem.subTotal | currency:"£"}}
+        </td>
+        <td>
+          {{lineItem.taxRate | percentage}}
+        </td>
+        <td>
+          {{lineItem.taxTotal | currency:"£"}}
+        </td>
+        <td>
+          {{lineItem.total | currency:"£"}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,255 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                {{title}}: <span class="subHeader">{{product.title}}</span>
+            </h1>
+
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg back-icon" data-ng-click="back()" data-ng-if="backUrl" value="Back">
+                <!--<input type="button" class="icon icon-lg cancel-icon" data-ng-click="reset()" value="Reset"/>-->
+                <input type="button" class="icon icon-lg tick-icon" data-ng-click="save(true)" value="Save">
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="products" class="container">
+    <alert-box data-group="Product"></alert-box>
+
+    <div id="product-tabs" kendo-tab-strip="productTabs">
+        <ul>
+            <li class="k-state-active">Product</li>
+            <li>Modifiers</li>
+            <li>Images</li>
+        </ul>
+        <div class="product-info">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <fieldset class="row">
+                        <legend>Product info</legend>
+                        <div class="col-md-12 editable-item" validate-data="product.title" rules="['required']" displayname="Product title" groupname="Product">
+                            <div class="row">
+                                <label class="col-md-4">Product title:</label>
+
+                                <div class="col-md-8">
+                                    <a editable-text="product.title" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="1" nexttabindex="2" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required="">{{ product.title ||
+                                        'required' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 editable-item">
+                            <div class="row">
+                                <label class="col-md-4">Alt. title:</label>
+
+                                <div class="col-md-8">
+                                    <a editable-text="product.altTitle" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="2" nexttabindex="3" e-data-ng-tab="moveToNextTabIndex($event, $editable)">{{ product.altTitle ||
+                                        'optional' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 editable-item" validate-data="product.category" rules="['required']" displayname="Product category" type="numeric" groupname="Product">
+                            <div class="row">
+                                <label class="col-md-4">Category:</label>
+
+                                <div class="col-md-8">
+                                    <select id="category" name="category" kendo-drop-down-list="categorySelect" k-data-text-field="'title'" k-data-value-field="'id'" data-ng-model="product.category" data-ng-change="showDataChangedMessage()" k-data-source="categories" tabindex="3" nexttabindex="4" data-ng-tab="moveToNextTabIndex($event, this)" k-class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" displayname="Product Sections" data-ng-if="sections">
+                            <div class="row">
+                                <label class="col-md-4">Sections:</label>
+                                <div class="col-md-8">
+                                    <select id="sectionSelection" kendo-multi-select="" k-options="sectionOptions" k-ng-model="sectionIds">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="row">
+                        <legend>Add to favourite category</legend>
+                        <div class="col-md-12">
+                            <button data-kendo-button="favouriteBtn" class="btn-group btn-group-justified btn-group-lg k-button" data-ng-class="{'k-primary': product.favourite}">
+                                <label class="btn">
+                                    <input type="checkbox" data-ng-model="product.favourite">
+                                    Favourite
+                                </label>
+                            </button>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <fieldset class="row">
+                        <legend>Eat in</legend>
+                        <div class="col-md-12 editable-item" validate-data="product.price" rules="['required']" type="numeric" displayname="Product price" groupname="Product">
+                            <div class="row">
+                                <label class="col-md-4">Price:</label>
+
+                                <div class="col-md-8">
+                                    &pound; <a editable-text="product.price" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="4" nexttabindex="5" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required="">{{
+                                    (product.price | number:2)
+                                    || 'required' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 editable-item" validate-data="product.tax" rules="['required']" type="numeric" displayname="Product tax" groupname="Product">
+                            <div class="row">
+                                <label class="col-md-4">VAT:</label>
+
+                                <div class="col-md-8">
+                                    <a editable-text="product.tax" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="5" nexttabindex="6" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required="" e-data-percentage-input="">{{ (product.tax |
+                                     percentage ) ||
+                                        'required' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="row">
+                        <legend>Eat out</legend>
+                        <div class="col-md-12 editable-item">
+                            <div class="row">
+                                <label class="col-md-4">Price:</label>
+
+                                <div class="col-md-8">
+                                    &pound; <a editable-text="product.altPrice" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="6" nexttabindex="7" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required=""> {{
+                                    (product.altPrice | number:2) || 'optional' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 editable-item">
+                            <div class="row">
+                                <label class="col-md-4">Tax:</label>
+
+                                <div class="col-md-8">
+                                    <a editable-text="product.altTax" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="7" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required="" e-data-percentage-input="">{{ (product.altTax |
+                                        percentage ) ||
+                                        'required' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="modifiers-tab">
+            <div class="row">
+                <nav class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li data-ng-repeat="modifier in product.modifiers | orderBy:'title'" data-ng-class="{active: modifier == selectedModifier}">
+                            <a data-ng-click="selectModifier(modifier)">{{modifier.title || '?'}}</a>
+                        </li>
+                        <li>
+                            <button type="button" data-kendo-button="addModifierBtn" id="product-edit-add-modifier" class="btn add-button" data-ng-click="addModifier()" title="Add modifier">Add modifier
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" data-kendo-button="deleteModifierBtn" id="product-edit-delete-modifier" class="btn-danger delete-button" data-ng-click="deleteModifier()" title="Delete modifier">
+                                Delete modifier
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="modifier-form col-sm-9" data-ng-show="selectedModifier">
+                    <fieldset class="row">
+                        <legend>Modifier info</legend>
+                        <div class="col-md-12 editable-item">
+                            <div class="row">
+                                <label class="col-md-3">Modifier title:</label>
+
+                                <div class="col-md-9">
+                                    <a editable-text="selectedModifier.title" e-class="k-textbox" blur="submit" buttons="no" e-data-ng-change="showDataChangedMessage()" tabindex="5" nexttabindex="6" e-data-ng-tab="moveToNextTabIndex($event, $editable)" e-required="">{{
+                                        selectedModifier.title || 'required' }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="k-block variants">
+                        <div class="k-header">
+                            Options
+                        </div>
+                        <div class="k-content">
+                            <div data-ng-repeat="variant in selectedModifier.variants">
+                                <div class="row variant">
+                                    <div class="col-md-7">
+                                        <input type="text" name="variant.title" class="form-control k-textbox" placeholder="Option" data-ng-model="variant.title" data-ng-change="showDataChangedMessage()">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input kendo-numeric-text-box="" class="input-currency" data-ng-model="variant.priceDelta" k-data-ng-model="variant.priceDelta" data-ng-change="showDataChangedMessage()">
+                                    </div>
+                                    <div class="col-md-2">
+                                      <label class="btn btn-default" data-ng-class="{active: variant.isDefault}">
+                                        <input type="checkbox" data-ng-model="variant.isDefault" data-ng-change="selectDefaultVariant(selectedModifier, variant)"> Default?
+                                      </label>
+                                    </div>
+
+                                    <div class="col-md-1">
+                                        <button type="button" data-kendo-button="deleteVariantBtn" class="btn-danger delete-button" data-ng-click="deleteVariant(variant)" title="Delete {{variant.title}}">Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <footer style="width: 100%">
+                                <button type="button" data-kendo-button="addVariantBtn" id="product-edit-add-variant" class="add-button k-primary" data-ng-click="addVariant()" title="Add variant" data-ng-disabled="!selectedModifier">Add variant
+                                </button>
+                            </footer>
+                            <div>
+                                <h5>Customer may select&hellip;</h5>
+
+                                <div class="btn-group btn-group-justified btn-group-lg">
+                                    <label class="btn btn-default" data-ng-class="{active: selectedModifier.allowNone}">
+                                        <input type="checkbox" data-ng-model="selectedModifier.allowNone"> none of the options
+                                    </label>
+                                    <label class="btn btn-default" data-ng-class="{active: selectedModifier.allowMultiples}">
+                                        <input type="checkbox" data-ng-model="selectedModifier.allowMultiples"> more than one
+                                        option
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="images-tab">
+            <div class="image-uploader">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="row product-images">
+                                <div class="col-md-12">
+                                    <h4>Current Image</h4>
+                                    <img data-ng-model="product.images[0]" class="img-thumbnail" data-ng-src="{{ product.images[0].url || 'data:image/gif;base64,R0lGODlhAQABAIAAAP7//wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='}}">
+                                    <div class="row" style="margin-top: 20px">
+                                        <div class="col-md-12">
+                                            <button class="delete icon icon-lg bin-icon" data-ng-if="product.images[0]" data-ng-click="deleteImage(product.images[0])">Delete Image</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4>Upload new image</h4>
+                                    <figure class="image-preview">
+                                        <canvas class="img-thumbnail"></canvas>
+                                    </figure>
+                                    <input class="form-control input-lg margin-bottom-20 imageInput" type="file" name="image" accept="image/*" onchange="angular.element(this).scope().imageChanged(this)">
+                                    <p>We recommend using landscape images for your products.  The minimum image size is 236 pixels width x 136 pixels height (aspect ratio 16:9 ratio).</p>
+                                    <p>Once you are happy with the image displayed in the tile above, please select save.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="image-cropper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<s3-image-uploader />-->
+        </div>
+    </div>
+</section>

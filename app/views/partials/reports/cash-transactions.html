@@ -1,0 +1,37 @@
+<h3>Cash transactions</h3>
+<table class="table table-condensed report-table">
+  <tbody>
+    <tr>
+      <th>Opening total</th>
+      <td class="opening-total" colspan="{{reports.length}}">
+        <div class="input-group pull-right hidden-print">
+          <span class="input-group-addon">&pound;</span>
+          <input type="number" step="0.01" min="0" data-ng-model="openingTotal" placeholder="Opening balance" class="form-control input-lg" required>
+        </div>
+        <output class="visible-print">{{openingTotal | currency:"£"}}</output>
+      </td>
+    </tr>
+    <tr>
+      <th>Cash in</th>
+      <td data-ng-repeat="report in reports">{{report.cashIn() | currency:"£"}}</td>
+    </tr>
+    <tr>
+      <th>Cash out</th>
+      <td data-ng-repeat="report in reports">{{report.cashOut() | currency:"£"}}</td>
+    </tr>
+    <tr>
+      <th>Partial payments</th>
+      <td>{{partialPayments.CASH | currency:"£"}}</td>
+    </tr>
+    <tr>
+      <th>Closing total</th>
+      <td data-ng-repeat="report in reports">{{report.closingTotal() + partialPayments.CASH + openingTotal | currency:"£"}}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Cash drawer expected</th>
+      <td data-ng-repeat="report in reports">{{report.closingTotal() + partialPayments.CASH + openingTotal | currency:"£"}}</td>
+    </tr>
+  </tfoot>
+</table>

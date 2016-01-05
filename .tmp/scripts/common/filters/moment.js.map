@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "moment.js",
+  "sourceRoot": "",
+  "sources": [
+    "moment.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,YAAA,CAAA;AAAA,EAEA,OAAO,CAAC,MAAR,CAAe,kBAAf,CACE,CAAC,MADH,CACU,QADV,EACoB;IAAC,SAAA,GAAA;aACjB,SAAC,IAAD,EAAO,MAAP,GAAA;eACE,MAAA,CAAO,IAAP,CAAY,CAAC,MAAb,CAAoB,MAApB,EADF;MAAA,EADiB;IAAA,CAAD;GADpB,CAFA,CAAA;AAAA"
+}

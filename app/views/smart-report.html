@@ -1,0 +1,100 @@
+<div class="container">
+<report-controls></report-controls>
+
+<div class="row reports">
+  <div class="report col-sm-5">
+    <section id="smart-report" class="report smart-report" data-reports="reports">
+      <h2>smartReport</h2>
+      <table class="table table-condensed report-table">
+        <thead>
+          <tr>
+            <th>Report date</th>
+            <td data-ng-repeat="report in reports">{{report.created | date:'dd-MMM-yyyy'}}</td>
+          </tr>
+          <tr>
+            <th>Report time</th>
+            <td data-ng-repeat="report in reports">{{report.created | date:'h:mm:ss a'}}</td>
+          </tr>
+        </thead>
+
+        <thead>
+          <tr>
+            <th>Start date</th>
+            <td data-ng-repeat="report in reports">{{report.dateRange.from | date:'dd-MMM-yyyy'}}</td>
+          </tr>
+          <tr>
+            <th>Start time</th>
+            <td data-ng-repeat="report in reports">{{report.dateRange.from | date:'h:mm:ss a'}}</td>
+          </tr>
+          <tr>
+            <th>Closing date</th>
+            <td data-ng-repeat="report in reports">{{report.dateRange.to | date:'dd-MMM-yyyy'}}</td>
+          </tr>
+          <tr>
+            <th>Closing time</th>
+            <td data-ng-repeat="report in reports">{{report.dateRange.to | date:'h:mm:ss a'}}</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th>Item sales</th>
+            <td data-ng-repeat="report in reports">{{report.totalSales() | currency:"£"}}</td>
+          </tr>
+          <tr>
+            <th>Item refunds</th>
+            <td data-ng-repeat="report in reports">{{report.totalRefunds() * -1 | currency:"£"}}</td>
+          </tr>
+          <tr>
+            <th>Refund count</th>
+            <td data-ng-repeat="report in reports">({{report.refundCount() | number}})</td>
+          </tr>
+          <tr>
+            <th>VAT</th>
+            <td data-ng-repeat="report in reports">{{report.totalTax() | currency:"£"}}</td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <td data-ng-repeat="report in reports">{{report.totalGross() | currency:"£"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="cash-transactions" class="report cash-transactions" data-reports="reports"></section>
+    <section id="cash-reconciliation" class="report cash-reconciliation"></section>
+    <section id="vat-breakdown" class="report vat-breakdown" data-report="reports[0]"></section>
+    <section id="payment-types" class="report payment-types-report" data-reports="reports"></section>
+    <section id="adhoc-payments" class="report ad-hoc-payments-report" data-report="reports[0]" data-payment-line-items="paymentLineItems"></section>
+  </div>
+
+  <div class="col-sm-7">
+    <section id="by-category" class="report category-report" data-report="reports[0]">
+      <h2>Categories</h2>
+
+      <category-report report="reports[0]"></category-report>
+
+      <bar-chart data-source="byCategory()" data-labels="category" data-values="net" data-currency="&#163;" data-id="chart1" data-direction="horizontal">
+        <h3>Net sales by category</h3>
+      </bar-chart>
+
+      <bar-chart data-source="byCategory()" data-labels="category" data-values="payment.count" data-id="chart2" data-direction="horizontal">
+        <h3>Items sold by category</h3>
+      </bar-chart>
+    </section>
+
+    <section id="by-product" class="report product-report" data-report="reports[0]">
+      <h2>Products (top 10)</h2>
+
+      <product-report report="reports[0]"></product-report>
+
+      <bar-chart data-source="topByProduct()" data-labels="title" data-values="net" data-currency="&#163;" data-id="chart3" data-direction="horizontal">
+        <h3>Net sales by product</h3>
+      </bar-chart>
+
+      <bar-chart data-source="topByProduct()" data-labels="title" data-values="payment.count" data-id="chart4" data-direction="horizontal">
+        <h3>Items sold by product</h3>
+      </bar-chart>
+    </section>
+  </div>
+</div>
+</div>

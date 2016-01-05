@@ -1,0 +1,36 @@
+<h2>Payment types</h2>
+<table class="table table-condensed table-striped report-table" data-ng-repeat="type in paymentTypes">
+  <thead>
+    <tr>
+      <th colspan="{{reports.length + 1}}" data-ng-if="!reportPeriods">{{type.paymentType}} {{type.transactionType}}</th>
+      <th data-ng-if="!!reportPeriods">{{type.paymentType}} {{type.transactionType}}</th>
+      <th data-ng-repeat="heading in reportPeriods()">{{heading}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Transaction count</th>
+      <td class="number" data-ng-repeat="report in reports">{{report.byPaymentType(type.paymentType, type.transactionType).count | number}}</td>
+    </tr>
+    <tr>
+      <th>Average value</th>
+      <td class="currency" data-ng-repeat="report in reports">{{report.byPaymentType(type.paymentType, type.transactionType).average | currency:"£"}}</td>
+    </tr>
+    <tr>
+      <th>Minimum value</th>
+      <td class="currency" data-ng-repeat="report in reports">{{report.byPaymentType(type.paymentType, type.transactionType).min | currency:"£"}}</td>
+    </tr>
+    <tr>
+      <th>Maximum value</th>
+      <td class="currency" data-ng-repeat="report in reports">{{report.byPaymentType(type.paymentType, type.transactionType).max | currency:"£"}}</td>
+    </tr>
+    <tr data-ng-if="type.transactionType == 'PAYMENT'">
+      <th>Partial payments</th>
+      <td class="currency">{{partialPayments[type.paymentType] | currency:"£"}}</td>
+    </tr>
+    <tr>
+      <th>Total value</th>
+      <td class="currency" data-ng-repeat="report in reports">{{paymentTypeTotal(report, type.paymentType, type.transactionType) | currency:"£"}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="PhantomJS 1.9.7 (Mac OS X)" package="" timestamp="2016-01-05T14:01:25" id="0" hostname="Martins-MBP.home" tests="349" errors="0" failures="0" time="4.237">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.7 Safari/534.34"/>
+    </properties>
+    <testcase name="converts the URL to the correct API call" time="0.037" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP requests with an API URL"/>
+    <testcase name="does not change the URL" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP requests with a regular HTTP URL"/>
+    <testcase name="does not append an Authorization header" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP requests when a user has not logged in"/>
+    <testcase name="adds an Authorization header" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP requests when a user has logged in"/>
+    <testcase name="encrypts the Authorization header correctly" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP requests when a user has logged in"/>
+    <testcase name="does not add an Authorization header if one exists already" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP requests when a user has logged in"/>
+    <testcase name="does not add any headers to a request that is not aimed at the myCircle API" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP requests when a user is impersonating a merchant"/>
+    <testcase name="rejects the promise" time="0.017" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 401 response from the API"/>
+    <testcase name="redirects the user to the login page" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 401 response from the API"/>
+    <testcase name="stores the original path" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 401 response from the API"/>
+    <testcase name="deletes their credentials" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 401 response from the API"/>
+    <testcase name="rejects the promise" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 403 response from the API"/>
+    <testcase name="rejects the promise" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses another error from the API"/>
+    <testcase name="does not redirect the user" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses another error from the API"/>
+    <testcase name="rejects the promise" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 401 response from somewhere else"/>
+    <testcase name="does not redirect the user" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 401 response from somewhere else"/>
+    <testcase name="does not store the original path" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 401 response from somewhere else"/>
+    <testcase name="rejects the promise" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 403 response from somewhere else"/>
+    <testcase name="does not redirect the user" time="0.019" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 403 response from somewhere else"/>
+    <testcase name="does not store the original path" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 403 response from somewhere else"/>
+    <testcase name="rejects the promise" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 503 when the API is down"/>
+    <testcase name="does not redirect the user" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 503 when the API is down"/>
+    <testcase name="broadcasts an event" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: apiInterceptor intercepting HTTP error responses a 503 when the API is down"/>
+    <testcase name="should return false from isLoggedIn" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when no user is logged in"/>
+    <testcase name="should return null from getCredentials" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when no user is logged in"/>
+    <testcase name="should return undefined from getVenue" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when no user is logged in"/>
+    <testcase name="should return false from hasRole(PERM_MERCHANT_API)" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when no user is logged in"/>
+    <testcase name="should return false from hasRole(PERM_MERCHANT_ADMINISTRATOR)" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when no user is logged in"/>
+    <testcase name="should return false from hasRole(PERM_VENUE_ADMINISTRATOR)" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when no user is logged in"/>
+    <testcase name="should return false from hasRole(PERM_PLATFORM_ADMINISTRATOR)" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when no user is logged in"/>
+    <testcase name="should return true from isLoggedIn" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a user is logged in already"/>
+    <testcase name="should return the credentials object from getCredentials" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a user is logged in already"/>
+    <testcase name="should return true from hasRole(PERM_MERCHANT_API)" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a user is logged in already"/>
+    <testcase name="should return true from hasRole(PERM_MERCHANT_ADMINISTRATOR)" time="0.027" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a user is logged in already"/>
+    <testcase name="should return true from hasRole(PERM_VENUE_ADMINISTRATOR)" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a user is logged in already"/>
+    <testcase name="should return false from hasRole(PERM_PLATFORM_ADMINISTRATOR)" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a user is logged in already"/>
+    <testcase name="should return true from hasRole(PERM_MERCHANT_API)" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a superuser is logged in"/>
+    <testcase name="should return true from hasRole(PERM_MERCHANT_ADMINISTRATOR)" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a superuser is logged in"/>
+    <testcase name="should return true from hasRole(PERM_VENUE_ADMINISTRATOR)" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a superuser is logged in"/>
+    <testcase name="should return true from hasRole(PERM_PLATFORM_ADMINISTRATOR)" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth when a superuser is logged in"/>
+    <testcase name="should consider the tool to be available" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth tool availability when the merchant has a tool"/>
+    <testcase name="should consider the tool to not be available" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth tool availability when the merchant does not have a tool"/>
+    <testcase name="uses the existing credentials" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when credentials already exist in local storage and no token is provided in the query string"/>
+    <testcase name="clears the stored credentials" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when credentials already exist in local storage and only a token is provided in the query string"/>
+    <testcase name="clears the stored credentials" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when credentials already exist in local storage and only a merchant id is provided in the query string"/>
+    <testcase name="clears the stored credentials" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when credentials already exist in local storage and only a venue id is provided in the query string"/>
+    <testcase name="creates a new credentials object" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when credentials already exist in local storage when email, token, merchant id and venue id are provided in the query string"/>
+    <testcase name="holds on to the merchant id" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when credentials already exist in local storage when email, token, merchant id and venue id are provided in the query string"/>
+    <testcase name="holds on to the venue id" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when credentials already exist in local storage when email, token, merchant id and venue id are provided in the query string"/>
+    <testcase name="persists the new credentials for future sessions" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when credentials already exist in local storage when email, token, merchant id and venue id are provided in the query string"/>
+    <testcase name="creates a new credentials object" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when no credentials exist in local storage when email, token, merchant id and venue id are all provided in the query string"/>
+    <testcase name="persists the new credentials for future sessions" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth initialization when no credentials exist in local storage when email, token, merchant id and venue id are all provided in the query string"/>
+    <testcase name="stores the credentials" time="0.041" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth logging in when login succeeds"/>
+    <testcase name="ignores the empty authorities" time="0.01" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth logging in when login succeeds but user has some blank authorities"/>
+    <testcase name="does not store any credentials" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth logging in when login fails"/>
+    <testcase name="calls the failure callback" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth logging in when login fails"/>
+    <testcase name="should store the impersonated merchant" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth merchant switching when a global admin switches merchant"/>
+    <testcase name="should store the impersonated venue" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth merchant switching when a global admin switches merchant"/>
+    <testcase name="should store the list of smart tools available to the impersonated venue" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth merchant switching when a global admin switches merchant"/>
+    <testcase name="should use the impersonated merchant" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth merchant switching when a global admin switches merchant"/>
+    <testcase name="should use the impersonated venue" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Service: Auth merchant switching when a global admin switches merchant"/>
+    <testcase name="immediately redirects the user" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Login when already logged in"/>
+    <testcase name="should route to home" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Login when not previously logged in a merchant successfully logs in logs in"/>
+    <testcase name="should route to the original path" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Login when not previously logged in a merchant successfully logs in logs in after being redirected"/>
+    <testcase name="should route to home" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Login when not previously logged in a merchant successfully logs in logs in after going direct to the login page"/>
+    <testcase name="should display an error message" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Login when not previously logged in failed login"/>
+    <testcase name="shoud remain on the login page" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Login when not previously logged in failed login"/>
+    <testcase name="should display the button" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: btnLogout button visibility when a user is logged in"/>
+    <testcase name="should hide the button if no user is logged in" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: btnLogout button visibility when no user is logged in"/>
+    <testcase name="should log the user out" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: btnLogout clicking the button"/>
+    <testcase name="should redirect the user to the login page" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: btnLogout clicking the button"/>
+    <testcase name="does not render the merchant selector" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: merchantSelector when a non-global admin is logged in"/>
+    <testcase name="renders the merchant selector" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: merchantSelector when a global admin is logged in"/>
+    <testcase name="contains an option for each active merchant" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: merchantSelector when a global admin is logged in"/>
+    <testcase name="selects the option for the logged in merchant" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: merchantSelector when a global admin is logged in"/>
+    <testcase name="should impersonate the merchant" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: merchantSelector when a global admin is logged in when the user selects a merchant"/>
+    <testcase name="should add the new merchant to the selector" time="0.049" classname="PhantomJS 1.9.7 (Mac OS X).Directive: merchantSelector when a global admin is logged in when a new merchant is created that is enabled"/>
+    <testcase name="should not add the new merchant to the selector" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: merchantSelector when a global admin is logged in when a new merchant is created that is not enabled"/>
+    <testcase name="the button should be enabled" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: populateCatalogFor when a merchant has no products in their catalog"/>
+    <testcase name="should populate the catalog" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: populateCatalogFor when a merchant has no products in their catalog clicking the button"/>
+    <testcase name="the button should be disabled" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: populateCatalogFor when a merchant has some products in their catalog"/>
+    <testcase name="should do nothing" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: populateCatalogFor when a merchant has some products in their catalog clicking the button"/>
+    <testcase name="should not set a root scope value" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when there is an environment in the root scope but it is not a valid environment name"/>
+    <testcase name="should redirect the user to an error page" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when there is an environment in the root scope but it is not a valid environment name"/>
+    <testcase name="should use the root scope environment" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when there is an environment in the root scope and it is a valid environment name"/>
+    <testcase name="should get stored in root scope" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when an environment exists as a URL parameter and it is a valid environment name"/>
+    <testcase name="should use the environment from the URL parameter" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when an environment exists as a URL parameter and it is a valid environment name"/>
+    <testcase name="should not set a root scope value" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when an environment exists as a URL parameter and it is an invalid environment name"/>
+    <testcase name="should redirect the user to an error page" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when an environment exists as a URL parameter and it is an invalid environment name"/>
+    <testcase name="should get stored in root scope" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when a baseURL exists as a URL parameter and it corresponds to one of the environments"/>
+    <testcase name="should use the environment from the URL parameter" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when a baseURL exists as a URL parameter and it corresponds to one of the environments"/>
+    <testcase name="should not set a root scope value" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when a baseURL exists as a URL parameter and it is an invalid environment name"/>
+    <testcase name="should redirect the user to an error page" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when a baseURL exists as a URL parameter and it is an invalid environment name"/>
+    <testcase name="defaults to the test environment" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when no environment is on the root scope or the query string when the host is localhost"/>
+    <testcase name="defaults to the test environment" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when no environment is on the root scope or the query string when the host is the live host"/>
+    <testcase name="uses the environment from the host" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when no environment is on the root scope or the query string when the host has an environment name in it"/>
+    <testcase name="should not set a root scope value" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when no environment is on the root scope or the query string when the host does not have an environment name in it"/>
+    <testcase name="should redirect the user to an error page" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Service: Config baseURL when no environment is on the root scope or the query string when the host does not have an environment name in it"/>
+    <testcase name="should return a string unmodified if the delimiter is not present" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).String filters after last filter"/>
+    <testcase name="should return the last portion of the string if the delimiter is present" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).String filters after last filter"/>
+    <testcase name="should base64 encode a string" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Crypto filters base64"/>
+    <testcase name="should base64 encode an object" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Crypto filters base64"/>
+    <testcase name="should encrypt a string" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Crypto filters hmacSha1"/>
+    <testcase name="should encrypt a string" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Crypto filters hmacSha256"/>
+    <testcase name="should format the duration by the specified unit" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Filter: duration"/>
+    <testcase name="should accept an optional decimal places argument" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Filter: duration"/>
+    <testcase name="should return the input array as a comma-separated string" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Filter: join joining arrays"/>
+    <testcase name="can specify a different delimiter" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Filter: join joining arrays"/>
+    <testcase name="should split and re-join the string" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Filter: join joining comma-separated strings"/>
+    <testcase name="should return the &quot;name&quot; property from each array element" time="0.004" classname="PhantomJS 1.9.7 (Mac OS X).Filter: map"/>
+    <testcase name="the button should display the initial button text" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: actionButton with specified loading text initially"/>
+    <testcase name="the button should be enabled" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: actionButton with specified loading text initially"/>
+    <testcase name="the button should display the loading text" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: actionButton with specified loading text when an action starts"/>
+    <testcase name="the button should be disabled" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: actionButton with specified loading text when an action starts"/>
+    <testcase name="the button should display the initial text" time="0.06" classname="PhantomJS 1.9.7 (Mac OS X).Directive: actionButton with specified loading text when an action starts when an action completes"/>
+    <testcase name="the button should be enabled" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: actionButton with specified loading text when an action starts when an action completes"/>
+    <testcase name="the button should display the default loading text" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: actionButton with default loading text when an action starts"/>
+    <testcase name="should not render the navbar" time="0.038" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in embedded mode"/>
+    <testcase name="should be visible" time="0.023" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode rendering"/>
+    <testcase name="should replace the element with a navbar" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode rendering"/>
+    <testcase name="should create a home link" time="0.033" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode rendering"/>
+    <testcase name="should show links that are available to anyone" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a merchant user"/>
+    <testcase name="should hide links only available to platform admins" time="0.021" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a merchant user"/>
+    <testcase name="should hide links only available to merchant admins" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a merchant user"/>
+    <testcase name="should show links that are available to anyone" time="0.021" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a merchant administrator"/>
+    <testcase name="should hide links only available to platform admins" time="0.02" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a merchant administrator"/>
+    <testcase name="should show links only available to merchant admins" time="0.021" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a merchant administrator"/>
+    <testcase name="should show links that are available to anyone" time="0.021" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a system administrator"/>
+    <testcase name="should show links only available to platform admins" time="0.02" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a system administrator"/>
+    <testcase name="should hide links only available to merchant admins" time="0.02" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a system administrator"/>
+    <testcase name="should hide links only relevant to POPP enabled merchants" time="0.019" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a merchant with no POPP smart tool"/>
+    <testcase name="should hide links only relevant to POPP enabled merchants" time="0.019" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode selective display of nav links for a merchant with the POPP smart tool"/>
+    <testcase name="should not highlight the relevant nav link" time="0.032" classname="PhantomJS 1.9.7 (Mac OS X).Directive: adminNav in browser mode responding to a route change when the new route is not in the nav"/>
+    <testcase name="should convert an ISO date/time string into the correct format for display" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: datetimeLocal"/>
+    <testcase name="should convert the input string into an ISO date/time string" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: datetimeLocal"/>
+    <testcase name="should convert the scope value to a local date/time allowing for DST" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: datetimeLocal"/>
+    <testcase name="should interpret the input value as a local date/time allowing for DST" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: datetimeLocal"/>
+    <testcase name="should request deletion of the resource" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: deleteButton responding to a click"/>
+    <testcase name="should do nothing" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: deleteButton responding to a different resource being deleted"/>
+    <testcase name="should disable itself" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: deleteButton responding to the resource being deleted when the delete is pending"/>
+    <testcase name="should re-enable itself" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: deleteButton responding to the resource being deleted when the delete is pending when the delete succeeds"/>
+    <testcase name="should re-enable itself" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: deleteButton responding to the resource being deleted when the delete is pending when the delete fails"/>
+    <testcase name="should replace the directive element with a form-group" time="0.079" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup rendering with a label attribute"/>
+    <testcase name="should transclude the directive element contents" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup rendering with a label attribute"/>
+    <testcase name="should create a label tied to the input" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup rendering with a label attribute"/>
+    <testcase name="should not create a label" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup rendering without a label attribute"/>
+    <testcase name="should not create an id for the input" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup rendering without a label attribute"/>
+    <testcase name="should create an id" time="0.01" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup rendering with no id on the input"/>
+    <testcase name="should tie the id to the label" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup rendering with no id on the input"/>
+    <testcase name="should make the id unique" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup rendering with no id on the input"/>
+    <testcase name="is not dirty" time="0.012" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a pristine input"/>
+    <testcase name="is not valid" time="0.012" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a pristine input"/>
+    <testcase name="should not have an error class" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a pristine input"/>
+    <testcase name="is dirty" time="0.026" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a dirty input"/>
+    <testcase name="is not valid" time="0.015" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a dirty input"/>
+    <testcase name="should have an error class" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a dirty input"/>
+    <testcase name="does not affect the dirty state of another field" time="0.015" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a dirty input"/>
+    <testcase name="does not affect the validity of another field" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a dirty input"/>
+    <testcase name="does not add an error class to another field" time="0.015" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a dirty input"/>
+    <testcase name="knows the form has been submitted" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a form that has been submitted"/>
+    <testcase name="is not dirty" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a form that has been submitted"/>
+    <testcase name="is not valid" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a form that has been submitted"/>
+    <testcase name="should have an error class" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a form that has been submitted"/>
+    <testcase name="should not have an error class" time="0.012" classname="PhantomJS 1.9.7 (Mac OS X).Directive: formGroup validation an empty string in a form that has been submitted and then reset to pristine"/>
+    <testcase name="should be visible" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: loggedInAs when a user is logged in"/>
+    <testcase name="should display the logged in user" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: loggedInAs when a user is logged in"/>
+    <testcase name="should be hidden" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: loggedInAs when no user is logged in"/>
+    <testcase name="the modal should show when the trigger value changes to an object" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: modal an element with no onCancel attribute when the trigger value is undefined"/>
+    <testcase name="should do nothing when the trigger value changes to null" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: modal an element with no onCancel attribute when the trigger value is undefined"/>
+    <testcase name="the modal should hide when the tigger value changes to undefined" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: modal an element with no onCancel attribute when the trigger value is an object"/>
+    <testcase name="the modal should hide when the tigger value changes to null" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: modal an element with no onCancel attribute when the trigger value is an object"/>
+    <testcase name="should do nothing when the trigger value changes to another object" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Directive: modal an element with no onCancel attribute when the trigger value is an object"/>
+    <testcase name="should call the cancel function in the scope when the modal is hidden" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: modal an element with no onCancel attribute when the modal is closed"/>
+    <testcase name="should call the specified function in the scope when the modal is hidden" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: modal an element with an onCancel attribute when the modal is closed"/>
+    <testcase name="should not call the cancel function in the scope when the modal is hidden" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: modal an element with an onCancel attribute when the modal is closed"/>
+    <testcase name="should start hidden" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: offlineNotification"/>
+    <testcase name="should display the notification" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: offlineNotification when the API goes down"/>
+    <testcase name="should start polling the API" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: offlineNotification when the API goes down after a few seconds"/>
+    <testcase name="should hide the notification" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: offlineNotification when the API goes down after a few seconds when the API becomes available again"/>
+    <testcase name="should hide the notification" time="0.017" classname="PhantomJS 1.9.7 (Mac OS X).Directive: offlineNotification when the API becomes available"/>
+    <testcase name="should render a checkbox for each role" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector rendering"/>
+    <testcase name="un-checks all checkboxes" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector checked state when the list does not exist"/>
+    <testcase name="un-checks all checkboxes" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector checked state when the list is empty"/>
+    <testcase name="checks any checkboxes whose value is in the list" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector checked state when the list is not empty"/>
+    <testcase name="un-checks any checkboxes whose value is not in the list" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector checked state when the list is not empty"/>
+    <testcase name="removes the checkbox value from the list" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector un-checking a checkbox"/>
+    <testcase name="un-checks the checkbox" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector un-checking a checkbox"/>
+    <testcase name="adds the group value to the list" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector checking a checkbox"/>
+    <testcase name="checks the checkbox" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: roleSelector checking a checkbox"/>
+    <testcase name="should have an &quot;active&quot; class" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: sortable when the table is sorted by this column"/>
+    <testcase name="should not have a &quot;desc&quot; class" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Directive: sortable when the table is sorted by this column"/>
+    <testcase name="should change sort order to descending" time="0.101" classname="PhantomJS 1.9.7 (Mac OS X).Directive: sortable when the table is sorted by this column clicking on the header"/>
+    <testcase name="should have a &quot;desc&quot; class" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: sortable when the table is sorted by this column descending"/>
+    <testcase name="should change sort order to ascending" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: sortable when the table is sorted by this column descending clicking on the header"/>
+    <testcase name="should not have an &quot;active&quot; class" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: sortable when the table is sorted by a different column"/>
+    <testcase name="should sort by this column ascending" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: sortable when the table is sorted by a different column clicking on the header"/>
+    <testcase name="should sort by this column ascending" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: sortable when the table is sorted by a different column descending clicking on the header"/>
+    <testcase name="should have a checkbox for each item in the basket" time="0.031" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm displaying the form"/>
+    <testcase name="should disable checkboxes for items that have been refunded" time="0.018" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm displaying the form when some but not all items have been refunded"/>
+    <testcase name="should enable the button" time="0.015" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm displaying the form when some but not all items have been refunded"/>
+    <testcase name="should disable the button" time="0.015" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm displaying the form when all items have been refunded"/>
+    <testcase name="should be the sum of all items in the basket if none are refunded or selected" time="0.016" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm calculating refund value"/>
+    <testcase name="should be the sum of all non-refunded items if some have been refunded already" time="0.016" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm calculating refund value"/>
+    <testcase name="should be the sum of all selected items if there are any" time="0.017" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm calculating refund value"/>
+    <testcase name="should request a refund of the specified items" time="0.017" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm submitting a refund when a refund is requested"/>
+    <testcase name="should broadcast an event" time="0.016" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm submitting a refund when a refund is requested"/>
+    <testcase name="should broadcast an event" time="0.016" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm submitting a refund when a refund succeeds"/>
+    <testcase name="should display an alert" time="0.015" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm submitting a refund when a refund succeeds"/>
+    <testcase name="should broadcast an event" time="0.016" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm submitting a refund when a refund fails"/>
+    <testcase name="should display an alert" time="0.015" classname="PhantomJS 1.9.7 (Mac OS X).Directive: orderRefundForm submitting a refund when a refund fails"/>
+    <testcase name="should retrieve a list of orders" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Order REST API retrieving data"/>
+    <testcase name="should search for orders" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Order REST API retrieving data"/>
+    <testcase name="should refund all items" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Order REST API refunding an order if no items are specified in the PUT body"/>
+    <testcase name="should refund only that item" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Order REST API refunding an order if an item is specified in the PUT body"/>
+    <testcase name="should execute an order search based on the input" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: OrdersCtrl searching for orders when the search is triggered"/>
+    <testcase name="should clear the existing search results" time="0.017" classname="PhantomJS 1.9.7 (Mac OS X).Controller: OrdersCtrl searching for orders when the search is triggered when there are search results already displayed"/>
+    <testcase name="should attach the search results to the scope" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: OrdersCtrl searching for orders when the search succeeds"/>
+    <testcase name="should replace the updated order in scope" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: OrdersCtrl searching for orders when an order is updated"/>
+    <testcase name="should use the venueId from local storage when making requests" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Product setting the venue in the resource URL"/>
+    <testcase name="should retrieve a list of products" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Product REST API retrieving data"/>
+    <testcase name="should retrieve a single product" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Product REST API retrieving data"/>
+    <testcase name="should create a new product" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Product REST API creating data"/>
+    <testcase name="should update a product" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Product REST API updating data"/>
+    <testcase name="should delete a product" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Product REST API updating data"/>
+    <testcase name="should replace the element with a figure" time="0.042" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with numeric values"/>
+    <testcase name="should assign an id to the chart element" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with numeric values"/>
+    <testcase name="should contain a caption with the transcluded content" time="0.02" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with numeric values"/>
+    <testcase name="should use the data points for the chart data" time="0.02" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with numeric values"/>
+    <testcase name="should use the values for the y axis labels" time="0.02" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with numeric values"/>
+    <testcase name="should use the keys for the x axis labels" time="0.02" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with numeric values"/>
+    <testcase name="should update the chart" time="0.032" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with numeric values when the source data changes"/>
+    <testcase name="should clear the chart" time="0.031" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with numeric values when the source data is removed"/>
+    <testcase name="should display the y axis labels as currency strings" time="0.016" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with hidden values"/>
+    <testcase name="should display the y axis labels as currency strings" time="0.017" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with currency values"/>
+    <testcase name="should use the values for the x axis labels" time="0.018" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series displayed horizontally"/>
+    <testcase name="should use the keys for the y axis labels" time="0.019" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series displayed horizontally"/>
+    <testcase name="should display a legend" time="0.02" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with a single data series with a legend"/>
+    <testcase name="should use the data points for the chart data" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with multiple data series with the same keys"/>
+    <testcase name="should use the values for the y axis labels" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with multiple data series with the same keys"/>
+    <testcase name="should use the keys for the x axis labels" time="0.023" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with multiple data series with the same keys"/>
+    <testcase name="should use the data points for the chart data" time="0.025" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with multiple data series with different keys"/>
+    <testcase name="should use the values for the y axis labels" time="0.162" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with multiple data series with different keys"/>
+    <testcase name="should use the keys for the x axis labels" time="0.029" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with multiple data series with different keys"/>
+    <testcase name="should default bar values to zero for the empty series" time="0.025" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with multiple data series with an empty series"/>
+    <testcase name="should not render any data" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: barChart drawing a bar chart with no data series"/>
+    <testcase name="should default the comparison type to &quot;day&quot;" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl"/>
+    <testcase name="should set the report date to the start date of the later report" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl"/>
+    <testcase name="should attach multiple reports to the scope" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl"/>
+    <testcase name="should extract the correct date labels from the reports" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl"/>
+    <testcase name="should describe the reports as dates" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl displaying the date range for a day comparison"/>
+    <testcase name="should describe the reports as day ranges" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl displaying the date range for a week comparison"/>
+    <testcase name="should describe the reports as months" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl displaying the date range for a month comparison"/>
+    <testcase name="should make 2 API calls" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the same day in the previous week"/>
+    <testcase name="should request report for the requested date" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the same day in the previous week"/>
+    <testcase name="should request report for the day one week before" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the same day in the previous week"/>
+    <testcase name="should make 2 API calls" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous week"/>
+    <testcase name="should request report for the week starting on the requested date" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous week"/>
+    <testcase name="should request report for the previous week" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous week"/>
+    <testcase name="should make 2 API calls" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous month"/>
+    <testcase name="should request report for the requested month" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous month"/>
+    <testcase name="should request report for the previous month" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous month"/>
+    <testcase name="should make 2 API calls" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous year"/>
+    <testcase name="should request report for the requested month" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous year"/>
+    <testcase name="should request report for the same month the previous year" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ComparisonReportCtrl changing the report date comparing with the previous year"/>
+    <testcase name="should attach a select for the range type" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange rendering"/>
+    <testcase name="should create datetime-local inputs for the from and to dates" time="0.011" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange rendering"/>
+    <testcase name="should set the from date to today" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types today"/>
+    <testcase name="should set the to date to blank" time="0.024" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types today"/>
+    <testcase name="should make the both dates read only" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types today"/>
+    <testcase name="should set the from date to yesterday" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types yesterday"/>
+    <testcase name="should set the to date to the start of today" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types yesterday"/>
+    <testcase name="should make the both dates read only" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types yesterday"/>
+    <testcase name="should set the from date to the start of the week" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this week"/>
+    <testcase name="should set the from date to the start of the week" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this week"/>
+    <testcase name="should make the both dates read only" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this week"/>
+    <testcase name="should set the from date to the start of the week" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types last week"/>
+    <testcase name="should set the from date to the start of the week" time="0.012" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types last week"/>
+    <testcase name="should make the both dates read only" time="0.012" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types last week"/>
+    <testcase name="should set the from date to the start of the month" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this month"/>
+    <testcase name="should set the from date to the start of the month" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this month"/>
+    <testcase name="should make the both dates read only" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this month"/>
+    <testcase name="should set the from date to the start of the month" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types last month"/>
+    <testcase name="should set the from date to the start of the month" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types last month"/>
+    <testcase name="should make the both dates read only" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types last month"/>
+    <testcase name="should set the from date to the start of the year" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this year"/>
+    <testcase name="should set the from date to the start of the year" time="0.023" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this year"/>
+    <testcase name="should make the both dates read only" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types this year"/>
+    <testcase name="should make the both dates read write" time="0.013" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types custom"/>
+    <testcase name="accepts a valid date range" time="0.012" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types custom validation"/>
+    <testcase name="marks the to date as invalid" time="0.015" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types custom validation attempting to enter a to date before the from date"/>
+    <testcase name="marks the to date as invalid" time="0.014" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types custom validation attempting to enter a from date after the to date"/>
+    <testcase name="should enable all the controls" time="0.012" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types disabling and enabling the disabled expression is false"/>
+    <testcase name="should enable all the controls" time="0.012" classname="PhantomJS 1.9.7 (Mac OS X).Directive: dateRange selecting range types disabling and enabling the disabled expression is true"/>
+    <testcase name="should generate the filename based on the report range" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ProductReportCtrl CSV file generation download filename when the start and end dates of the report are the same"/>
+    <testcase name="should generate the filename based on the report range" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: ProductReportCtrl CSV file generation download filename when the start and end dates of the report are different"/>
+    <testcase name="paymentsFor should return an array of paymentLineItems filtered by type, paymentType and direction" time="0.01" classname="PhantomJS 1.9.7 (Mac OS X).Directive: reportsDirective"/>
+    <testcase name="should use the venue id" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report query"/>
+    <testcase name="should parse the date header" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report query"/>
+    <testcase name="total tax is the sum of PAYMENT VAT less the sum of REFUND VAT" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods"/>
+    <testcase name="total gross is the sum of PAYMENT totals less the sum of REFUND totals" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods"/>
+    <testcase name="total sales is the sum of PAYMENT totals" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods"/>
+    <testcase name="total refunds is the sum of REFUND totals" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods"/>
+    <testcase name="refund count is the total number of refund transactions" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods"/>
+    <testcase name="cash in is the sum of CASH PAYMENT totals and CASH IN payments" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods"/>
+    <testcase name="cash out is the sum of CASH REFUND totals and CASH OUT payments" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods"/>
+    <testcase name="closing total is the sum of opening total plus cash in minus cash out" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods"/>
+    <testcase name="should collate PAYMENT and REFUND data for each category" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods collated reports byCategory"/>
+    <testcase name="should collate PAYMENT and REFUND data for each product" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods collated reports byProduct"/>
+    <testcase name="should fill in blanks with zero values" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods collated reports byProduct"/>
+    <testcase name="should order by highest grossing product" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods collated reports byProduct"/>
+    <testcase name="should contain at most 10 products" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Report custom methods collated reports topByProduct"/>
+    <testcase name="should attach the report data to the scope" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: SmartReportCtrl with no POS data"/>
+    <testcase name="should request data for the entered date" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Controller: SmartReportCtrl with no POS data changing the report date range with only a from date"/>
+    <testcase name="should request data for the entered date" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: SmartReportCtrl with no POS data changing the report date range with a from and to date"/>
+    <testcase name="should save the openingTotal in localStorage" time="0.016" classname="PhantomJS 1.9.7 (Mac OS X).Controller: SmartReportCtrl with no POS data changing the report date range changing the opening total"/>
+    <testcase name="should attach the openingTotal from localStorage if present" time="0.005" classname="PhantomJS 1.9.7 (Mac OS X).Controller: SmartReportCtrl persisting the openingTotal"/>
+    <testcase name="should not display anything" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Directive: foursquareUser when there is no foursquare account"/>
+    <testcase name="replaces the element" time="0.009" classname="PhantomJS 1.9.7 (Mac OS X).Directive: foursquareUser when there is a foursquare account"/>
+    <testcase name="should retrieve the user data from foursquare" time="0.172" classname="PhantomJS 1.9.7 (Mac OS X).Directive: foursquareUser when there is a foursquare account"/>
+    <testcase name="does not do anything" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Social displaying the page when no foursquare tool settings exist"/>
+    <testcase name="returns it from the scope function" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Social displaying the page when a foursquare tool exists"/>
+    <testcase name="redirects the user to OAuth page" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Social authenticating with foursquare"/>
+    <testcase name="removes the tool properties and updates" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Social disconnecting from foursquare"/>
+    <testcase name="does not do anything" time="0.006" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Social displaying the page when no facebook tool settings exist"/>
+    <testcase name="returns it from the scope function" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Social displaying the page when a facebook tool exists"/>
+    <testcase name="redirects the user to OAuth page" time="0.017" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Social authenticating with facebook"/>
+    <testcase name="removes the tool properties and updates" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Social disconnecting from facebook"/>
+    <testcase name="treats the started time as the date for the shift" time="0.01" classname="PhantomJS 1.9.7 (Mac OS X).Resource: Shift getting the shift date"/>
+    <testcase name="adds the date range as an array to the scope" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets"/>
+    <testcase name="adds the timesheets to the scope grouped by date" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets"/>
+    <testcase name="should request new data from the API" time="0.007" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets updating the date range"/>
+    <testcase name="adds the selected timesheet to scope" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with a single shift"/>
+    <testcase name="adds the relevant shift to scope" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with a single shift"/>
+    <testcase name="should update the shift" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with a single shift saving"/>
+    <testcase name="should close the form once the update completes" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with a single shift saving"/>
+    <testcase name="should refresh the timesheet data once the update completes" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with a single shift saving"/>
+    <testcase name="removes the selected timesheet from scope" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with a single shift cancelling"/>
+    <testcase name="removes the selected shifts from scope" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with a single shift cancelling"/>
+    <testcase name="places all the relevant shifts in scope" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with multiple shifts"/>
+    <testcase name="should update all the shifts" time="0.008" classname="PhantomJS 1.9.7 (Mac OS X).Controller: Timesheets displaying timesheets selecting a timesheet with multiple shifts saving"/>
+    <testcase name="creates a new phone contact" time="0.026" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm creating a venue"/>
+    <testcase name="adds the new contact to the list attached to the venue" time="0.023" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm creating a venue"/>
+    <testcase name="selects the phone contact" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm editing a venue that has a phone contact already"/>
+    <testcase name="creates a new phone contact" time="0.023" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm editing a venue that does not currently have a phone contact"/>
+    <testcase name="adds the new contact to the list attached to the venue" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm editing a venue that does not currently have a phone contact"/>
+    <testcase name="updates the contacts array of the venue" time="0.036" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm editing a venue that does not currently have a phone contact entering a contact phone number"/>
+    <testcase name="creates a new phone contact" time="0.023" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm editing a venue that does not currently have any contacts"/>
+    <testcase name="adds the new contact to the list attached to the venue" time="0.022" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm editing a venue that does not currently have any contacts"/>
+    <testcase name="updates the contacts array of the venue" time="0.024" classname="PhantomJS 1.9.7 (Mac OS X).Directive: venueEditForm editing a venue that does not currently have any contacts entering a contact phone number"/>
+    <system-out><![CDATA[PhantomJS 1.9.7 (Mac OS X) LOG: ERROR
+ 'Got error 403', undefined, 'http://platform-test.amazon.mycircleinc.net/api/foo/bar/baz',PhantomJS 1.9.7 (Mac OS X) LOG: ERROR
+ 'Got error 422', undefined, 'http://platform-test.amazon.mycircleinc.net/api/foo/bar/baz',PhantomJS 1.9.7 (Mac OS X) LOG: ERROR
+ 'Got error 422', undefined, 'http://platform-test.amazon.mycircleinc.net/api/foo/bar/baz',PhantomJS 1.9.7 (Mac OS X) LOG: LOG
+ Object{$$protocol: 'http', $$host: 'server', $$port: 80, $$parse: function (url) { ... }, $$compose: function () { ... }, $$rewrite: function (url) { ... }, $$path: '', $$search: Object{}, $$hash: '', $$url: '', $$absUrl: 'http://server/', path: function () { ... }},PhantomJS 1.9.7 (Mac OS X) LOG: WARN
+ 'Invalid environment 'foo'',PhantomJS 1.9.7 (Mac OS X) LOG: WARN
+ 'Invalid environment 'foo'',PhantomJS 1.9.7 (Mac OS X) LOG: WARN
+ 'Invalid environment 'foo'',PhantomJS 1.9.7 (Mac OS X) LOG: WARN
+ 'Invalid environment 'foo'',PhantomJS 1.9.7 (Mac OS X) LOG: WARN
+ 'Invalid environment 'undefined'',PhantomJS 1.9.7 (Mac OS X) LOG: WARN
+ 'Invalid environment 'undefined'',PhantomJS 1.9.7 (Mac OS X) LOG: WARN
+ 'Invalid environment 'undefined'',PhantomJS 1.9.7 (Mac OS X) LOG: WARN
+ 'Invalid environment 'undefined''
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>

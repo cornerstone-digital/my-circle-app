@@ -1,0 +1,17 @@
+<!--<button type="button" class="btn btn-default btn-lg" data-ng-click="edit(selected.category)" data-ng-disabled="!selected.category">Edit category</button>-->
+<div class="controls">
+    <!--<button type="button" class="icon icon-lg plus-icon" data-ng-click="create()">Add Category</button>-->
+    <button type="button" class="icon icon-lg plus-icon" data-ng-click="create()">Add Category</button>
+    <button type="button" class="icon icon-lg edit-icon" data-ng-click="edit(selected.category)" data-ng-if="hasCategories()">Edit</button>
+    <button type="button" class="icon icon-lg bin-icon" data-ng-click="deleteCategory()" data-ng-if="hasCategories()">Delete</button>
+</div>
+<ul id="favorites" class="favorites nav nav-pills nav-stacked">
+    <li data-ng-class="{active: isFavoritesSelected()}" class="favorites">
+        <a data-ng-click="selectFavorites()">Favourites</a>
+    </li>
+</ul>
+<ul id="categoryList" class="category-list nav nav-pills nav-stacked">
+    <li data-ng-repeat="category in categories | orderBy : ['index']" data-ng-class="{active: isSelected(category)}" data-category="{{category}}" data-index="{{category.index}}">
+        <a data-ng-click="selectCategory(category)" style="border-color: {{category.colour}}; background-color: {{category.colour}}">{{category.title}}</a>
+    </li>
+</ul>

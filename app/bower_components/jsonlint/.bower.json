@@ -1,0 +1,12 @@
+{
+  "name": "jsonlint",
+  "_cacheHeaders": {
+    "ETag": "\"6d691ccebef73fb56990a228db686fb4\"",
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "_release": "e-tag:6d691cceb",
+  "main": "index",
+  "_source": "https://github.com/zaach/jsonlint",
+  "_target": "*",
+  "_originalSource": "https://github.com/zaach/jsonlint"
+}

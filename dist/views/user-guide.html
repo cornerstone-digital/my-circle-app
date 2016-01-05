@@ -1,0 +1,1931 @@
+<script>
+
+    function scroll(element){
+        var ele = document.getElementById(element);
+        window.scrollTo(ele.offsetLeft,ele.offsetTop);
+    }
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    // navigation click actions
+    $('.scroll-link').on('click', function(event){
+      event.preventDefault();
+      var sectionID = $(this).attr("data-id");
+      scrollToID('#' + sectionID, 750);
+    });
+    // scroll to top action
+    $('.scroll-top').on('click', function(event) {
+      event.preventDefault();
+      $('html, body').animate({scrollTop:0}, 'slow');
+    });
+    // mobile nav toggle
+    $('#nav-toggle').on('click', function (event) {
+      event.preventDefault();
+      $('#main-nav').toggleClass("open");
+    });
+  });
+
+  // scroll function
+  function scrollToID(id, speed){
+    var offSet = 50;
+    var targetOffset = $(id).offset().top - offSet;
+    var mainNav = $('#main-nav');
+    $('html,body').animate({scrollTop:targetOffset}, speed);
+    if (mainNav.hasClass("open")) {
+      mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+      mainNav.removeClass("open");
+    }
+  }
+
+  if (typeof console === "undefined") {
+    console = {
+      log: function() { }
+    };
+  }
+
+</script>
+<div class="container-fluid faq">
+
+<span id="target5"></span>
+
+<section style="margin-top: 3em">
+
+<div class="container" style="margin-bottom: 1em">
+    <div class="row">
+
+        <div class="col-md-12" class="col-padding">
+
+            <h1 style="font-weight: 100">smartDashboard User Guide</h1>
+
+            <p><span>&nbsp;</span></p>
+
+            <p style="font-size: 16px; text-align: justify">Welcome to myCircle’s smartDashboard, your cloud-based management centre available on your computer or with the tap of an icon button on your iPad.</p>
+
+            <p style="font-size: 16px; text-align: justify; margin-bottom: 2em">Manage your employees, catalogue, pricing and discounts.  View reports and connect social tools to your smartPOS.  Establish user rights for your suite of smartTools.  It’s all here, personalised for your business.</p>
+
+
+        </div>
+
+  </div>
+
+</div>
+
+
+<div class="container" style="margin-bottom: 14em" id="main-nav">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <img src="images/faq/smartSetup.svg" width="160" height="160" style="margin: 10px auto; display: block">
+
+      <a href="#" class="btn btn-default target-btn scroll-link" data-id="target1" style="line-height: 2.8em; outline: none; margin: 0 auto; display: block">smartSet-up</a>
+
+        </div>
+
+        <div class="col-md-3">
+            <img src="images/faq/smartReports.svg" width="160" height="160" style="margin: 10px auto; display: block">
+
+      <a href="#" class="btn btn-default target-btn scroll-link" data-id="target2" style="line-height: 2.8em; outline: none; margin: 0 auto; display: block">smartReports</a>
+
+        </div>
+
+    <div class="col-md-3" style="display: block">
+
+            <img src="images/faq/smartSocial.svg" width="160" height="160" style="margin: 10px auto;  display: block">
+
+      <a href="#" class="btn btn-default target-btn scroll-link" data-id="target3" style="line-height: 2.8em; outline: none; margin: 0 auto; display: block">smartSocial</a>
+
+        </div>
+
+        <div class="col-md-3" style="display: block">
+
+            <img src="images/faq/smartTools.svg" width="160" height="160" style="margin: 10px auto 13px;  display: block">
+
+      <a href="#" class="btn btn-default target-btn scroll-link" data-id="target4" style="line-height: 2.8em; outline: none; margin: 0 auto; display: block">smartTools</a>
+
+        </div>
+
+  </div>
+
+
+  <a href="#" class="scroll-link" data-id="target5" style="display: block; position: fixed; right: 0; bottom: 0; margin: 0 10px 60px 0; outline: none; z-index: 1; line-height: 1.8em; width: 5em; height: 3em"><img height="50" width="50" src="images/faq/scroll-to-top.png"></a>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="target1" class="container" style="padding-top: 4em">
+
+    <div class="row">
+
+        <div class="col-md-2" class="col-padding">
+
+            <img src="images/faq/smartSetup.svg" width="160" height="160">
+
+        </div>
+
+
+        <div class="col-md-10" class="col-padding">
+
+            <h2 style="margin-bottom: 1em">smartSet-up</h2>
+
+            <p class="section-intro">You’re in full control with myCircle’s friendly and intuitive smartSet-up.  It’s never been easier to manage your venue, employees, products and pricing.</p>
+
+
+            <div class="accordion" id="accordion">
+
+
+
+
+                <h4 style="margin-top: 3em; color: #2EAAD5; margin-bottom: 1em"><span class="section-heading">Venue:</span> Set up details for your Venue(s).</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-1" style="outline: none"><p style="float: left; margin-bottom: 0">How do I add a Venue?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-1" class="collapse in panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">The specifics of your principal Venue are pre-populated but may be edited as necessary. You can add additional Venues either by clicking 'Add New' to add a new Venue or by duplicating an existing Venue using the 'Duplicate' button.</p>
+                            
+                            <p>To edit your Venues(s) details:</p>
+                            
+                            <img src="images/faq/83.png" class="screen-shots list-gap">
+                            
+                            <ol>
+
+                                <li class="list-gap">Select ‘Venue’ from the smartSet-up drop down box.</li>
+                                <li class="list-gap">Edit venue details, such as name, address, VAT number, manager name and contact information.</li>
+                                <li class="list-gap">Save changes.</li>
+                                
+                            </ol>
+                            
+                            <p class="list-gap">The new venue is created, you can proceed to add products in the standard way.</p>
+                            
+                            <p class="list-gap">To delete a venue, please select the venue and click the Delete button.</p>
+
+                            <img src="images/faq/94.png" class="screen-shots">
+
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-86" style="outline: none"><p style="float: left; margin-bottom: 0">How do I add a Venue Section?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-86" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">You may have multiple sections at your venue.  Your different venue sections are likely to have different responsibilities, such as bill/receipt printing, order printing - some venue sections may need to know only about certain items for order preparation. It's very easy to create Venue Sections, here's how:</p>
+                            
+                            <ol>
+
+                                <li class="list-gap">Go to the merchant dashboard at <a href="http://merchant-live.mycircleinc.com">http://merchant-live.mycircleinc.com</a> and login.</li>
+                                <li class="list-gap"> Go to smartSet-up > Venues > Edit Venue</li>
+                                <li class="list-gap">Under Venue Sections, simply enter the name of a Venue Section e.g. Kitchen and click 'Add New'.</li>
+                                <li class="list-gap">Save changes.</li>
+                                
+                            </ol>
+                            
+                            <p class="list-gap">A delete function is also available.</p>
+                            
+                            <img src="images/faq/112.png" class="screen-shots list-gap">
+
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-87" style="outline: none"><p style="float: left; margin-bottom: 0">How to associate Products and Categories with a Venue Section?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-87" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">To send specific items ordered to different printers for preparation you can create Venue Sections, assign those Venues Sections to Categories and Products and then associate a printer with a Venue Section.</p>
+                            
+                            <ol>
+
+                                <li class="list-gap">In the Merchant Dashboard you must first add venue sections (as seen in the above FAQ)</li>
+                                <li class="list-gap">Next, go to smartSet-up > Products.  You can assign all products in a category to be associated with a venue section by editing the Category selected and choosing the venue section for list of Venue Sections available in the Edit Category screen.</li>
+                                
+                                <img src="images/faq/96.png" class="screen-shots list-gap">
+                                
+                                <li class="list-gap">If you wish to overwrite the Venue Section for a specific product in a Category, simply assign that Product to it's own Venue Section (future changes to the Category venue sections will not overwrite the Product's own specific configuration).</li>
+                                
+                                <img src="images/faq/97.png" class="screen-shots list-gap">
+                                
+                                <li class="list-gap">Finally, associate Printers with a specific Venue Section in the smartPOS. PLEASE NOTE: Configuring Printers to specific Venue Sections is due for future release.  In preparation for this, we recommend you start to associate your Product Catalogue with Venue Sections now.</li>
+                                <li class="list-gap">Products within Categories not associated with a Venue Section will not be included in printed Orders.</li>
+                                
+                            </ol>
+                            
+                            <p class="list-gap">Note: If a Venue Section's printer should ignore the Category/Product association and print all Order Items, the smartPOS should be configured to activate 'Default Order Printer'.</p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+
+                <h4 style="margin-top: 3em; color: #2EAAD5; margin-bottom: 1em"><span class="section-heading">Employee:</span> Set up employee details, PIN codes and roles.</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-2" style="outline: none"><p style="float: left; margin-bottom: 0">What are employee roles?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-2" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>With employee roles, you precisely assign access and permissions for specific features of the smartPOS.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-3" style="outline: none"><p style="float: left; margin-bottom: 0">How do I set up myself/employee and define roles?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-3" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To set-up employees:</p>
+                            <ol>
+
+                                <li class="list-gap">Select ‘Staff’ from the smartSet-up drop down window.</li>
+                                <li class="list-gap">Select ‘Add New’.</li>
+
+                                <img src="images/faq/108.png" class="screen-shots" style="margin-bottom: 40px">
+
+                                <li class="list-gap">Enter employee's information.</li>
+                                <li class="list-gap">Assign a role:  Assign access for each smartTool and Discounts by designating a role for each employee.  Select either Staff (the system default gives staff access to smartPOS, smartOrders and Foursquare) or Manager (the system default gives managers access to smartPOS, smartOrders, Foursquare and all other functions).  These default settings may be changed in smartTools.</li>
+                                <li class="list-gap">Select employee’s status:  Select either Active (staff who may use the smartPOS) or Inactive (staff who may not currently use the smartPOS, such as those on extended leave).</li>
+                                <li class="list-gap">You then have the option of assigning a unique 4 digit PIN code for each employee.  This is not mandatory as staff member accounts may be set up without a PIN if you so wish.  Employees can use their 4 digit PIN code each time they log into the smartPOS. </li>
+                                <li>Save your entries.</li>
+
+                                <img src="images/faq/109.png" class="screen-shots" style="margin-bottom: 40px">
+
+                            </ol>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-4" style="outline: none"><p style="float: left; margin-bottom: 0">How do I make changes to employee settings after set-up?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-4" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To make changes to an established employee’s name, information, role, status or PIN:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select ‘Staff’ from the smartSet-up drop down window.</li>
+                                <li class="list-gap">Click on the edit button beside the employee’s name that you wish to make changes to.</li>
+                                <li class="list-gap">Make changes.</li>
+                                <li>Save your changes.</li>
+
+                            </ol>
+
+                            <img src="images/faq/109.png" class="screen-shots">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <h4 style="margin-top: 3em; color: #2EAAD5; margin-bottom: 1em"><span class="section-heading">Product:</span> Set up products, categories, favourites, and modifiers.</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-5" style="outline: none"><p style="float: left; margin-bottom: 0">What is a product catalogue?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-5" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Your product catalogue is your menu and consists of all the products you sell.  It includes both categories (broad groups of products) and products (individual items). The myCircle reports are run at a product level.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-6" style="outline: none"><p style="float: left; margin-bottom: 0">What are categories?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-6" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Categories are broad groups of products, such as hot drinks, cold drinks, starters, mains, desserts etc.  Catalogue set-up begins with categories.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-7" style="outline: none"><p style="float: left; margin-bottom: 0">How do I create categories?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-7" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To set up categories:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select ‘Products’ from the smartSet-up drop down window.</li>
+                                <li class="list-gap">Select ‘Add Category’.</li>
+                                <li class="list-gap">Enter broad categories such as hot drinks, cold drinks, starters, mains, desserts etc.</li>
+                                <li class="list-gap">Associate the Category with a Venue Section</li>
+                                <li class="list-gap">Designate a color for each category.</li>
+                                <li class="list-gap">Save your category entries.</li>
+                                <li class="list-gap">Categories can be edited or deleted by selecting the “Edit” or “Delete” buttons.</li>
+                                <li>Categories can only be deleted once all products have been removed from the selected category.</li>
+
+                            </ol>
+
+                            <img src="images/faq/98.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-8" style="outline: none"><p style="float: left; margin-bottom: 0">How are products defined?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-8" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Products are the individual items you sell, such as latte or cappuccino.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-9" style="outline: none"><p style="float: left; margin-bottom: 0">How do I add a product?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-9" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To set up a product:</p>
+
+                            <ol>
+                                <li class="list-gap">Select ‘Products’ from the smartSet-up drop down window.</li>
+                                <li class="list-gap">Select ‘Add Product’.</li>
+                                <li class="list-gap">Enter a product name, such as Latte or Irish coffee.</li>
+                                <li class="list-gap">Select a category from the drop down menu.  Both Latte and Irish coffee would belong to the Coffee category.</li>
+                                <li class="list-gap">Designate Eat-in and/or Take-away pricing. The default is Eat-in.</li>
+                                <li class="list-gap"> Select a Venue Section for a product, if you wish to overwrite the Category Venue Section.</li>
+                                <li class="list-gap">Save your entry.</li>
+                                <li class="list-gap">Continue to use the ‘Add Product’ function to build your Product Catalogue.</li>
+                                <li>Products can be edited or deleted by selecting the product and tapping the “Edit” or “Delete” buttons.</li>
+                            </ol>
+
+                            <img src="images/faq/99.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-10" style="outline: none"><p style="float: left; margin-bottom: 0">What’s the difference between Eat-in and Take-Away pricing?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-10" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>The pricing fields in your product catalogue allow for differentiation between Eat-In and Take-Away food consumption.  Use both fields if you charge different prices/VAT rates for the product.  Use Eat-In, the default, if you charge only one price and VAT rate for the product.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-11" style="outline: none"><p style="float: left; margin-bottom: 0">What is the Favourite category used for?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-11" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Favourites provide quick access to frequently sold products and will often include products from diverse categories. Products that appear in Favourites also appear in their original category.  For example, a latte may appear in both the Favourites and coffee categories.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-12" style="outline: none"><p style="float: left; margin-bottom: 0">How do I set-up Favourites?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-12" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To set-up Favourites:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select ‘Products’ from the smartSet-up drop down window.</li>
+                                <li class="list-gap">Select a product you wish to appear in your favourite’s category and click edit.</li>
+                                <li class="list-gap">At the bottom of the ‘edit product’ screen select 'Favourite'.</li>
+                                <li>This will add the product to the favourite’s category.</li>
+
+                            </ol>
+
+                            <img src="images/faq/99.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-13" style="outline: none"><p style="float: left; margin-bottom: 0">What is a product modifier?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-13" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Product modifiers are add-ons to products, such as an extra shot, soya or rice milk.  Modifiers can also be different sizes for products, such as small, medium and large.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-14" style="outline: none"><p style="float: left; margin-bottom: 0">How do I set-up product modifiers?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-14" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To add modifiers to a product:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Click on the desired product and tap the ‘Edit’ button.</li>
+                                <li class="list-gap">Select the Modifier tab.</li>
+                                <li class="list-gap">Select the ‘Add Modifier’ icon.</li>
+                                <li class="list-gap">Name the modifier, for example “Milk”.</li>
+                                <li class="list-gap">Add options under the modifier, such as different types of milk like soya, rice or almond.  Select the “+” button and enter the name and price for each milk option. </li>
+                                <li class="list-gap">Create a name and price for each modifier option, such as “Soya” for “£0.50”.  The price should be the difference between the price of the “base” product and the price of the “base” product plus the modifier.</li>
+                                <li class="list-gap">At the bottom of the modifier tab, tick the box to tell smartPOS how to handle modifier options for this product:
+                                    <ul>
+
+                                        <li class="list-gap">“Customer may select none of the options”:  Configures the smartPOS so customers may order the product without any special modifier options.</li>
+                                        <li class="list-gap">“Customer may select more than one option”:  Configures the smartPOS so customers may order the product with several modifier options.  While this feature does not make sense for the milk modifier (customers order just one type of milk), this is a nice feature for items with more than one optional “side item” (such as tomatoes, mushrooms, onion for a sandwich).</li>
+
+                                    </ul>
+
+                                </li>
+                                <li>Save your entries.</li>
+
+                            </ol>
+
+                            <img src="images/faq/100.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-85" style="outline: none"><p style="float: left; margin-bottom: 0">How do I upload images to product tiles?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-85" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">If you have images of the Products you sell you can now update your Product Catalogue to display them, making it even easier for you and your team to use your smartPOS.</p>
+                            
+                            <p class="list-gap">It’s simple to do, all you need to start are some images saved on your computer or iPad that you can upload.</p>
+                            
+                            <p>We recommend using the following image dimensions if possible (230 x 130)</p>
+                            
+                            
+                            <img src="images/faq/74.png" class="screen-shots list-gap">
+                            
+                            
+                            <p>To upload images to product tiles:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select the Add product button in the product catalogue.</li>
+                                <li class="list-gap">Select the images tab from the edit product screen that displays.</li>
+                                <li class="list-gap">Select "Choose File" to locate a saved image on your computer or iPad to upload.</li>
+                                
+                                <img src="images/faq/101.png" class="screen-shots list-gap">
+                                
+                                <li class="list-gap">After image is selected, it will appear in the cropping area on the right hand side of the page.</li>
+                                <li class="list-gap">You can move and scale this cropping tool until you are satisfied with the final image, displayed on the left hand side of the page.</li>
+                                
+                                <img src="images/faq/102.png" class="screen-shots list-gap">
+                                
+                                <li class="list-gap">Once you are happy with the image, select “Use this image” and then select  “Save”.</li>
+                                <li class="list-gap">The image will now appear on the product tile, on your menu.</li>
+                                <li class="list-gap">Please note that large image file sizes may take a bit longer to display on your product tile.</li>
+                                <li class="list-gap">Also images taken from the thumbnail on Google images will not work in your product catalogue.</li>
+
+                            </ol>
+
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-15" style="outline: none"><p style="float: left; margin-bottom: 0">At what level are product catalogue reports and stock monitored?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-15" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Product catalogue reports and stock are monitored at a product level not at a modifier level.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-17" style="outline: none"><p style="float: left; margin-bottom: 0">How do I fast track the set-up of my product catalogue with the duplicate function?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-17" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To speed up your Catalogue creation process with the duplicate function:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select ‘Products’ from the smartSet-up drop down window.</li>
+                                <li class="list-gap">Select the product you wish to duplicate.</li>
+                                <li class="list-gap">Click ‘Duplicate’.</li>
+                                <li class="list-gap">Re-name the copied product and adjust the price by hovering over (when accessing your product catalogue from a desktop and working with a mouse) or tapping and holding the product tile when working on a tablet.</li>
+                                <li>Save your entries.</li>
+
+                            </ol>
+
+                            <img src="images/faq/103.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+        <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-83" style="outline: none"><p style="float: left; margin-bottom: 0">How do I manage the display order of Products?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-83" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To manage the display order of products, simply drag and drop products to the required position.  Products are displayed row by row, left to right.</p>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-84" style="outline: none"><p style="float: left; margin-bottom: 0">How do I manage the display order of Categories?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-84" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To manage the display order of Categories, simply drag and drop a category to the required position.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <h4 style="margin-top: 3em; color: #2EAAD5; margin-bottom: 1em"><span class="section-heading">Discounts:</span> Set up product discounts.</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-18" style="outline: none"><p style="float: left; margin-bottom: 0">Can I specify discounts?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-18" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Yes. You may establish up to 3 venue specific discount levels.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-19" style="outline: none"><p style="float: left; margin-bottom: 0">How do I specify discount levels?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-19" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To create discounts:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select ‘Discounts’ from the smartSet-up drop down window.</li>
+                                <li class="list-gap">Click the ‘New Discount’ button.</li>
+
+                                <img src="images/faq/104.png" class="screen-shots" style="margin-bottom: 40px">
+
+                                <li class="list-gap">Enter the name of the Discount, for example, “Student”.</li>
+                                <li class="list-gap">Enter the discount percentage amount, for example “25”.</li>
+                                <li class="list-gap">Select the level of employee who is permitted to process the discount, either Staff or Manager.</li>
+                                <li class="list-gap">Discounts may be edited or deleted using the “Edit” or “Delete” buttons.</li>
+                                <li>Save your entries.</li>
+
+                            </ol>
+
+                            <img src="images/faq/105.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-20" style="outline: none"><p style="float: left; margin-bottom: 0">Can I restrict user access rights to discounts?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-20" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Yes, user access rights can be restricted by employee role. Remember that employee roles can only be defined in the ‘Staff’ section of smartSet-up.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="target2" class="container" style="padding-top: 4em">
+
+    <div class="row">
+
+        <div class="col-md-2" class="col-padding">
+
+            <img src="images/faq/smartReports.svg" width="160" height="160">
+
+        </div>
+
+
+        <div class="col-md-10" class="col-padding">
+
+            <h2 style="margin-bottom: 1em">smartReports</h2>
+
+            <p class="section-intro">smartReports deliver key performance metrics at a glance.  Log on anywhere and view personalised reports in real time so you can make decisions faster.</p>
+
+
+            <div class="accordion" id="accordion">
+
+
+                <h4 style="margin-top: 3em; color: #69998A; margin-bottom: 1em"><span class="section-heading">smartReport:</span> View daily performance, cash reconciliation and what/how much you’re selling in seconds.</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-21" style="outline: none"><p style="float: left; margin-bottom: 0">What is the smartReport?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-21" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Available anytime in the Cloud, your smartReport displays daily performance in an easy-to-read, insightful format.  Similar to a traditional Z report but with significantly increased power, the smartReport identifies top selling products by value and volume and streamlines end-of-day cash reconciliation.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-22" style="outline: none"><p style="float: left; margin-bottom: 0">How do I access and use the smartReport?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-22" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>To access your smartReport:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select ‘smartReport’ from the smartReports drop down window.</li>
+                                <li class="list-gap">View your smartReport by selecting a venue, a date and entering an opening till balance if desired.</li>
+                                <li class="list-gap">Click the update icon.</li>
+                                <li>Your smartReport is also available directly from the smartPOS app, so real time reporting is never more than a touch away.</li>
+
+                            </ol>
+
+                            <img src="images/faq/85.png" class="screen-shots">
+
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #69998A; margin-bottom: 1em"><span class="section-heading">Comparison Report:</span> Compare data across time windows to spot trends and improve performance.</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-23" style="outline: none"><p style="float: left; margin-bottom: 0">What is a Comparison report?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-23" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>The Comparison report compares sales, refunds and payment data across two customisable time windows--previous day, week, month or year.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-24" style="outline: none"><p style="float: left; margin-bottom: 0">How do I access the Comparison report and customise my comparison windows?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-24" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">To access your Comparison report:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select ‘Comparison report’ from the smartReports drop down window. </li>
+                                <li class="list-gap">Selected the Venue</li>
+                                <li class="list-gap">Customise comparison windows:</li>
+                                <li class="list-gap">Select desired base date</li>
+                                <li class="list-gap">Tick the desired comparison window:</li>
+                                    <ul>
+
+                                        <li class="list-gap">Same day as previous week</li>
+                                        <li class="list-gap">Previous week</li>
+                                        <li class="list-gap">Previous month</li>
+                                        <li class="list-gap">Same month is previous year</li>
+
+                                    </ul>
+                                <li>Click the ‘update’ button.</li>
+
+                            </ol>
+
+                            <img src="images/faq/110.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 style="margin-top: 3em; color: #69998A; margin-bottom: 1em"><span class="section-heading">Staff Timesheets:</span> Monitor who is working, tweak shifts and reconcile employee hours.</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-25" style="outline: none"><p style="float: left; margin-bottom: 0">What are Staff Timesheets?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-25" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>The Staff Timesheet report lists employee names, shifts and hours, pulling data directly from the Clock In/Out app on your smartPOS.  Managers are able to reconcile employee hours, round up or down and make corrections.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-26" style="outline: none"><p style="float: left; margin-bottom: 0">How do I access Staff timesheets and/or make corrections?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-26" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">To access your Staff timesheets:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select ‘Staff timesheets’ from the smartReports drop down window.</li>
+                                <li>Use the ‘update’ button to reconcile employee hours, round up or down and make corrections.</li>
+
+                            </ol>
+
+                            <img src="images/faq/111.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+        <h4 style="margin-top: 3em; color: #69998A; margin-bottom: 1em"><span class="section-heading">Product Report:</span></h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-81" style="outline: none"><p style="float: left; margin-bottom: 0">What is the Product Report?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-81" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Available anytime in the Cloud, your Product Report displays full details of Product purchased, including products sold, products refunded, the sales value of products sold and those refunded, as well as the total revenue by Product.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-82" style="outline: none"><p style="float: left; margin-bottom: 0">How do I access and use the Product Report?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-82" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">To access your Product report:</p>
+
+                          <p class="list-gap">Select ‘Product report’ from the smartReports drop down window.</p>
+
+                          <ol>
+
+                            <li class="list-gap">Select desired date range</li>
+
+                            <li class="list-gap">Select the Venue</li>
+
+                            <li class="list-gap">Select for an individual or All POS tills</li>
+
+                            <li class="list-gap">Click the ‘update’ button.</li>
+
+                            <li>The Product report results can be exported to a <em>.CSV</em> file, which can then be used with third party applications</li>
+
+                          </ol>
+
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <h4 style="margin-top: 3em; color: #69998A; margin-bottom: 1em"><span class="section-heading">Closing POS Report:</span></h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-88" style="outline: none"><p style="float: left; margin-bottom: 0">What is the Closing POS Report?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-88" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">The Closing POS Report allows you to report Sales and Transactions for a trading period.  Each report will be for a specific POS.</p>
+                            <p class="list-gap">If you are creating a Closing POS Report for the first time, the opening time of the POS will be 00.01 for that day.  Each subsequent report will have an opening time equivalent to the Closing time (+ 1 minute) of the last report saved.</p>
+                            <p class="list-gap">The Closing time can be set by you, if you want to report on a shift or a day or number of days trading for that POS, choose the appropriate closing time that is relevant for your business.</p>
+                            <p class="list-gap">The Closing POS Report will report on the transactions processed by that POS for the period between the opening and closing times, including Sales/Refunds, Pay-in/Pay-out transactions and Tax.</p>
+                            <p class="list-gap">Within the report you can save the Actual values held in Cash/Card and also enter an opening balance.</p>
+                            <p class="list-gap">All saved Closing POS Reports can be accessed via the Merchant Dashboard Report navigation, accessing Reports > Closing POS Reports > Historical Closing POS Reports.</p>
+                            
+                            <img src="images/faq/106.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-89" style="outline: none"><p style="float: left; margin-bottom: 0">How do I access and use the Closing Product Report?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-89" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">To access your Closing POS report:</p>
+
+                          <p class="list-gap">Select ‘Closing POS Report’ from the Reports drop down window. </p>
+
+                          <ol>
+
+                            <li class="list-gap">Select the Venue and POS you wish to create a Closing POS Report for</li>
+
+                            <li class="list-gap">The Opening date will be automatically populated and cannot be edited</li>
+
+                            <li class="list-gap">Please choose a Closing POS time</li>
+
+                            <li class="list-gap">Enter an opening balance for the POS</li>
+
+                            <li class="list-gap">Enter all Actual values</li>
+
+                            <li>Save the Closing POS Report when you are sure all values entered are correct</li>
+                              
+                            <img src="images/faq/107.png" class="screen-shots">
+
+                          </ol>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="target3" class="container" style="padding-top: 4em">
+
+    <div class="row">
+
+        <div class="col-md-2" class="col-padding">
+
+            <img src="images/faq/smartSocial.svg" width="160" height="160">
+
+        </div>
+
+
+        <div class="col-md-10" class="col-padding">
+
+            <h2 style="margin-bottom: 1em">smartSocial</h2>
+
+            <p class="section-intro">Set up connectivity and user permissions for Facebook, Twitter and Foursquare with smartSocial.  Then share promotions and news seamlessly from your smartPOS.</p>
+
+
+            <div class="accordion" id="accordion">
+
+
+                <h4 style="margin-top: 3em; color: #777BAF; margin-bottom: 1em"><span class="section-heading-alt">Facebook:</span> Set up connectivity to Facebook using smartSocial.  Then post directly to your business Facebook page directly from your smartPOS.</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-27" style="outline: none"><p style="float: left; margin-bottom: 0">How do I link Facebook to my smartPOS and control access?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-27" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Link your business Facebook page to the smartPOS app: </p>
+
+                            <ol>
+
+                                <li class="list-gap">Select smartSocial from the navigation bar.</li>
+                                <li class="list-gap">Select 'connect' from the facebook panel on the smartSocial page.  You’ll be re-directed to the Facebook log-in screen.</li>
+                                <li class="list-gap">Log into Facebook.</li>
+
+                                <li class="list-gap">Once you have logged in, you will be prompted to confirm that you are linking your company Facebook page with your smartPOS.</li>
+                                <li class="list-gap">You will then be re-directed back to the smartSocial page where you will need to select the correct Facebook page from the drop down field on the Facebook panel.</li>
+                                <li class="list-gap">Save your entries.</li>
+                                <li>Remember that rights to use Facebook on the smartPOS are set-up under the smartTools section of the smartDashboard.</li>
+
+                            </ol>
+
+                            <img src="images/faq/12.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #777BAF; margin-bottom: 1em"><span class="section-heading-alt">Twitter:</span> Set up connectivity to Twitter using smartSocial. Then tweet promotions and news directly from your smartPOS.</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-28" style="outline: none"><p style="float: left; margin-bottom: 0">How do I link Twitter to my smartPOS and control access?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-28" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Link your business Twitter account to the smartPOS app: </p>
+                            <p style="color: red"><i>This can only be done using your iPad, once you have installed the Twitter app and set up a Twitter account .</i></p>
+
+                            <ol>
+                                <li class="list-gap">Go to settings on your ipad.</li>
+                                <li class="list-gap">Select Twitter from the list of options on the left-hand side column.</li>
+                                <li class="list-gap">Select install to download the Twitter app, if you have not done so already.</li>
+                                <li class="list-gap">On the same page in settings, enter your Twitter 'User Name' and 'Password' and select 'Sign In' to add your company twitter account to the ipad.</li>
+                                <img src="images/faq/51.jpg" class="screen-shots" style="margin-bottom: 40px">
+                                <li class="list-gap">Once that's done you will be able to post comments to Twitter from your smartSocial app.</li>
+                                <li class="list-gap">You can set user privileges for this app in the smartSocial section on the smartDashboard.</li>
+
+                            </ol>
+
+                            <img src="images/faq/13.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #777BAF; margin-bottom: 1em"><span class="section-heading-alt">Foursquare:</span> Set up connectivity to Foursquare using smartSocial. Then view check-ins to your location directly from your smartPOS.</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-29" style="outline: none"><p style="float: left; margin-bottom: 0"></p><p style="float: left; margin-bottom: 0">How do I link Foursquare to my smartPOS?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-29" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Link business Foursquare to the smartPOS app:</p>
+
+                            <ol>
+
+                                <li class="list-gap">Select smartSocial from the navigation bar.</li>
+                                <li class="list-gap">Select 'connect' from the foursquare panel on the smartSocial page.  You’ll be re-directed to the Foursquare login page.</li>
+                                <li class="list-gap">Log into your Foursquare account.</li>
+                                <li class="list-gap">Select to log in as ‘you’ (the account holder of the Foursquare account) - not the page.</li>
+                                <li class="list-gap">You’ll be prompted to allow the myCircle smartPOS App to connect to Foursquare.  Select ‘Yes’.</li>
+                                <li class="list-gap">You’ll be re-directed back to the smartSocial page where you began the set-up.  The ‘Connect’ button has now changed to ‘Disconnect’, meaning you’ve linked your smartPOS App with your Foursquare account.</li>
+                                <li class="list-gap">Enter your Foursquare Venue ID in the Venue ID field.  To obtain your Venue ID, go to <a href="www.foursquare.com" target="_blank">www.foursquare.com</a>. Enter your Venue name in the search box at the very top of the screen labelled ‘I’m looking for….’</li>
+                                <li class="list-gap">Select your Venue from the search results drop down option. </li>
+                                <li class="list-gap">You’ll be re-directed to your Venue’s Foursquare page.  From the URL address field, copy the long number at the end-- as per the example below:
+
+                                    <ul>
+
+                                        <li class="list-gap">https://foursquare.com/v/venue_name/5a678db8984ncd7w75hdfhe7</li>
+
+                                    </ul>
+
+                                </li>
+                                <li class="list-gap">Paste the long number into the Venue ID field in the foursquare panel on the smartSocial page.</li>
+                                <li class="list-gap">Save your entries.</li>
+                                <li class="list-gap">Remember that rights to use Foursquare on the smartPOS are set-up under the smartTools section of the smartDashboard.</li>
+
+                            </ol>
+
+                            <img src="images/faq/14.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="target4" class="container" style="padding-top: 4em">
+
+    <div class="row">
+
+        <div class="col-md-2" class="col-padding">
+
+            <img src="images/faq/smartTools.svg" width="160" height="160">
+
+        </div>
+
+
+        <div class="col-md-10" class="col-padding">
+
+            <h2 style="margin-bottom: 1em">smartTools</h2>
+
+            <p class="section-intro">smartTools are one touch apps designed to make you more productive, organised and connected.  From the smartTools menu, you can set user access rights to individual apps.  Then unleash their speed, simplicity and power with just a tap of an icon on your smartPOS.</p>
+
+
+            <div class="accordion" id="accordion">
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">smartPOS:</span> Set-up user rights under smartTools in your smartDashboard. Then create orders, apply discounts, take payments and print from your smartPOS.</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-30" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the smartPOS app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-30" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the smartPOS app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard</li>
+                                <li class="list-gap">Find the smartPOS section.</li>
+                                <li class="list-gap">Click on who the app will be available to, i.e. Staff or Manager.</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+
+                            <img src="images/faq/93.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em">Login:</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-31" style="outline: none"><p style="float: left; margin-bottom: 0">As an owner, how do I log onto the myCircle smartPOS application for the first time?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-31" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">For Owners/Managers using the smartPOS for the first time,</p>
+                            <ol>
+
+                                <li class="list-gap">Log onto the smartPOS using the Log-in screen.</li>
+                                <li class="list-gap">Input your email address registered with myCircle, as well as the password that was issued to you.</li>
+
+                            </ol>
+                            
+                            <img src="images/faq/81.png" class="screen-shots list-gap">
+                            
+                            <p class="list-gap">Next, you will be asked to select the venue the smartPOS is operating in.</p>
+                            
+                             <p class="list-gap">NB. If you change the location of of smartPOS, you MUST reassign the smartPOS to the new venue.</p>
+
+                            <img src="images/faq/82.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-32" style="outline: none"><p style="float: left; margin-bottom: 0">How do my employees and I log into the smartPOS app on a regular basis? </p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-32" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+                                <li class="list-gap">Look for the name of the employee currently active on the smartPOS in the upper right hand corner.</li>
+
+                                <img src="images/faq/18.5.png" class="screen-shots" style="margin-bottom: 40px">
+
+                                <li class="list-gap">Tap the name field to enter a name or switch employees which will bring up a PIN entry keyboard prompt. </li>
+                                <li class="list-gap">Enter your unique PIN code.  Pin numbers are managed under ‘Staff’ from the smartSet-up drop down window.</li>
+                            </ol>
+
+                            <img src="images/faq/17.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-33" style="outline: none"><p style="float: left; margin-bottom: 0">I forgot my email address.</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-33" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Normally we  will have set you up on the email address you provided on sign up. However, if you have forgot this email address, please call our helpdesk on 0800 8 40 30 40 for assistance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-34" style="outline: none"><p style="float: left; margin-bottom: 0">I forgot my password.</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-34" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Not to worry. Simply click the ‘forgot my password’ link at the bottom of the log-in screen of your smartPOS app for directions on re-setting.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-35" style="outline: none"><p style="float: left; margin-bottom: 0">What should I see after logging in? </p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-35" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Your product catalogue is the main home screen of the smartPOS.</p>
+                            <img src="images/faq/79.png" class="screen-shots" style="margin-bottom: 40px">
+                            <p class="list-gap">Tap the myCircle logo at the bottom right-hand side of your screen to bring up your suite of smartTools.  Up to 9 smartTools are available. Access to these smartTools is role based and established via smartSet-up in the smartDashboard.</p>
+                            <img src="images/faq/80.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em">Navigation:</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-36" style="outline: none"><p style="float: left; margin-bottom: 0">What are the icons at the very top of the smartPOS app screen?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-36" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">At the very top of the smartPOS app screen, you’ll find:</p>
+                            <ol>
+
+                                <li class="list-gap">Employee Name: In the top right-hand side of the smartPOS app, you’ll see the name of the employee currently active within the app.  Switch employees by tapping the Name Field which will bring up a PIN entry keyboard prompt.  The employee can then enter his or her PIN code for accurate tracking of transactions.</li>
+                                <li class="list-gap">Printer Icon: This icon represents your smartPOS app's connection to the printer. If your printer is suddenly disconnected from the smartPOS, the printer icon will turn red as seen in the image below.</li>
+                                <img src="images/faq/18.5.png" class="screen-shots" style="margin-bottom: 40px">
+                                <li>Globe Icon: This Icon represents your smartPOS app’s connection to the internet. If your smartPOS suddenly looses connection to the internet, this icon will turn red  alerting the user that they are now operating without internet onnection.</li>
+
+                            </ol>
+
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em">Product Catalogue:</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-37" style="outline: none"><p style="float: left; margin-bottom: 0">What are the key functions of my Product Catalogue?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-37" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">From the Product Catalogue’s main screen on the smartPOS, you can:</p>
+                            <ol>
+
+                                <li class="list-gap">Create orders for immediate processing.</li>
+                                <li>Set up a Tab.</li>
+
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-38" style="outline: none"><p style="float: left; margin-bottom: 0">How do I manually add items that aren’t in my ‘Catalogue, say the “special of the day”?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-38" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">You can manually add items that aren’t in the Product Catalogue:</p>
+                            <ol>
+
+                                <li class="list-gap">Select ‘Add Manual Item’ from the main order screen.</li>
+                                <li class="list-gap">Choose a product name and set your price.</li>
+                                <li class="list-gap">Select VAT Rate.</li>
+                                <li class="list-gap">Click ‘Add Item’</li>
+                                <li class="list-gap">Process the order.</li>
+
+                            </ol>
+                            <img src="images/faq/19.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-39" style="outline: none"><p style="float: left; margin-bottom: 0">What do the different Category colours mean?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-39" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">When the queue is long, colours help to quickly differentiate your product categories.</p>
+                            <p>Remember category colours are set-up through your smartDashboard’s smartSet-up function.  The Dashboard can be accessed by tapping the smartAdmin app or from wherever you have computer access.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-40" style="outline: none"><p style="float: left; margin-bottom: 0">How do I modify a product?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-40" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">If modifiers are attached to an item, the modifier options will be displayed as soon as the product tile is selected.</p>
+                            <p class="list-gap">Select all required modifiers and then tap the 'Add' button to add the item and selected modifiers to the basket.</p>
+              <p>Remember that product modifiers are set-up through your smartDashboard’s smartSet-up, in the ‘edit product’ section. The Dashboard can be accessed by tapping the smartAdmin app or from wherever you have computer access.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em">Orders:</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-41" style="outline: none"><p style="float: left; margin-bottom: 0">How do I create an Order? </p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-41" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">To create an order:</p>
+                            <ol>
+
+                                <li class="list-gap">Tap a product tile once to add one to the order quantity.  </li>
+                                <li class="list-gap">Tap a product tile repetitively to add multiple items of this product to the order.  Each tap on the product tile will increase the item count of the product to the order.</li>
+                                <li class="list-gap">You will notice an item counter appearing on the product tile to help you quickly identify the quantity of items in the basket.  </li>
+
+                <p class="list-gap" style="color: red">To quickly delete an item from the basket, swipe the item out of the basket, swiping from left to right.  To quickly duplicate an item swipe from right to left.</p>
+
+                                <li class="list-gap">Products that have a modifier attached to them are apparent, as they have a have a semi circle on the top right hand corner of the tile.</li>
+                                <li class="list-gap">You’ll always see the content of the current order in the order/basket view on the right hand side of the screen. </li>
+                                <li class="list-gap">In the bottom right hand side of the smartPOS screen you’ll see the ‘Pay’, ‘Add Manual Item’ and ‘Order Details’ buttons.
+                                    <ul>
+
+                                        <li class="list-gap">Pay:  Process an order immediately using cash or card.</li>
+                                        <li class="list-gap">Add Manual Item:  Add a product manually, such as a lunch special, which you don’t have on your Product Catalogue because it changes frequently.</li>
+                                        <li class="list-gap">Order Details:
+
+                                            <ul>
+
+                                                <li class="list-gap">Save an order for later payment like opening a tab</li>
+                                                <li class="list-gap">Apply a discount</li>
+                                                <li class="list-gap">Select Eat In or Take Away pricing (pricing established in your smartDashboard)</li>
+                                                <li class="list-gap">Printing an order for the kitchen</li>
+                                                <li class="list-gap">Printing an itemised bill.</li>
+
+                                            </ul>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                            </ol>
+                            <img src="images/faq/74.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-42" style="outline: none"><p style="float: left; margin-bottom: 0">Upon selecting a product, the tile changes its appearance.  Why is that? </p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-42" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>We designed this so you can easily see which products have been added to an order.   You can also always see the contents of your active order on the right hand side of the screen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-43" style="outline: none"><p style="float: left; margin-bottom: 0">How do I save an order and create a tab for later viewing?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-43" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">To save an order you’ve created:</p>
+                            <ol>
+
+                                <li class="list-gap">Tap the ‘Order Details’ icon in the bottom right hand corner of your smartPOS app.</li>
+                                <li class="list-gap">Name the order by typing the customer’s name or table number.</li>
+                                <li class="list-gap">Add any optional notes for your kitchen and serving staff, such as “salad with dressing on the side” or “customer table in the corner red jumper”.</li>
+                                <li class="list-gap">Save the entry.</li>
+                                <li class="list-gap">The order is now accessible via the ‘Orders’ icon in the upper right hand side of the screen.</li>
+
+                            </ol>
+                            <img src="images/faq/21.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-44" style="outline: none"><p style="float: left; margin-bottom: 0">Anything else I should remember about saving orders?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-44" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">A few important notes about saving orders:</p>
+                            <ol>
+
+                                <li class="list-gap">Saving orders is simple since they are saved the moment you name them with either a Table Number or Customer Name.  Selecting ‘Save’ returns you to the main Product screen.</li>
+                                <li class="list-gap">You may return to saved orders to add items, such as dessert.  Changes are tracked automatically.</li>
+                                <li>Exit the saved orders by tapping the ‘Products’ button in the top left hand corner of the screen or selecting ‘Save’.</li>
+
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-45" style="outline: none"><p style="float: left; margin-bottom: 0">How do I exit the ‘Order’ view to take the next customer’s Order?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-45" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Selecting the ‘New Order’ icon in the top right hand corner clears any previous order content that’s been displayed and enables you to create a new order.</p>
+                            <img src="images/faq/86.png" class="screen-shots" style="width: 60%">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-46" style="outline: none"><p style="float: left; margin-bottom: 0">Where do I find orders that have already been created?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-46" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Order history is just a tap away.</p>
+                            <ol>
+                                <li class="list-gap">Select ‘Orders’, which lists the number of open items in brackets.</li>
+                                <li class="list-gap">View order history, including order name, number of items, current bill, member of staff who created the order and when the order was created.</li>
+                            </ol>
+                            <img src="images/faq/22.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-47" style="outline: none"><p style="float: left; margin-bottom: 0">Can I toggle between an unsaved order and update an existing order?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-47" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">When things get busy, you may forget to save an order.  We’ve built a prompt into smartPOS to avoid losing orders you meant to save.</p>
+                            <p>If one member of staff is making the coffees for an order that’s still open on the screen and hasn’t been saved whilst another member of staff wants to update an existing order via the ‘Orders’ button, an unsaved order message will be displayed asking whether the current unsaved order should be discarded and thus deleted.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-48" style="outline: none"><p style="float: left; margin-bottom: 0">Can I amend an Order?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-48" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Yes, it’s easy and quick.</p>
+                            <ol>
+
+                                <li class="list-gap">Select ‘Orders’ to access your saved orders.</li>
+                                <li class="list-gap">Select the order you would like to update from the list.</li>
+                                <li class="list-gap">The selected order will turn blue and the list of items ordered will appear in the basket on the right hand side. </li>
+                                <img src="images/faq/29.png" class="screen-shots" style="margin-bottom: 40px">
+
+                                <li class="list-gap">Hit the ‘products’ button in the top left hand corner of your screen which will navigate you back to the products screen. You can now add further items to this order</li>
+
+
+                                <li class="list-gap">Tapping on an item in the basket will display a drop down menu, allowing you to delete, discount or in some cases, modify the item. </li>
+                                <li class="list-gap">Once the order is amended, you don’t have to save again.  smartPOS automatically updates and saves orders in the background.</li>
+                                <li class="list-gap">Select ‘New Order’ (don’t worry, it’s saved!) to process your next order.</li>
+
+                            </ol>
+                            <img src="images/faq/87.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em">Applying Discounts:</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-49" style="outline: none"><p style="float: left; margin-bottom: 0">Can I apply a discount to an individual Item or the entire order?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-49" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Yes. You can apply up to 3 user-defined Discounts to individual Items or to an entire order (100% Discount).  Discount types and amounts are customised in the smartSet-Up tab of the smartDashboard.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-50" style="outline: none"><p style="float: left; margin-bottom: 0">To discount an entire order: </p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-50" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+                                <li class="list-gap">While currently in an order, select the order details button on the bottom right hand corner of your screen.</li>
+                                 <li class="list-gap">When on the order details page you can then select discount, and apply the appropriate discount to your order.</li>
+                                <li class="list-gap">The discount will be applied to each item of the order, with savings displayed at both levels.</li>
+                            </ol>
+                            <img src="images/faq/24.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-51" style="outline: none"><p style="float: left; margin-bottom: 0">To discount individual items:</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-51" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+                                <li class="list-gap">Tap the product tile on the right hand side of the order screen that you wish to discount.</li>
+                                <li class="list-gap">Select the discount to be applied from the slider view that has been activated.</li>
+                                <li class="list-gap">The discount will be applied to the selected product.</li>
+                            </ol>
+                            <p class="list-gap">Please note, an order can have several discounts applied in parallel, meaning an entire order can be discounted as well as individual Items.</p>
+                            <img src="images/faq/87.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em">Payments:</h4>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-52" style="outline: none"><p style="float: left; margin-bottom: 0">How do I process payments? </p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-52" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+
+                                <li class="list-gap">Select the ‘Pay’ button to take the payment whenever it is presented.</li>
+                                <li class="list-gap">Enter the amount being paid or select one of the pre-set amounts.</li>
+                                <li class="list-gap">For example, push £10. You will see the change that is due, then press ‘Pay’.</li>
+                                <li class="list-gap">You will be given the option to print the receipt or not and the cash drawer will open.</li>
+
+                            </ol>
+                            <img src="images/faq/67.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em">Printing orders and receipts:</h4>
+                
+                
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-90" style="outline: none"><p style="float: left; margin-bottom: 0">How to configure a printer or multiple printers? </p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-90" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">You can configure as many printers to work with your smartPOS as required.</p>
+                            <p class="list-gap">To begin, tap the Printer icon in the smartPOS main menu.  This action will automatically search for all printers available, including LAN, wifi and bluetooth printers.</p>
+                            
+                            <img src="images/faq/113.png" class="screen-shots list-gap">
+                            
+                            <p class="list-gap">All available printers will be discovered and can then be configured.  To configure the printer, please follow these instructions:</p>
+                            <ol>
+
+                                <li class="list-gap">Tap on the 'discovered' printer to be configured</li>
+                                <li class="list-gap">Click Edit</li>
+                                
+                                <img src="images/faq/114.png" class="screen-shots list-gap">
+                                
+                                <li class="list-gap">Next, give the printer a name e.g. Kitchen</li>
+                                <li class="list-gap">Activate the required toggles to indicate if the printer should print Bills, Receipts, Reports or Orders</li>
+                                <li class="list-gap">If Orders is active, you will be prompted to indicate which Venue Sections should be associated with the Printer.  In the Merchant Dashboard you can create and associate Venue Sections with Categories and Products, so only items associated with a particular Venue Section are sent to print at a particular printer e.g. Drink items may be associated with a Venue Section named 'Bar'. If Printer A is configured to print orders only for Venue Section 'Bar', only ordered items associated with the 'Bar' venue section will be printed by Printer A.</li>
+                                
+                                <img src="images/faq/115.png" class="screen-shots list-gap">
+                                <img src="images/faq/117.png" class="screen-shots list-gap">
+                                
+                                <li class="list-gap">Select to activate the toggle if the printer should open the cash drawer.</li>
+                                
+                            </ol>
+                            <p class="list-gap">Once complete save the printer configuration.  Should connectivity with the printer be lost, for whatever reason, when the printer is rediscovered these settings will be automatically applied.</p>
+                            <p class="list-gap">Repeat these steps to configure multiple printers.</p>
+                            <img src="images/faq/116.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-53" style="outline: none"><p style="float: left; margin-bottom: 0">Can I print the content of an order? </p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-53" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Of course. From the order details window:</p>
+                            <ol>
+
+                                <li class="list-gap">Select the ‘Print’ icon to print a copy of the order.</li>
+                                <li class="list-gap">If you want to give a copy of the order to your bar staff for drinks and another copy to the kitchen, print multiple copies.  No more trying to decipher everybody’s handwriting and second- guessing what starter Table 2 has ordered!</li>
+
+                            </ol>
+                            <img src="images/faq/50.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-54" style="outline: none"><p style="float: left; margin-bottom: 0">There’s another field called “Print Bill” — what is that?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-54" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">smartPOS includes bill print functionality in case your customer prefers an itemised bill before settling payment for an order.</p>
+                            <p class="list-gap">Perhaps you’ve applied a 5% student discount to an order as well as fully compensated a dessert due to a mix-up.  The bill shows a full itemisation of both. </p>
+                            <p>The customer receipt, however, shows the total discount applied expressed as an absolute number, without the itemisation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-55" style="outline: none"><p style="float: left; margin-bottom: 0">Does the myCircle smartPOS support VAT receipts?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-55" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Yes, smartPOS allows you to be fully VAT compliant.  If you provide your VAT number in the smartSet-up section of the smartDashboard, all customer receipts printed via the smartPOS app and printed on the thermal printer provided as part your Shop-in-a-Box bundle, will provide a detailed VAT breakdown.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em">System FAQ:</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-56" style="outline: none"><p style="float: left; margin-bottom: 0">What happens if I lose connectivity?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-56" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Sometimes Wi-Fi connections aren’t as stable as we would like them to be and you may occasionally lose connectivity between the elements of the Shop-in-a-Box and your smartPOS.  When the network is up and running again, all changes and transactions taken during an offline period automatically sync.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-57" style="outline: none"><p style="float: left; margin-bottom: 0">The globe symbol in the top right hand corner has turned red.  What does this mean?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-57" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>This indicates the connection between the smartPOS app and the internet has been disrupted. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-58" style="outline: none"><p style="float: left; margin-bottom: 0">What do I need to do when the globe has turned red?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-58" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>You may also notice your iPad is no longer showing the Wi-Fi network symbol in the very top left hand corner.  It’s usually due to your venue’s network. Open Safari or any other web browser app you have installed on your iPad and attempt to open a website.  If you’re unable to connect to the internet, try re-setting your venue’s Wi-Fi-router to re-boot the network.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-59" style="outline: none"><p style="float: left; margin-bottom: 0">Did I lose everything while the internet was down?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-59" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>No. Any orders made, amended or checked out for payment are saved on your iPad.  When the network is back up and running, your orders will be synced seamlessly to the myCircle platform.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-60" style="outline: none"><p style="float: left; margin-bottom: 0">There is a number next to the globe.  What does this mean?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-60" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">This is a count of orders that have been made and saved whilst connectivity was lost.  When connectivity is restored, the count decreases as your queued orders are pulled onto myCircle’s platform. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-61" style="outline: none"><p style="float: left; margin-bottom: 0">The printer icon has turned red. What does this mean?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-61" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Your myCircle Shop-in-a-Box system comes with a Bluetooth® printer.  When the Bluetooth® connection between the printer and iPad is disrupted, smartPOS will turn the printer icon red.  Try turning your printer off and then on again to re-set your connection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-62" style="outline: none"><p style="float: left; margin-bottom: 0">I still have some questions on the smartPOS app.  How do I get help?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-62" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ul>
+
+                                <li class="list-gap">The Helpdesk can be contacted on 0800 8 403040. </li>
+                                <li>It is manned 08.00 to 23.00 Monday to Saturday and 10.00 to 17.00 Sundays and bank holidays.</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+        <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-80" style="outline: none"><p style="float: left; margin-bottom: 0">I see an alert a new version of the SmartPOS is available.  What should I do?</p><img src="../images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-80" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ul>
+
+                                <li class="list-gap">If you see an alert informing you a new version of the SmartPOS is available for download, follow the normal process to download and install the new version of the App.</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">smartOrders:</span> Set-up user rights under smartTools in your smartDashboard.  Then process refunds directly from your smartPOS.</h4>
+
+
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-63" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the smartOrders app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-63" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the smartOrders app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard</li>
+                                <li class="list-gap">Find the smartOrders section.</li>
+                                <li class="list-gap">Click on who the smartOrders app will be available to, i.e. Staff or Manager.</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+                            <img src="images/faq/88.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-64" style="outline: none"><p style="float: left; margin-bottom: 0">How do I refund an item or the full transaction?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-64" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+
+                                <li class="list-gap">Select the smartOrders smartTool icon.</li>
+                                <li class="list-gap">The left hand navigation displays a list of transactions.  The last 10 orders are automatically displayed.</li>
+                                <li class="list-gap">Search for the transaction you wish to refund, using the unique numeric order ID code displayed at the bottom of the receipt as necessary.</li>
+                                <li class="list-gap">You can refund items individually or the entire order by ticking the relevant boxes.</li>
+
+                            </ol>
+                            <img src="images/faq/45.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">Pay In/Out:</span> Set up user rights under smartTools in your smartDashboard.  Then pay and receive payments from vendors and staff on the spot from your smartPOS.</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-65" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the Pay In/Out app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-65" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the Pay In/Out app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard</li>
+                                <li class="list-gap">Find the Pay In/Out section.</li>
+                                <li class="list-gap">Select who the Pay In/Out app will be available to, i.e. Staff or Manager</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+                            <img src="images/faq/89.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-66" style="outline: none"><p style="float: left; margin-bottom: 0">How do I use the Pay In/Out smartTool app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-66" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+
+                                <li class="list-gap">Tap the ‘Pay In/Out’ smartTool icon.</li>
+                                <li class="list-gap">Select ‘outgoing payment’ to pay a supplier or employee.</li>
+                                <li class="list-gap">Select ‘incoming payment’ to register any cash paid in to the system.</li>
+
+                            </ol>
+                            <img src="images/faq/69.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">Clock In/Out:</span> Set up user rights under smartTools in your smartDashboard.  Then monitor who is logged in and working, adjust hours and tweak shifts right from your smartPOS.</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-67" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the Clock In/Out app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-67" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the Clock In/Out app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard.</li>
+                                <li class="list-gap">Find the Clock In/Out section.</li>
+                                <li class="list-gap">Select who the Clock In/Out app will be available to, i.e. Staff or Manager.</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+                            <img src="images/faq/90.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-68" style="outline: none"><p style="float: left; margin-bottom: 0">How do I use the Clock In/Out smartTool app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-68" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+
+                                <li class="list-gap">Tap the ‘Clock In/Out’ smartTool icon.</li>
+                                <li class="list-gap">Press “Clock In” at the beginning of an employee’s shift to log them in.</li>
+                                <li class="list-gap">Press “Clock Out” at the end of an employee’s shift to log them out.</li>
+
+                            </ol>
+                            <img src="images/faq/73.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">smartReports:</span> Set up user rights under smartTools in your smartDashboard.  Then generate your smartReport in real time right from your smartPOS.</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-69" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the smartReports app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-69" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the smartReport app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard</li>
+                                <li class="list-gap">Find the smartReport section.</li>
+                                <li class="list-gap">Select who the smartReports app will be available to, i.e. Staff or Manager.</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+                            <img src="images/faq/91.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-70" style="outline: none"><p style="float: left; margin-bottom: 0">How do I generate my smartReport?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-70" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">With one touch, your smartReport, a powerful version of the traditional “Z report” can be generated directly from the smartPOS app:</p>
+                            <ol>
+
+                                <li class="list-gap">Tap the smartReport smartTool icon.</li>
+                                <li class="list-gap">Add notes if desired, such as what’s in your till to make cash reconciliation at the end of the day easier.</li>
+                                <li class="list-gap">View the report on screen or print it out.</li>
+                                <li class="list-gap">Your smartReport is also accessible via smartReports in the smartDashboard.</li>
+
+                            </ol>
+                            <img src="images/faq/41.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-71" style="outline: none"><p style="float: left; margin-bottom: 0">Do you provide more reports?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-71" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p>Yes, we make a powerful selection of comparison data and timesheet reports available to you via the smartReports in the smartDashboard.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">Facebook:</span> Set-up user rights under smartTools in your smartDashboard.  Then share news and promotions on your Facebook page directly from your smartPOS.</h4>
+
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-72" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the Facebook app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-72" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the Facebook app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard.</li>
+                                <li class="list-gap">Find the Facebook section.</li>
+                                <li class="list-gap">Click on who the app will be available to - Staff or Manager.</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+                            <img src="images/faq/12.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-73" style="outline: none"><p style="float: left; margin-bottom: 0">How do I connect with the Facebook smartTool app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-73" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+
+                                <li class="list-gap">Press the Facebook logo icon.</li>
+                                <li class="list-gap">Update your status/promote offers and upload pictures.</li>
+
+                            </ol>
+                            <img src="images/faq/72.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">Twitter:</span> Set-up user rights under smartTools in your smartDashboard.  Then tweet news and promotions from the smartPOS.</h4>
+
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-74" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the Twitter app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-74" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the Twitter app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard</li>
+                                <li class="list-gap">Find the Twitter section</li>
+                                <li class="list-gap">Click on who the app will be available to - Staff or Manager.</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+                            <img src="images/faq/13.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-75" style="outline: none"><p style="float: left; margin-bottom: 0">How do I connect with the Twitter smartTool app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-75" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+
+                                <li class="list-gap">Press the Twitter logo icon.</li>
+                                <li class="list-gap">Update your status and promote offers.</li>
+
+                            </ol>
+                            <img src="images/faq/71.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">Foursquare:</span> Set-up user rights under smartTools in your smartDashboard.  Then see who’s checked into your venue with just a tap of an icon.</h4>
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-76" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the Foursquare app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-76" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the Foursquare app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard</li>
+                                <li class="list-gap">Find the Foursquare section.</li>
+                                <li class="list-gap">Click on who the app will be available to - Staff or Manager.</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+                            <img src="images/faq/14.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-77" style="outline: none"><p style="float: left; margin-bottom: 0">How do I use the Foursquare smartTool app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-77" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+
+                                <li class="list-gap">Press the Foursquare logo icon.</li>
+                                <li class="list-gap">View which customers are currently “Checked in” to your business.</li>
+
+                            </ol>
+                            <img src="images/faq/70.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 style="margin-top: 3em; color: #D37E9E; margin-bottom: 1em"><span class="section-heading-alt">smartAdmin:</span> Set-up user rights under smartTools in your smartDashboard.  Then leap to your smartDashboard with one touch from your smartPOS.</h4>
+
+
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-78" style="outline: none"><p style="float: left; margin-bottom: 0">How do I define user rights to the smartAdmin app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-78" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <p class="list-gap">Define access to the smartAdmin app:</p>
+                            <ol>
+
+                                <li class="list-gap">Click smartTools from the smartDashboard</li>
+                                <li class="list-gap">Find the smartAdmin section.</li>
+                                <li class="list-gap">Click on who the app will be available to - Staff or Manager.</li>
+                                <li class="list-gap">Save your entry.</li>
+
+                            </ol>
+                            <img src="images/faq/92.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel" style="box-shadow: none">
+                    <button type="button" class="btn custom-btn-panel" data-toggle="collapse" data-target="#collapsible-79" style="outline: none"><p style="float: left; margin-bottom: 0">How do I use the smartAdmin smartTool app?</p><img src="images/faq/down-arrow.png" class="down-arrow"></button>
+                    <div id="collapsible-79" class="collapse panel-edits">
+                        <div class="panel-body">
+                            <ol>
+
+                                <li class="list-gap">Press the “Smart Admin” smartTool icon.</li>
+                                <li class="list-gap">This will open a Safari, which will log you into the smartDashboard.</li>
+                                <li class="list-gap">To get back to the smartPOS, you must use the button on the iPad itself and press on the app again.</li>
+
+                            </ol>
+                            <img src="images/faq/41.png" class="screen-shots">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+</div>

@@ -1,0 +1,68 @@
+$palette-mid-blue: rgb(78, 135, 160)
+$palette-dark-peach: rgb(214, 147, 138)
+$palette-lilac: rgb(182, 184, 220)
+$palette-aqua: rgb(104, 210, 223)
+$palette-mint: rgb(173, 202, 184)
+$palette-dark-blue: rgb(4, 28, 44)
+$palette-dusky-pink: rgb(233, 205, 208)
+$palette-light-green: rgb(183, 221, 121)
+
+// $body-bg: #e1e3e0
+
+// THESE OVERRIDE SETTINGS FROM app/bower_components/sass-bootstrap/lib/_variables.scss
+
+$headings-font-weight: 400
+$btn-font-weight: 300
+$alert-link-font-weight: 500
+
+// $input-border-focus: $palette-aqua
+
+// $state-success-bg: $palette-dusky-pink
+// $state-success-text: $palette-dark-peach
+// $state-info-bg: $palette-dusky-pink
+// $state-info-text: $palette-dark-peach
+// $state-warning-bg: $palette-dusky-pink
+// $state-warning-text: $palette-dark-peach
+// $state-danger-bg: $palette-dusky-pink
+// $state-danger-text: $palette-dark-peach
+
+// $alert-danger-border: transparent
+
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/"
+
+@import bootstrap-sass-official/vendor/assets/stylesheets/bootstrap
+
+@import variables
+
+@import compass
+
+@import switchery
+
+@import fonts
+@import background
+@import retina
+@import base-mixins
+@import bootstrap-overrides
+
+@import embedded-app
+
+@import login
+@import navbar
+@import forms
+@import animated-alerts
+@import toggle-buttons
+@import sortable-tables
+@import entity-lists
+@import product-grid
+@import product-form
+@import color-picker
+@import image-uploader
+@import orders
+@import reports
+@import report-charts
+@import comparison-reports
+@import smart-report-print
+@import social
+@import timesheets
+@import offline-notification
+@import faq

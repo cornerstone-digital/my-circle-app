@@ -1,0 +1,142 @@
+<div class="container">
+<div class="row">
+  <header class="report-header col-sm-12">
+    <h1>Comparison reports</h1>
+
+    <div class="panel">
+      <div class="panel-body">
+        <form data-ng-submit="update()">
+          <div class="row">
+            <div class="col-sm-6">
+              <fieldset>
+                <legend>Compare&hellip;</legend>
+                <div class="form-group">
+                  <label for="date" class="sr-only">From</label>
+                  <input id="date" type="date" data-ng-model="date" class="form-control input-lg" required>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-sm-6">
+              <fieldset class="clearfix">
+                <legend>With&hellip;</legend>
+                <div class="radio">
+                  <label><input name="compare" type="radio" value="day" data-ng-model="compare"> same day of previous week</label>
+                </div>
+                <div class="radio">
+                  <label><input name="compare" type="radio" value="week" data-ng-model="compare"> previous week</label>
+                </div>
+                <div class="radio">
+                  <label><input name="compare" type="radio" value="month" data-ng-model="compare"> previous month</label>
+                </div>
+                <div class="radio">
+                  <label><input name="compare" type="radio" value="year" data-ng-model="compare"> same month in previous year</label>
+                </div>
+              </fieldset>
+              <button type="submit" class="btn btn-primary btn-lg pull-right" data-loading-button="Updating&hellip;">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="row">
+  <div class="report col-sm-6">
+    <section id="smart-report" class="report smart-report comparison-report" data-reports="reports">
+    <section id="smart-report" class="report smart-report" data-reports="reports">
+      <h2>smartReport</h2>
+      <table class="table table-condensed report-table">
+        <thead>
+          <tr>
+            <th>Report period</th>
+            <th data-ng-repeat="report in reports">{{reportPeriods()[$index]}}</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th>Item sales</th>
+            <td data-ng-repeat="report in reports">{{report.totalSales() | currency:"£"}}</td>
+          </tr>
+          <tr>
+            <th>Item refunds</th>
+            <td data-ng-repeat="report in reports">{{report.totalRefunds() * -1 | currency:"£"}}</td>
+          </tr>
+          <tr>
+            <th>Refund count</th>
+            <td data-ng-repeat="report in reports">({{report.refundCount() | number}})</td>
+          </tr>
+          <tr>
+            <th>VAT</th>
+            <td data-ng-repeat="report in reports">{{report.totalTax() | currency:"£"}}</td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <td data-ng-repeat="report in reports">{{report.totalGross() | currency:"£"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <div class="report col-sm-6">
+    <section id="payment-types" class="report payment-types-report comparison-report" data-reports="reports" data-headings="reportPeriods()"></section>
+  </div>
+</div>
+
+<section id="by-category" class="report category-report">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Categories</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" data-ng-repeat="report in reports">
+      <h3>{{reportPeriods()[$index]}}</h3>
+      <category-report report="report"></category-report>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <bar-chart data-source="byCategory()" data-labels="category" data-values="net" data-currency="&#163;" data-id="chart1" data-legends="reportPeriods" data-hide-values data-tooltips>
+        <h3>Net sales by category</h3>
+      </bar-chart>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <bar-chart data-source="byCategory()" data-labels="category" data-values="payment.count" data-id="chart2" data-legends="reportPeriods" data-hide-values data-tooltips>
+        <h3>Items sold by category</h3>
+      </bar-chart>
+    </div>
+  </div>
+</section>
+
+<section id="by-product" class="report product-report">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Products (top 10)</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" data-ng-repeat="report in reports">
+      <h3>{{reportPeriods()[$index]}}</h3>
+      <product-report report="report"></product-report>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <bar-chart data-source="byProduct()" data-labels="title" data-values="net" data-currency="&#163;" data-id="chart3" data-legends="reportPeriods" data-hide-values data-tooltips>
+        <h3>Net sales by product</h3>
+      </bar-chart>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <bar-chart data-source="byProduct()" data-labels="title" data-values="payment.count" data-id="chart4" data-legends="reportPeriods" data-hide-values>
+        <h3>Items sold by product</h3>
+      </bar-chart>
+    </div>
+  </div>
+</section>
+</div>

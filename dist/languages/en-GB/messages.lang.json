@@ -1,0 +1,9 @@
+{
+    "dataChanged": "Your data has changed. Don't forget to press the 'Save' button.",
+    "isRequired": "%1 is required.",
+    "isNumeric": "%1 must be numeric",
+    "isEmail": "%1 is not a valid email address.",
+    "isMatch": "The values of '%1' and '%2' must match.",
+    "isPostcode": "%1 is not a valid postcode.",
+    "isExistingSection": "A section with that name already exists."
+}

@@ -1,0 +1,156 @@
+$report-subnav-height: $navbar-height + 1px + 120px + 1px + $navbar-padding-vertical
+$report-table-section-spacing: 30px
+
+.reports
+  .table
+    tbody + tbody:before
+      content: "\a0"
+      display: table-row
+      height: $report-table-section-spacing
+    td, th
+      vertical-align: middle !important
+
+.report
+  margin-bottom: 30px
+
+.smart-report .report-table td,
+.cash-transactions .report-table td
+  width: 50%
+  text-align: right
+
+th.currency,
+th.number,
+td.currency,
+td.number
+  text-align: right
+
+.report-table
+  th.column-group-header
+    text-align: center
+  tfoot td
+    font-weight: 500
+
+.report-subnav
+
+  button
+    .app &
+      margin-right: 26px // temporary solution to allow for print button - better would be to register custom URL and render print button in the page
+
+  .has-navbar &
+    margin-top: $navbar-height + 1px
+
+  z-index: $zindex-dropdown - 1 // otherwise active menus overlay the subnav
+
+  + *
+    margin-top: $report-subnav-height - ($navbar-height + $navbar-padding-vertical)
+
+  .container
+    margin-bottom: 10px
+
+  .error
+    padding-left: 0.25em
+    vertical-align: middle
+    color: $state-danger-text
+    margin: 0
+
+  .form-group.has-error .error
+    display: inline-block
+
+.opening-total input
+  text-align: right
+
+.csv-export td
+  text-align: right
+
+.table > thead > tr > th[colspan]
+  border-bottom: none
+  text-align: center
+
+.table > thead > tr:not(:first-child) > th
+  border-top: none
+
+.reportBlock
+  margin-bottom: 50px
+
+  .green-text
+    color: #6B9B8E
+
+  .k-datetimepicker
+    width: auto !important
+
+  .row
+    line-height: 40px
+
+    .header-col span
+      padding-left: 10px
+      font-weight: 500
+
+  .data-row, .header-bar
+    background: #FCFCFC
+    margin: 0 -2px
+    color: #444444
+
+  .data-row
+    padding-bottom: 5px
+    padding-right: 10px
+
+  .header-row
+    background: #EFEFEF
+    font-weight: 500
+
+  .white-background-row
+    background: #FFFFFF !important
+
+  .k-block
+    background: none
+    padding-top: 0
+
+    > .k-header, .header-bar
+      background: #6B9B8E
+      color: #FFFFFF
+      font-size: 18px
+      padding-left: 20px
+      font-weight: 300
+
+      .k-inset
+        -webkit-box-shadow: none
+        box-shadow: none
+        padding-left: 10px
+        font-weight: 500
+
+.state-refunded td
+  text-decoration: line-through
+
+.state-refunded td.state-cell
+  text-decoration: none
+  color: #EEA627
+
+.state-paid td.state-cell
+  color: #66C5FF
+
+.paid-count, .refunded-count, .order-total
+  padding: 20px
+  border-radius: 5px
+  text-align: center
+
+.paid-count
+  background-color: #66C5FF
+  color: #FFFFFF
+  margin-bottom: 5px
+
+.refunded-count
+  background-color: #EEA627
+  color: #FFFFFF
+
+.order-total
+  font-size: 18px
+  font-weight: bold
+
+.dateFilter
+  padding: 0 20px
+  float: left
+
+.k-grid
+  .k-hierarchy-cell
+    .k-icon
+      display: none

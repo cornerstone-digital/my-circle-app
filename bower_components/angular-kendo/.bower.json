@@ -1,0 +1,24 @@
+{
+  "name": "angular-kendo",
+  "version": "1.0.3",
+  "dependencies": {
+    "kendo-ui": "~2014.1.318",
+    "angular": "~1.2.2"
+  },
+  "devDependencies": {
+    "jquery": "~1.9.1",
+    "angular-mocks": "~1.0.7",
+    "kendo-ui": "~2014.1.318"
+  },
+  "main": "build/angular-kendo.min.js",
+  "homepage": "https://github.com/kendo-labs/angular-kendo",
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.3",
+    "commit": "49c8fc3341e010b04412a5e19d35b1373aa9a730"
+  },
+  "_source": "git://github.com/kendo-labs/angular-kendo.git",
+  "_target": "~1.0.3",
+  "_originalSource": "angular-kendo"
+}

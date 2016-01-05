@@ -1,0 +1,65 @@
+<nav id="mainnav" data-ng-hide="!isVisible()">
+    <div class="container">
+        <a id="drawer-trigger" href="#" style="display: none"><span>Show drawer</span></a>
+
+        <div class="pull-left">
+            <a href="#" class="navbar-brand" data-ng-show="isLoggedIn()">myCircle</a>
+            <a href="/#/login" class="navbar-brand" data-ng-show="!isLoggedIn()">myCircle</a>
+        </div>
+        <ul id="menu" class="pull-left" data-ng-show="isLoggedIn()">
+            <li class="smart-setup toplevel">
+                smartSet-up
+                <ul class="subnav">
+                    <li data-requires-permission="PERM_PLATFORM_ADMINISTRATOR" class="animated-btn animated-swipe-right"><a href="#/merchants">Merchants</a></li>
+                    <li data-requires-permission="PERM_MERCHANT_ADMINISTRATOR" class="animated-btn animated-swipe-right"><a href="#/merchant">Merchant</a></li>
+                    <li data-requires-permission="PERM_MERCHANT_ADMINISTRATOR" class="animated-btn animated-swipe-right"><a href="#/venues">Venues</a></li>
+                    <!--<li class="animated-btn animated-swipe-right"><a href="#/employees">Staff</a></li>-->
+                    <li class="animated-btn animated-swipe-right"><a href="#/products">Products</a></li>
+                    <!--<li class="animated-btn animated-swipe-right"><a href="#/discounts">Discounts</a></li>-->
+                </ul>
+            </li>
+            <li class="smart-reports toplevel">
+                smartReports
+                <ul class="subnav">
+                    <li class="has-nested animated-btn animated-swipe-right">
+                        Sales
+                        <ul class="nested-subnav">
+                            <li class="animated-btn animated-swipe-right"><a href="#/reports">Smart Reports</a></li>
+                            <li class="animated-btn animated-swipe-right"><a href="#/reports/compare">Comparison Reports</a></li>
+                            <li class="animated-btn animated-swipe-right"><a href="#/reports/sales-transaction-history">Sales Transaction History</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-nested animated-btn animated-swipe-right">
+                        Products
+                        <ul class="nested-subnav">
+                            <li class="animated-btn animated-swipe-right"><a href="#/reports/products">Product Report</a></li>
+                            <li data-requires-tool="com.mycircleinc.smarttools.popp" class="animated-btn animated-swipe-right"><a href="#/reports/sold-stock">Sold Stock Report</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-nested animated-btn animated-swipe-right" data-requires-permission="PERM_MERCHANT_ADMINISTRATOR">
+                        Closing POS Report
+                        <ul class="nested-subnav">
+                            <li class="animated-btn animated-swipe-right"><a href="#/reports/cpr">Create Closing POS Report</a></li>
+                            <li class="animated-btn animated-swipe-right"><a href="#/reports/cpr-history">Historical Closing POS Reports</a></li>
+                        </ul>
+                    </li>
+                    <li data-requires-permission="PERM_MERCHANT_ADMINISTRATOR" class="animated-btn animated-swipe-right"><a href="#/timesheets">Staff Timesheets</a></li>
+                    <li data-requires-permission="PERM_PLATFORM_ADMINISTRATOR" class="animated-btn animated-swipe-right"><a href="#/orders">Orders</a></li>
+                </ul>
+            </li>
+            <li class="smart-social toplevel" data-requires-permission="PERM_MERCHANT_ADMINISTRATOR"><a href="#/social">smartSocial</a></li>
+            <li class="smart-tools toplevel" data-requires-permission="PERM_MERCHANT_ADMINISTRATOR"><a href="#/tools">smartTools</a></li>
+            <li class="user-guide toplevel"><a href="#/user-guide">User Guide</a></li>
+        </ul>
+
+        <!-- Logged in menu -->
+        <ul class="nav pull-right" data-ng-show="isLoggedIn()">
+            <li class="login-menu">
+                <a class="dropdown-toggle" data-toggle="dropdown"><span class="logged-in-as"></span> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="btn-logout"><span data-i18n="navigation.logout"></span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

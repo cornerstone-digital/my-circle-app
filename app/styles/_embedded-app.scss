@@ -1,0 +1,17 @@
+// this file contains overrides for elements when displayed embedded in the SmartRegister iPad app
+
+$uiwebview-size: 874px;
+
+@media (min-width: $uiwebview-size ($md - 1px)) {
+  .container {
+    max-width: $uiwebview-size;
+  }
+
+  .modal-dialog {
+    width: $uiwebview-size - 40px;
+  }
+}
+
+body:not(.app) .app-only {
+  display: none;
+}

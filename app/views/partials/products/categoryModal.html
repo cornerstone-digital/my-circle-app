@@ -1,0 +1,28 @@
+<div class="categoryModal">
+    <div style="padding: 0 10px">
+
+        <div class="row margin-bottom-20">
+            <label>Title</label>
+            <input type="text" class="form-control" data-ng-model="category.title" required>
+        </div>
+
+        <div class="row margin-bottom-20" data-ng-if="sections">
+            <label>Sections</label>
+            <select id="sectionNames" data-ng-model="sectionIds"></select>
+        </div>
+
+        <div class="color-picker row margin-bottom-20">
+            <h5>Colour</h5>
+            <label class="color" data-ng-repeat="color in palette" data-ng-class="{active: category.colour == color}"
+                   data-ng-style="{'background-color': color}">
+                <input type="radio" name="category-color" data-ng-model="category.colour" data-ng-value="'{{color}}'">
+            </label>
+        </div>
+
+        <div class="row">
+            <!--<button id="category-edit-cancel" type="button" class="btn btn-default btn-lg" data-ng-click="cancel()" data-ng-disabled="locked">Cancel</button>-->
+            <button id="category-edit-save" type="button" class="btn btn-success btn-lg" data-ng-click="save(category)" data-ng-disabled="locked">Save</button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,118 @@
+// cash reconciliation
+.cash-reconciliation {
+  display: none;
+  th {
+    text-align: right;
+  }
+  td {
+    width: 100%;
+  }
+}
+
+// general print styles
+@media only print {
+  body.has-navbar {
+    padding-top: 0;
+  }
+
+  .report-subnav + * {
+    margin-top: 0;
+  }
+
+  .opening-total {
+    output {
+      padding: 0;
+    }
+  }
+}
+
+// print styles specifically for the StarIO thermal receipt printer
+// we can't use @media print because the iOS app is handling printing
+// so the media query is not triggered
+@media (max-width: $stario-printer-width) {
+  body.app {
+    color: #000;
+    font: {
+      size: 18px;
+      weight: 400;
+    }
+
+    #z-report {
+      font-size: 24px;
+    }
+
+    // hide the page header with the date range form
+    .report-subnav {
+      display: none;
+      + * {
+        margin-top: 0;
+      }
+    }
+    .report {
+      margin-bottom: 2em;
+      // headers that will fit on the printer
+      h1, h2, h3 {
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+    .report-table {
+      margin-bottom: 1em;
+      // disable table cell borders
+      thead > tr > th,
+      thead > tr > td,
+      tbody > tr > th,
+      tbody > tr > td,
+      tfoot > tr > th,
+      tfoot > tr > td {
+        border: none;
+      }
+      // disable striping on .table-striped
+      .table-striped > tbody > tr:nth-child(odd) {
+        > td, > th {
+          background-color: transparent;
+        }
+      }
+    }
+    // prevent charts from overflowing view
+    .bar-chart {
+      font-size: 16px;
+      text-align: center;
+      max-width: $stario-printer-width;
+      overflow: hidden;
+    }
+    .jqplot-target {
+      font-size: 24px;
+      color: #333333;
+    }
+    .cash-reconciliation {
+      display: block;
+      font-size: 32px;
+      .table-bordered {
+        > tbody > tr > th,
+        > tbody > tr > td,
+        > tfoot > tr > th,
+        > tfoot > tr > td {
+          border-color: black;
+        }
+      }
+    }
+    // hide the category and product reports - save space for printing report
+    .category-report {
+      display: none;
+    }
+    .product-report {
+      display: none;
+    }
+
+    .hidden-print {
+      display: none;
+    }
+    .visible-print {
+      display: inline !important;
+      color: #000;
+      font-size: 18px;
+    }
+  }
+}

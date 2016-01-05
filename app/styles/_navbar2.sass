@@ -1,0 +1,119 @@
+body.has-navbar
+  padding:
+    top: 60px
+    bottom: 60px
+
+body.has-fixednav
+  padding:
+    top: 200px
+    bottom: 200px
+
+.navbar-default
+  background-color: #FFFFFF !important
+
+a.dropdown-toggle
+  @extend %clickable
+
+.navbar-brand
+  +replace-text("logo.png")
+  width: image-width("logo.png") + $navbar-padding-horizontal
+  height: $navbar-height
+  background-position: $navbar-padding-horizontal 50%
+  +retina
+    background-image: image-url("logo@2x.png")
+    background-size: image-width("logo.png") auto
+
+#mainnav
+  .navbar-nav>li>.dropdown-menu
+    margin-left: -60em
+    padding-left: 60em
+    width: 200em
+    border: none !important
+
+  .login-menu
+    margin-top: 10px
+
+  .login-menu > .dropdown-menu
+    position: absolute
+    right: 0 !important
+    left: inherit
+
+  .navbar-nav > li > a
+    border-top: 10px solid #CCCCCC
+    color: #C0C0C0 !important
+    font-size: 22px
+    font-weight: 100
+
+  .navbar-nav > li > .dropdown-menu > li
+    width: 11em
+    display: inline-block
+    text-align: center
+
+  .navbar-nav > li > a:hover, .navbar-nav > li > a:active, .navbar-nav > li > .open > a
+    color: #FFFFFF !important
+    background: none
+
+  .navbar-nav > .open > a
+    background: none
+    color: #FFFFFF !important
+
+  .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus
+    background: none
+
+  .navbar-text
+    margin: 0
+
+  // smartSetup
+
+  .navbar-nav > .smart-set-up > a
+    border-color: #97D4E4
+
+  .navbar-nav > .smart-set-up > a:hover, .navbar-nav > .smart-set-up > .active, .navbar-nav > .smart-set-up.open > a
+    background-color: #97D4E4
+
+  .smart-set-up > ul
+    background-color: #97D4E4
+
+  // smartReports
+
+  .navbar-nav > .smart-reports > a
+    border-color: #91BFB1
+
+  .navbar-nav > .smart-reports > a:hover, .navbar-nav > .smart-reports.open > a
+    background-color: #91BFB1
+
+  .smart-reports > ul
+    background-color: #91BFB1
+
+  // smartTools
+
+  .navbar-nav > .smart-tools > a
+    border-color: #E599B5
+
+  .navbar-nav > .smart-tools > a:hover, .navbar-nav > .smart-tools.open > a
+    background-color: #E599B5
+
+  .smart-tools > ul
+    background-color: #E599B5
+
+  // smartSocial
+
+  .navbar-nav > .smart-social > a
+    border-color: #9FA2CC
+
+  .navbar-nav > .smart-social > a:hover, .navbar-nav > .smart-social.open > a
+    background-color: #9FA2CC
+
+  .smart-social > ul
+    background-color: #9FA2CC
+
+  // User Guide
+
+  .navbar-nav > .user-guide > a
+    border-color: #57A1C1
+
+  .navbar-nav > .user-guide > a:hover, .navbar-nav > .user-guide.open > a
+    background-color: #57A1C1
+
+  .user-guide > ul
+    background-color: #57A1C1

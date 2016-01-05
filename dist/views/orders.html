@@ -1,0 +1,41 @@
+<header>
+  <div class="container">
+      <h1>Search orders</h1>
+  </div>
+    <div class="panel">
+        <div class="panel-body">
+            <form name="order-search" class="form-inline" data-ng-submit="search()">
+                <div class="input-group input-group-lg">
+                    <input type="search" class="form-control" data-ng-model="orderId" placeholder="Order number" autocomplete="off" autocapitalize="off">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary" data-loading-button="">Search</button>
+                <button type="button" class="btn btn-default" data-ng-click="clear()">Clear</button>
+              </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
+
+<section class="container">
+  <table class="table table-condensed orders">
+    <thead>
+      <tr>
+        <th>Order id</th>
+        <th>Order placed</th>
+        <th>Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="order in orders | orderBy:'created':true">
+        <th><span class="order-id">{{order.orderId}}</span></th>
+        <td>
+          <time datetime="{{order.created}}">{{order.created | date:'dd-MMM-yyyy h:mm a'}}</time>
+        </td>
+        <td>
+          <order-refund-form order="order">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

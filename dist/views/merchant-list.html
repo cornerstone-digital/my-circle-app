@@ -1,0 +1,194 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                Merchants:
+                <span class="subHeader" data-ng-pluralize="" count="merchantlist.length" when="{'0': 'You currently have no merchant setup.',
+                             '1': 'You currently have 1 merchants setup.',
+                             'other': 'You currently have {{merchantlist.length}} merchants setup.'}">
+
+                </span>
+            </h1>
+            <div class="controls pull-right" data-ng-if="hasModuleEnabled('multivenue')">
+                <button type="button" class="icon icon-lg plus-icon" data-ng-click="create()">Add New</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<alert-box></alert-box>
+
+<section id="merchants" class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th data-sortable="name">Name</th>
+        <th>Merchant id</th>
+        <th class="controls" data-ng-if="!hasModuleEnabled('multivenue')">
+          <button type="button" class="btn btn-primary btn-lg pull-right" data-ng-click="create()">New Merchant</button>
+        </th>
+        <th data-ng-if="hasModuleEnabled('multivenue')"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="merchant in merchants | orderBy:sort:reverse">
+        <td data-ng-class="{'inactive text-muted': !merchant.enabled}">{{merchant.name}}</td>
+        <td data-ng-class="{'inactive text-muted': !merchant.enabled}">{{merchant.id}}</td>
+        <td class="controls">
+          <button type="button" class="icon icon-lg edit-icon" data-ng-click="edit(merchant)">Edit</button>
+          <button type="button" class="icon icon-lg bin-icon" data-ng-click="confirmedDelete(merchant)">Delete</button>
+          <!--<button type="button" class="btn btn-info btn-lg" data-populate-catalog-for="merchant">Populate catalog</button>-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="pager" style="text-align: center">
+      <pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" num-pages="totalPages" class="pagination-sm" boundary-links="false" rotate="false" ng-change="pageChanged()"></pagination>
+  </div>
+
+</section>
+
+<!--<section class="modal bs-modal-lg fade" tabindex="-1" role="dialog" data-trigger="merchant" data-on-cancel="close">-->
+  <!--<div class="modal-dialog modal-lg">-->
+    <!--<div class="modal-content">-->
+      <!--<form name="merchantForm" role="form" data-ng-submit="save()">-->
+        <!--<header class="modal-header">-->
+          <!--<h2>Edit merchant</h2>-->
+        <!--</header>-->
+
+        <!--<div class="modal-body">-->
+
+          <!--<fieldset>-->
+            <!--<legend>Merchant</legend>-->
+
+            <!--<div data-label="Name" class="form-group">-->
+              <!--<input type="text" class="form-control input-lg" data-ng-model="merchant.name" required>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+              <!--<h5>Status</h5>-->
+
+              <!--<div class="btn-group btn-group-justified btn-group-lg">-->
+                <!--<label class="btn btn-default" data-ng-class="{active: merchant.enabled}">-->
+                  <!--<input type="radio" name="merchant-enabled" data-ng-model="merchant.enabled" data-ng-value="true">-->
+                  <!--Active-->
+                <!--</label>-->
+                <!--<label class="btn btn-default" data-ng-class="{active: !merchant.enabled}">-->
+                  <!--<input type="radio" name="merchant-enabled" data-ng-model="merchant.enabled" data-ng-value="false">-->
+                  <!--Inactive-->
+                <!--</label>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</fieldset>-->
+
+          <!--<fieldset data-ng-if="venue">-->
+            <!--<legend>Venue</legend>-->
+
+            <!--<div data-label="Name" class="form-group">-->
+              <!--<input type="text" name="name" class="form-control input-lg" data-ng-model="venue.name" required>-->
+              <!--<div class="help-block error">Please enter a name</div>-->
+            <!--</div>-->
+
+            <!--<div class="row">-->
+              <!--<fieldset class="col-sm-6">-->
+                <!--<legend>Address</legend>-->
+
+                <!--<div data-label="Address" class="form-group">-->
+                  <!--<input type="text" name="streetAddress" class="form-control input-lg" data-ng-model="venue.address.line1" required>-->
+                  <!--<div class="help-block error">Please enter the first line of your address.</div>-->
+                <!--</div>-->
+
+                <!--<div class="form-group">-->
+                  <!--<input type="text" name="locality" class="form-control input-lg" data-ng-model="venue.address.line2">-->
+                <!--</div>-->
+
+                <!--<div data-label="City" class="form-group">-->
+                  <!--<input type="text" name="region" class="form-control input-lg" data-ng-model="venue.address.city" required>-->
+                  <!--<div class="help-block error">Please enter a city</div>-->
+                <!--</div>-->
+
+                <!--<div data-label="Region" class="form-group">-->
+                  <!--<input type="text" name="region" class="form-control input-lg" data-ng-model="venue.address.county">-->
+                <!--</div>-->
+
+                <!--<div data-label="Post code" class="form-group">-->
+                  <!--<input type="text" name="postalCode" class="form-control input-lg" data-ng-model="venue.address.postCode" required>-->
+                  <!--<div class="help-block error">Please enter your Post Code.</div>-->
+                <!--</div>-->
+
+              <!--</fieldset>-->
+
+              <!--<fieldset class="col-sm-6">-->
+                <!--<legend>Contact</legend>-->
+
+                <!--<div data-label="Telephone" class="form-group">-->
+                  <!--<input type="tel" name="tel" class="form-control input-lg" data-ng-model="venue.contacts[0].value" required>-->
+                  <!--<div class="help-block error">Please enter a telephone number</div>-->
+                <!--</div>-->
+              <!--</fieldset>-->
+
+              <!--<fieldset class="col-sm-6">-->
+                <!--<legend>Venue info</legend>-->
+
+                <!--<div data-label="Legal name" class="form-group">-->
+                  <!--<input type="text" name="legalName" class="form-control input-lg" data-ng-model="venue.legalName" required>-->
+                  <!--<div class="help-block error">Please enter a Legal name</div>-->
+                <!--</div>-->
+
+                <!--<div data-label="VAT registration no." class="form-group">-->
+                  <!--<input type="text" name="vatID" class="form-control input-lg" data-ng-model="venue.vatNumber">-->
+                  <!--<div class="help-block error">Please enter a VAT registration no.</div>-->
+                <!--</div>-->
+              <!--</fieldset>-->
+            <!--</div>-->
+          <!--</fieldset>-->
+
+          <!--<fieldset data-ng-if="employee">-->
+            <!--<legend>Merchant administrator</legend>-->
+
+            <!--<div class="row">-->
+              <!--<div data-label="First name" class="form-group col-sm-4">-->
+                <!--<input type="text" class="form-control input-lg" data-ng-model="employee.firstname" required>-->
+              <!--</div>-->
+              <!--<div data-label="Last name" class="form-group col-sm-4">-->
+                <!--<input type="text" class="form-control input-lg" data-ng-model="employee.lastname" required>-->
+              <!--</div>-->
+              <!--<div data-label="Display name" class="form-group col-sm-4">-->
+                <!--<input type="text" class="form-control input-lg" data-ng-model="employee.displayName">-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div data-label="Email" class="form-group">-->
+              <!--<input type="email" class="form-control input-lg" data-ng-model="employee.email" required>-->
+                  <!--<div class="help-block error">Please enter a valid lowercase email address.</div>-->
+            <!--</div>-->
+
+            <!--<div data-label="Password" class="form-group">-->
+              <!--<input type="password" class="form-control input-lg" data-ng-model="employee.credentials[0].token" required>-->
+            <!--</div>-->
+          <!--</fieldset>-->
+
+        <!--</div>-->
+
+        <!--<footer class="modal-footer">-->
+          <!--<button id="category-edit-cancel" type="button" class="btn btn-default btn-lg" data-ng-click="close()" data-ng-disabled="locked">Cancel</button>-->
+          <!--<button id="category-edit-save" type="submit" class="btn btn-success btn-lg" data-loading-button="Saving&hellip;">Save</button>-->
+        <!--</footer>-->
+      <!--</form>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
+
+<div class="modal bs-modal-lg fade" data-trigger="merchantToDelete" role="dialog" data-on-cancel="closeConfirm">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Are you sure you want to delete '{{merchantToDelete.name}}'?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-lg" data-ng-click="closeConfirm()">No</button>
+                <button type="button" class="btn btn-danger btn-lg" data-ng-click="confirmYes()">Yes</button>
+            </div>
+        </div>]
+    </div>
+</div>

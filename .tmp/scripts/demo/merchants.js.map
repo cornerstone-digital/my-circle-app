@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "merchants.js",
+  "sourceRoot": "",
+  "sources": [
+    "merchants.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,YAAA,CAAA;AAAA,EAEA,OAAO,CAAC,MAAR,CAAe,aAAf,CACE,CAAC,QADH,CACY,mBADZ,EAEI;IACE;AAAA,MAAA,GAAA,EAAK,SAAL;AAAA,MACA,IAAA,EAAM,eADN;AAAA,MAEA,KAAA,EAAO,CAFP;KADF;GAFJ,CAFA,CAAA;AAAA"
+}

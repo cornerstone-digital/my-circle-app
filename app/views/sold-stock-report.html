@@ -1,0 +1,37 @@
+<div class="container">
+<report-controls data-hide-pos="true"></report-controls>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Sold stock report</h1>
+  </div>
+</div>
+
+<table class="table table-condensed table-striped">
+  <colgroup>
+    <col class="col-sm-4">
+    <col class="col-sm-2">
+    <col class="col-sm-2">
+    <col class="col-sm-2">
+    <col class="col-sm-2">
+  </colgroup>
+  <thead>
+    <tr>
+      <th data-sortable="title">Product</th>
+      <th class="numeric" data-sortable="merchantOrders">POS sales</th>
+      <th class="numeric" data-sortable="consumerOrders">POPP collected</th>
+      <th class="numeric" data-sortable="readyForCollection">POPP pending</th>
+      <th class="numeric" data-sortable="total">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="product in report.soldStockReport.soldStockSummaries | orderBy:sort:reverse">
+      <td>{{product.title}}</td>
+      <td class="numeric">{{product.merchantOrders}}</td>
+      <td class="numeric">{{product.consumerOrders}}</td>
+      <td class="numeric">{{product.readyForCollection}}</td>
+      <td class="numeric">{{product.total}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

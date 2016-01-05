@@ -1,0 +1,284 @@
+<header class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1 class="pull-left main-header">
+                {{title}}
+            </h1>
+            <div class="controls pull-right">
+                <input type="button" class="icon icon-lg back-icon" data-ng-click="back()" data-ng-if="backUrl" value="Back">
+                <input type="button" class="icon icon-lg back-icon" data-ng-click="generatePDF(report)" data-ng-if="readOnly()" value="Export PDF">
+                <input type="button" class="icon icon-lg tick-icon" data-ng-click="save()" value="Save" data-ng-if="!readOnly()">
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="DCPRReport" class="container">
+    <alert-box data-group="CPRReport"></alert-box>
+
+    <div class="reportBlock" data-ng-if="report">
+        <div class="k-block">
+            <div class="row header-bar">
+                Closing POS Report
+            </div>
+
+            <div class="row data-row">
+                <div class="col-md-2 header-col">
+                    <span>Venue</span>
+                </div>
+                <div class="col-md-10">
+                    <div class="pull-right">
+                        <select id="venue" name="venue"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row data-row">
+                <div class="col-md-2 header-col">
+                    <span>POS</span>
+                </div>
+                <div class="col-md-10">
+                    <div class="pull-right">
+                        <select id="posId" name="posId"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row data-row">
+                <div class="col-md-2 header-col">
+                    <span>Opening</span>
+                </div>
+                <div class="col-md-4 pull-right">
+                    <input id="opening" class="pull-right">
+                </div>
+            </div>
+            <div class="row data-row">
+                <div class="col-md-2 header-col">
+                    <span>Closing</span>
+                </div>
+                <div class="col-md-4 pull-right">
+                    <input id="closing" class="pull-right">
+                </div>
+            </div>
+            <!--<div class="row data-row">-->
+                <!--<div class="col-md-12">-->
+                    <!--<button class="btn btn-default pull-right" data-ng-click="generateReport()" data-ng-if="!readOnly()">Update</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="row header-bar">
+                <span>Sales</span>
+            </div>
+
+            <div class="row data-row header-row">
+                <div class="col-md-3">
+                    <span></span>
+                </div>
+                <div class="col-md-2">
+                    <span>Payments</span>
+                </div>
+                <div class="col-md-3">
+                    <span>Actual</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Difference</span>
+                </div>
+                <div class="col-md-2">
+                    <span>% Difference</span>
+                </div>
+            </div>
+
+            <div class="row data-row">
+                <div class="col-md-3 header-col">
+                    <span>Cash</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{report.cashPayment | currency:"£" }}</span>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="k-textbox" value="Input" data-ng-model="report.cashPaymentActual" data-ng-change="calculatePayments()" value="{{ report.cashPaymentActual | currency:'£' }}" data-ng-if="!readOnly()">
+                    <span data-ng-if="readOnly()">{{ report.cashPaymentActual | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ report.calculated.cashPaymentDifference  | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ formatPercentage(report.calculated.cashPaymentPercentageDifference) }}</span>
+                </div>
+            </div>
+            <div class="row data-row">
+                <div class="col-md-3 header-col">
+                    <span>Card</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{report.cardPayment | currency:"£" }}</span>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="k-textbox" value="Input" data-ng-model="report.cardPaymentActual" data-ng-change="calculatePayments()" value="{{ report.cardPaymentActual | currency:'£' }}" data-ng-if="!readOnly()">
+                    <span data-ng-if="readOnly()">{{ report.cardPaymentActual | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ report.calculated.cardPaymentDifference  | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ formatPercentage(report.calculated.cardPaymentPercentageDifference) }}</span>
+                </div>
+            </div>
+            <div class="row data-row">
+                <div class="col-md-3 header-col">
+                    <span>Total</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{report.calculated.paymentTotal | currency:"£" }}</span>
+                </div>
+                <div class="col-md-3">
+                    <span>{{report.calculated.actualPaymentTotal | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ report.calculated.paymentDifferenceTotal  | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ formatPercentage(report.calculated.paymentPercentageDifference) }}</span>
+                </div>
+            </div>
+
+            <div class="row header-bar">
+                <span>Payments</span>
+            </div>
+
+            <div class="row data-row header-row">
+                <div class="col-md-3">
+                    <span></span>
+                </div>
+                <div class="col-md-2">
+                    <span>Payments</span>
+                </div>
+                <div class="col-md-3">
+                    <span>Actual</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Difference</span>
+                </div>
+                <div class="col-md-2">
+                    <span>% Difference</span>
+                </div>
+            </div>
+
+            <div class="row data-row">
+                <div class="col-md-3 header-col">
+                    <span>Payments In</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ report.paymentIn | currency:"£" }}</span>
+                </div>
+                <div class="col-md-3">
+                    <span>-</span>
+                </div>
+                <div class="col-md-2">
+                    <span>-</span>
+                </div>
+                <div class="col-md-2">
+                    <span>-</span>
+                </div>
+            </div>
+            <div class="row data-row">
+                <div class="col-md-3 header-col">
+                    <span>Payments Out</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ report.paymentOut | currency:"£" }}</span>
+                </div>
+                <div class="col-md-3">
+                    <span>-</span>
+                </div>
+                <div class="col-md-2">
+                    <span>-</span>
+                </div>
+                <div class="col-md-2">
+                    <span>-</span>
+                </div>
+            </div>
+
+            <div class="row header-bar">
+                <span>Totals</span>
+            </div>
+            <div class="row data-row header-row">
+                <div class="col-md-3">
+                    <span></span>
+                </div>
+                <div class="col-md-2">
+                    <span>Payments</span>
+                </div>
+                <div class="col-md-3">
+                    <span>Actual</span>
+                </div>
+                <div class="col-md-2">
+                    <span>Difference</span>
+                </div>
+                <div class="col-md-2">
+                    <span>% Difference</span>
+                </div>
+            </div>
+            <div class="row data-row">
+                <div class="col-md-3 header-col">
+                    <span>Opening</span>
+                </div>
+                <div class="col-md-2">
+                    <span>-</span>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="k-textbox" value="Input" data-ng-model="report.openingBalance" data-ng-change="calculatePayments()" value="{{ report.openingBalance | currency:'£' }}" data-ng-if="!readOnly()">
+                    <span data-ng-if="readOnly()">{{ report.openingBalance | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>-</span>
+                </div>
+                <div class="col-md-2">
+                    <span>-</span>
+                </div>
+            </div>
+            <div class="row data-row">
+                <div class="col-md-3 header-col">
+                    <span class="green-text">Cash Drawer Balance</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ report.calculated.cashDrawerBalance  | currency:"£" }}</span>
+                </div>
+                <div class="col-md-3">
+                    <span>{{ report.calculated.cashDrawerActual  | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ report.calculated.cashDrawerDifference  | currency:"£" }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ formatPercentage(report.calculated.cashDrawerPercentageDifference) }}</span>
+                </div>
+            </div>
+            <div data-ng-if="report.vatSummaryDetails">
+                <div class="row header-bar">
+                    <span>Tax</span>
+                </div>
+
+                <div class="row data-row header-row">
+                    <div class="col-md-3">
+                        <span></span>
+                    </div>
+                    <div class="col-md-7">
+                        <span>Rate</span>
+                    </div>
+                    <div class="col-md-2">
+                        <span>Total Tax value</span>
+                    </div>
+                </div>
+                <div class="row data-row" data-ng-repeat="vatRow in report.vatSummaryDetails">
+                    <div class="col-md-3">
+                        <span></span>
+                    </div>
+                    <div class="col-md-7 header-col">
+                        <span>{{vatRow.taxRate | percentage}}</span>
+                    </div>
+                    <div class="col-md-2">
+                        <span>{{vatRow.total | currency:"£"}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
