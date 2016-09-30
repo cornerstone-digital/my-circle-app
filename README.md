@@ -61,6 +61,6 @@ This will clear the API base URL and stored credentials.
 [grunt]:http://gruntjs.com
 [bower]:http://bower.io
 [homebrew]:http://brew.sh
-[jasmine]:http://pivotal.github.io/jasmine/
+[jasmine]:https://jasmine.github.io/
 [karma]:http://karma-runner.github.io/0.10/index.html
 [compass]:http://compass-style.org/
